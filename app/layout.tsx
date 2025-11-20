@@ -18,8 +18,6 @@ const geistMono = Geist_Mono({
 
 const metadataBase = new URL(siteConfig.url);
 
-export const runtime = "edge";
-
 export const metadata: Metadata = {
   metadataBase,
   title: {
