@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageBanner } from "@/components/PageBanner";
 import { SectionHeading } from "@/components/SectionHeading";
 import { FeatureCard } from "@/components/FeatureCard";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { featureHighlights } from "@/lib/site";
 
 const automationTracks = [
@@ -69,6 +70,10 @@ export default function FeaturesPage() {
         eyebrow="Feature map"
         title="Automate every workflow, from tills to boardrooms."
         subtitle="Crystal ERP ships modular building blocks so you can activate POS, ERP, and analytics components that match where your business is headed."
+      />
+      <BreadcrumbJsonLd
+        id="breadcrumb-features"
+        items={[{ name: "Home" }, { name: "Features", path: "/features" }]}
       />
 
       <section className="space-y-8">

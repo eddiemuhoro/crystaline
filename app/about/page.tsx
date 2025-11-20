@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageBanner } from "@/components/PageBanner";
 import { SectionHeading } from "@/components/SectionHeading";
 import { StatGrid } from "@/components/StatGrid";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { stats, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -33,6 +34,10 @@ export default function AboutPage() {
         eyebrow="Our story"
         title="We build mission-critical software for African commerce."
         subtitle="Crystal ERP blends two decades of POS experience with a cloud-native ERP approach so Kenyan businesses can modernize without sacrificing reliability."
+      />
+      <BreadcrumbJsonLd
+        id="breadcrumb-about"
+        items={[{ name: "Home" }, { name: "About", path: "/about" }]}
       />
 
       <section className="space-y-8">

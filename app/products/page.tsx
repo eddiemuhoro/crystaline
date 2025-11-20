@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageBanner } from "@/components/PageBanner";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProductCard } from "@/components/ProductCard";
+import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { productPlans } from "@/lib/site";
 
 const onboardingSteps = [
@@ -52,6 +53,10 @@ export default function ProductsPage() {
         eyebrow="Product suite"
         title="Pick the deployment that fits your rollout."
         subtitle="From offline-ready desktops to modern cloud suites and partner toolkits, Crystal ERP meets you where you are and scales without limits."
+      />
+      <BreadcrumbJsonLd
+        id="breadcrumb-products"
+        items={[{ name: "Home" }, { name: "Products", path: "/products" }]}
       />
 
       <section className="space-y-8">
