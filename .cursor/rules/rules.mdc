@@ -1,0 +1,158 @@
+---
+alwaysApply: true
+---
+
+# ============================================
+
+# CURSOR RULES — Next.js + TypeScript + Tailwind + SEO
+
+# For converting HTML site → Modern, SEO-optimized Next.js app
+
+# ============================================
+
+# ---------- GENERAL PROJECT RULES ----------
+
+- Always use:
+
+  - Next.js 14 (App Router only)
+  - TypeScript
+  - Tailwind CSS
+  - next/image for all images
+  - next/font for custom or Google fonts
+  - Server Components by default
+  - Client Components only when required (useEffect, state, events)
+
+- Maintain clean, semantic HTML structure:
+    <header>, <nav>, <main>, <section>, <article>, <footer>, etc.
+- Ensure full mobile responsiveness using Tailwind.
+- Ensure accessibility: alt text, aria labels, proper heading order.
+
+# ---------- FILE & PROJECT STRUCTURE ----------
+
+- Use the App Router:
+  /app
+  /[pages]
+  /components
+  /lib
+  /styles
+  layout.tsx
+  page.tsx
+
+- Convert every HTML page into:
+  /app/<route>/page.tsx
+
+- Convert repeating UI parts into reusable components:
+  /components/Navbar.tsx
+  /components/Footer.tsx
+  /components/Hero.tsx
+  /components/FeatureCard.tsx
+
+# ---------- SEO RULES ----------
+
+- Use metadata API in every page:
+  export const metadata: Metadata = { ... }
+
+- Metadata must include:
+  title
+  description
+  keywords
+  openGraph
+  twitter
+  canonical URL
+  authors
+  robots
+  alternates
+
+- Always create a sitemap:
+  /app/sitemap.ts
+- Create a dynamic robots.txt:
+  /app/robots.ts
+
+- Add structured data (JSON-LD) where applicable using:
+    <script type="application/ld+json">{}</script>
+
+For business websites include: - Organization schema - Website schema - Product/Service schema
+
+# ---------- PERFORMANCE RULES ----------
+
+- Optimize all images using next/image.
+- Inline critical above-the-fold content.
+- Use dynamic imports for large components, e.g.:
+  const Component = dynamic(() => import('@/components/Component'));
+
+- Ensure no large JavaScript on pages that do not need it.
+- Use server components as much as possible.
+- Keep bundle size minimal.
+
+# ---------- TAILWIND RULES ----------
+
+- Always use Tailwind utility classes for styling.
+- Use global styles in globals.css only when necessary.
+- Use @layer for re-usable custom classes.
+- No inline <style> blocks unless absolutely necessary.
+
+# ---------- CONTENT MIGRATION RULES ----------
+
+- For each HTML section, preserve:
+  text
+  headings (H1 → H6)
+  images
+  CTAs
+  structure
+
+- Upgrade:
+  - Replace <img> with <Image />
+  - Replace outdated tags with modern HTML5
+  - Split large HTML pages into components
+  - Use Tailwind classes, not old CSS classes
+
+# ---------- NAVIGATION RULES ----------
+
+- Use <Link href=""> instead of <a>.
+- All internal links MUST use Next.js Link.
+- External links must include:
+  target="\_blank"
+  rel="noopener noreferrer"
+
+# ---------- DEPLOYMENT RULES ----------
+
+- The final output MUST be 100% Vercel-friendly.
+- Build must pass:
+  vercel build
+  next lint
+- Use edge runtime where possible:
+  export const runtime = "edge";
+
+# ---------- EXTRA SEO FEATURES ----------
+
+- Include:
+  /app/opengraph-image.png
+  /app/twitter-image.png
+- Generate dynamic OG images using @vercel/og when needed.
+- Include canonical tags for every route.
+- Ensure no duplicate H1s.
+- Ensure images have descriptive alt text.
+
+# ---------- WRITING & CONTENT ----------
+
+- Use clear, simple English.
+- Explain features of the business or product.
+- Include keywords naturally.
+- Avoid keyword stuffing.
+- Maintain professional tone.
+
+# ---------- DO NOT DO ----------
+
+- Do not use the Pages Router.
+- Do not use JavaScript instead of TypeScript.
+- Do not add any CSS frameworks besides Tailwind.
+- Do not use <img>, <iframe>, or deprecated tags.
+- Do not output unoptimized images.
+- Do not create inline styles unless absolutely required.
+- Do not create inconsistent component naming.
+
+# ============================================
+
+# END OF RULES
+
+# ============================================
