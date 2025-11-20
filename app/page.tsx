@@ -54,6 +54,16 @@ export default function HomePage() {
             <FeatureCard key={feature.title} {...feature} />
           ))}
         </div>
+        <p className="text-sm text-slate-500">
+          Explore every automation block in detail on the{" "}
+          <Link
+            href="/features"
+            className="font-semibold text-indigo-600 underline-offset-4 hover:underline"
+          >
+            Crystal ERP feature map
+          </Link>
+          .
+        </p>
       </section>
 
       <section
@@ -145,6 +155,16 @@ export default function HomePage() {
                 products page
               </Link>
               .
+            </p>
+            <p className="mt-3">
+              Looking for rollout playbooks? Visit the{" "}
+              <Link
+                href="/resources"
+                className="font-semibold text-indigo-600 underline-offset-4 hover:underline"
+              >
+                resources hub
+              </Link>{" "}
+              for detailed guides.
             </p>
           </article>
         </div>

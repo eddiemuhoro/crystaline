@@ -19,7 +19,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "#resources": ["./content/resources/*"]
     }
   },
   "include": [
