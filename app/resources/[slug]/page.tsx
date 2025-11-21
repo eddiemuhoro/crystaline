@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ResourcePage({ params }: Props) {
   const { slug } = await params;
   let resource;
-  
+
   try {
     resource = await getResourceBySlug(slug);
   } catch {
