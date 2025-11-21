@@ -35,3 +35,22 @@ export async function getAllResources(): Promise<ResourceMeta[]> {
     })
     .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)));
 }
+
+export async function getResourceBySlug(slug: string) {
+  const fullPath = path.join(resourcesDirectory, `${slug}.mdx`);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const { data, content } = matter(fileContents);
+  
+  return {
+    slug,
+    content,
+    meta: {
+      title: data.title,
+      excerpt: data.excerpt,
+      date: data.date,
+      readingTime: data.readingTime,
+      author: data.author,
+      keywords: data.keywords ?? [],
+    } as ResourceMeta,
+  };
+}
