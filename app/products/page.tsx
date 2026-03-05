@@ -3,7 +3,26 @@ import { PageBanner } from "@/components/PageBanner";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProductCard } from "@/components/ProductCard";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
-import { productPlans } from "@/lib/site";
+
+type Product = {
+  _id?: string;
+  title: string;
+  subtitle: string;
+  slug: string;
+  description: string;
+  price: number;
+  href: string;
+  highlights: string[];
+};
+
+import { client } from "@/sanity/client";
+
+const POSTS_QUERY = `*[
+  _type == "products"
+  && defined(slug.current)
+]|order(publishedAt desc)[0...12]{_id, title, slug, price, "description": pt::text(description), subtitle, publishedAt}`;
+
+const options = { next: { revalidate: 60 } };
 
 const onboardingSteps = [
   {
@@ -46,7 +65,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ProductsPage() {
+export default async function ProductsPage() {
+  const posts = await client.fetch(POSTS_QUERY, {}, options);
+  console.log("Fetched products:", posts);
   return (
     <div className="space-y-16">
       <PageBanner
@@ -66,8 +87,8 @@ export default function ProductsPage() {
           description="Every plan includes core POS, inventory, finance, and analytics plus 24/7 Kenyan support."
         />
         <div className="grid gap-6 lg:grid-cols-3">
-          {productPlans.map((plan) => (
-            <ProductCard key={plan.name} {...plan} />
+          {posts.map((post: Product, index: number) => (
+            <ProductCard key={post._id || `product-${index}`} {...post} />
           ))}
         </div>
       </section>
