@@ -25,7 +25,7 @@
 
 ### 4. Structured Data (JSON-LD)
 - ✅ Organization schema
-- ✅ Website schema  
+- ✅ Website schema
 - ✅ Product schema
 - ✅ FAQ schema on homepage
 - ✅ Breadcrumb navigation
@@ -136,7 +136,7 @@ curl -I https://erp.crystaline.co.ke
 - Check Google Search Console for new errors
 - Monitor impressions and click-through rates
 
-### Monthly  
+### Monthly
 - Review which pages are getting traffic
 - Update meta descriptions for low CTR pages
 - Add new resource articles with target keywords

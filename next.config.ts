@@ -6,10 +6,10 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   generateEtags: true,
   trailingSlash: false,
-  
+
   // Enable static exports for better SEO
   output: undefined, // Keep as server-side for dynamic sitemap
-  
+
   // Headers for better SEO and security
   async headers() {
     return [

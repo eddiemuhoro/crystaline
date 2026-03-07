@@ -17,7 +17,7 @@ check_url() {
     local url=$1
     local name=$2
     local status=$(curl -s -o /dev/null -w "%{http_code}" "$url")
-    
+
     if [ "$status" -eq 200 ]; then
         echo -e "${GREEN}✓${NC} $name: ${GREEN}OK${NC} (Status: $status)"
         return 0
@@ -32,7 +32,7 @@ check_content() {
     local url=$1
     local search=$2
     local name=$3
-    
+
     if curl -s "$url" | grep -q "$search"; then
         echo -e "${GREEN}✓${NC} $name: ${GREEN}FOUND${NC}"
         return 0
@@ -78,7 +78,7 @@ check_content "$DOMAIN/robots.txt" "sitemap.xml" "Sitemap Reference"
 check_content "$DOMAIN/robots.txt" "Allow: /" "Crawling Allowed"
 echo ""
 
-# Check sitemap content  
+# Check sitemap content
 echo -e "${BOLD}6. Sitemap Content${NC}"
 SITEMAP_COUNT=$(curl -s "$DOMAIN/sitemap.xml" | grep -c "<url>")
 if [ "$SITEMAP_COUNT" -gt 5 ]; then

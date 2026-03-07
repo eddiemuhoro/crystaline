@@ -16,7 +16,7 @@ const staticRoutes = [
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Get all resource articles
   const resources = await getAllResources();
-  
+
   // Create sitemap entries for static routes
   const staticEntries = staticRoutes.map((route) => ({
     url: `${siteConfig.url}${route.path}`,
