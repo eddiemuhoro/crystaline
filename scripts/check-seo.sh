@@ -2,15 +2,18 @@
 
 # SEO Health Check Script for erp.crystaline.co.ke
 # Run this after deployment to verify SEO setup
+# Usage: ./check-seo.sh [domain]
+# Example: ./check-seo.sh http://localhost:3000
 
-DOMAIN="https://erp.crystaline.co.ke"
+DOMAIN="${1:-https://erp.crystaline.co.ke}"
 BOLD='\033[1m'
 GREEN='\033[0;32m'
 RED='\033[0;31m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
-echo -e "${BOLD}🔍 Crystal ERP SEO Health Check${NC}\n"
+echo -e "${BOLD}🔍 Crystal ERP SEO Health Check${NC}"
+echo -e "Testing: ${YELLOW}$DOMAIN${NC}\n"
 
 # Function to check if URL returns 200
 check_url() {

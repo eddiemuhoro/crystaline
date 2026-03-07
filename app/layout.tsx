@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
@@ -121,6 +120,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth bg-slate-50">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased text-slate-900`}
       >
@@ -129,27 +142,6 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <Script
-          id="schema-organization"
-          type="application/ld+json"
-          strategy="afterInteractive"
-        >
-          {JSON.stringify(organizationJsonLd)}
-        </Script>
-        <Script
-          id="schema-website"
-          type="application/ld+json"
-          strategy="afterInteractive"
-        >
-          {JSON.stringify(websiteJsonLd)}
-        </Script>
-        <Script
-          id="schema-product"
-          type="application/ld+json"
-          strategy="afterInteractive"
-        >
-          {JSON.stringify(productJsonLd)}
-        </Script>
       </body>
     </html>
   );
