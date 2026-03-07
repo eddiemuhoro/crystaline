@@ -3,26 +3,24 @@ import { PageBanner } from "@/components/PageBanner";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProductCard } from "@/components/ProductCard";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
+import { productPlans } from "@/lib/site";
 
 type Product = {
-  _id?: string;
-  title: string;
-  subtitle: string;
-  slug: string;
+  id: string;
+  name: string;
   description: string;
-  price: number;
+  price: string;
   href: string;
   highlights: string[];
 };
 
-import { client } from "@/sanity/client";
-
-const POSTS_QUERY = `*[
-  _type == "products"
-  && defined(slug.current)
-]|order(publishedAt desc)[0...12]{_id, title, slug, price, "description": pt::text(description), subtitle, publishedAt}`;
-
-const options = { next: { revalidate: 60 } };
+// TODO: Uncomment when Sanity CMS is configured
+// import { client } from "@/sanity/client";
+// const POSTS_QUERY = `*[
+//   _type == "products"
+//   && defined(slug.current)
+// ]|order(publishedAt desc)[0...12]{_id, title, slug, price, "description": pt::text(description), subtitle, publishedAt}`;
+// const options = { next: { revalidate: 60 } };
 
 const onboardingSteps = [
   {
@@ -65,9 +63,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function ProductsPage() {
-  const posts = await client.fetch(POSTS_QUERY, {}, options);
-  console.log("Fetched products:", posts);
+export default function ProductsPage() {
+  // TODO: Fetch from Sanity when CMS is configured
+  // const posts = await client.fetch(POSTS_QUERY, {}, options);
+  const products = productPlans;
+
   return (
     <div className="space-y-16">
       <PageBanner
@@ -87,8 +87,16 @@ export default async function ProductsPage() {
           description="Every plan includes core POS, inventory, finance, and analytics plus 24/7 Kenyan support."
         />
         <div className="grid gap-6 lg:grid-cols-3">
-          {posts.map((post: Product, index: number) => (
-            <ProductCard key={post._id || `product-${index}`} {...post} />
+          {products.map((product: Product) => (
+            <ProductCard
+              key={product.id}
+              title={product.name}
+              subtitle={product.price}
+              description={product.description}
+              price={0}
+              href={product.href}
+              highlights={product.highlights}
+            />
           ))}
         </div>
       </section>

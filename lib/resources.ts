@@ -54,3 +54,4 @@ export async function getResourceBySlug(slug: string) {
     } as ResourceMeta,
   };
 }
+
