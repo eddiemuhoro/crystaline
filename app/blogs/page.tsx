@@ -5,26 +5,26 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { getAllResources } from "@/lib/resources";
 
 export const metadata: Metadata = {
-  title: "Crystal ERP Resources",
+  title: "Crystal ERP Blog",
   description:
     "Guides and checklists for launching POS, ERP, and retail operations across Kenya using Crystal ERP.",
   alternates: {
-    canonical: "/resources",
+    canonical: "/blogs",
   },
 };
 
-export default async function ResourcesPage() {
+export default async function BlogsPage() {
   const articles = await getAllResources();
   return (
     <div className="space-y-12">
       <PageBanner
-        eyebrow="Resources"
+        eyebrow="Blog"
         title="Field-tested playbooks for Kenyan retailers."
         subtitle="Deploy Crystal ERP with confidence using rollout checklists, compliance tips, and partner insights."
       />
       <BreadcrumbJsonLd
-        id="breadcrumb-resources"
-        items={[{ name: "Home" }, { name: "Resources", path: "/resources" }]}
+        id="breadcrumb-blogs"
+        items={[{ name: "Home" }, { name: "Blog", path: "/blogs" }]}
       />
       <section className="space-y-6">
         <div className="grid gap-6 md:grid-cols-2">
@@ -41,7 +41,7 @@ export default async function ResourcesPage() {
                 })}
               </p>
               <h2 className="mt-3 text-xl font-semibold text-slate-900">
-                <Link href={`/resources/${article.slug}`}>{article.title}</Link>
+                <Link href={`/blogs/${article.slug}`}>{article.title}</Link>
               </h2>
               <p className="mt-2 text-sm text-slate-600">{article.excerpt}</p>
               <div className="mt-4 flex flex-wrap gap-3 text-xs text-slate-500">
@@ -50,7 +50,7 @@ export default async function ResourcesPage() {
                 <span>{article.author}</span>
               </div>
               <Link
-                href={`/resources/${article.slug}`}
+                href={`/blogs/${article.slug}`}
                 className="mt-6 inline-flex items-center text-sm font-semibold text-brand-700 underline-offset-4 hover:underline"
               >
                 Read article →

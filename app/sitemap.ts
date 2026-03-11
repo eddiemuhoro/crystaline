@@ -8,7 +8,7 @@ const staticRoutes = [
   { path: "/about", priority: 0.8, changeFrequency: "monthly" as const },
   { path: "/features", priority: 0.9, changeFrequency: "monthly" as const },
   { path: "/products", priority: 0.9, changeFrequency: "monthly" as const },
-  { path: "/resources", priority: 0.7, changeFrequency: "weekly" as const },
+  { path: "/blogs", priority: 0.7, changeFrequency: "weekly" as const },
   { path: "/terms", priority: 0.5, changeFrequency: "yearly" as const },
   { path: "/privacy", priority: 0.5, changeFrequency: "yearly" as const },
   // Industry pages
@@ -46,9 +46,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: route.priority,
   }));
 
-  // Create sitemap entries for dynamic resource pages
+  // Create sitemap entries for dynamic blog pages
   const resourceEntries = resources.map((resource) => ({
-    url: `${siteConfig.url}/resources/${resource.slug}`,
+    url: `${siteConfig.url}/blogs/${resource.slug}`,
     lastModified: new Date(resource.date),
     changeFrequency: "monthly" as const,
     priority: 0.6,

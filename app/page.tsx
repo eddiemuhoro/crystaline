@@ -159,10 +159,10 @@ export default function HomePage() {
             <p className="mt-3">
               Looking for rollout playbooks? Visit the{" "}
               <Link
-                href="/resources"
-                className="font-semibold text-brand-700 underline-offset-4 hover:underline"
+                href="/blogs"
+                className="font-medium text-brand-700 underline underline-offset-4 hover:no-underline"
               >
-                resources hub
+                blog
               </Link>{" "}
               for detailed guides.
             </p>

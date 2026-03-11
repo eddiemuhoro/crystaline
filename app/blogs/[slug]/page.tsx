@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: meta.excerpt,
       keywords: meta.keywords,
       alternates: {
-        canonical: `/resources/${slug}`,
+        canonical: `/blogs/${slug}`,
       },
       openGraph: {
         title: meta.title,
@@ -37,12 +37,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   } catch {
     return {
-      title: "Resource Not Found",
+      title: "Blog Post Not Found",
     };
   }
 }
 
-export default async function ResourcePage({ params }: Props) {
+export default async function BlogPage({ params }: Props) {
   const { slug } = await params;
   let resource;
 
@@ -66,11 +66,11 @@ export default async function ResourcePage({ params }: Props) {
         subtitle={`${meta.readingTime} • By ${meta.author}`}
       />
       <BreadcrumbJsonLd
-        id={`breadcrumb-resource-${slug}`}
+        id={`breadcrumb-blog-${slug}`}
         items={[
           { name: "Home" },
-          { name: "Resources", path: "/resources" },
-          { name: meta.title, path: `/resources/${slug}` },
+          { name: "Blog", path: "/blogs" },
+          { name: meta.title, path: `/blogs/${slug}` },
         ]}
       />
       <article className="prose prose-slate max-w-none prose-headings:font-bold prose-headings:text-black prose-h2:text-3xl prose-h2:mt-8 prose-h3:text-xl prose-h3:mt-6 prose-p:text-black prose-p:leading-relaxed prose-li:text-black prose-ul:text-black prose-strong:text-black prose-strong:font-semibold prose-a:text-brand-700 prose-a:font-medium hover:prose-a:underline">
