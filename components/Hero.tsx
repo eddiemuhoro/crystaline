@@ -3,9 +3,9 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="overflow-hidden rounded-3xl border border-slate-100 bg-gradient-to-br from-indigo-50 via-white to-slate-50 px-6 py-16 shadow-sm sm:px-10 lg:flex lg:items-center lg:gap-12">
+    <section className="overflow-hidden rounded-3xl border border-slate-100 bg-linear-to-br from-brand-50 via-white to-slate-50 px-6 py-16 shadow-sm sm:px-10 lg:flex lg:items-center lg:gap-12">
       <div className="max-w-2xl space-y-6">
-        <p className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wider text-indigo-600">
+        <p className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-700">
           Trusted ERP & POS in Kenya
         </p>
         <div className="space-y-4">

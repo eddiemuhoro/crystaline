@@ -70,7 +70,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="space-y-8 rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
+      <section className="space-y-8 rounded-3xl border border-brand-100 bg-brand-50 p-8 shadow-sm">
         <SectionHeading
           eyebrow="Snapshot"
           title="Crystal ERP by the numbers."
@@ -104,7 +104,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="space-y-6 rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
+      <section className="space-y-6 rounded-3xl border border-brand-100 bg-brand-50 p-8 shadow-sm">
         <SectionHeading
           eyebrow="Contact"
           title="Let's meet at our Nairobi HQ."

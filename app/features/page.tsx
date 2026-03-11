@@ -89,7 +89,7 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      <section className="space-y-8 rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
+      <section className="space-y-8 rounded-3xl border border-brand-100 bg-brand-50 p-8 shadow-sm">
         <SectionHeading
           eyebrow="Automation tracks"
           title="Switch on only what you need—scale when ready."
@@ -99,7 +99,7 @@ export default function FeaturesPage() {
           {automationTracks.map((track) => (
             <article
               key={track.title}
-              className="rounded-2xl border border-slate-100 p-6"
+              className="rounded-2xl border border-brand-200/60 bg-white p-6"
             >
               <h3 className="text-lg font-semibold text-slate-900">
                 {track.title}
@@ -138,7 +138,7 @@ export default function FeaturesPage() {
                   limits, sandbox access, and dedicated monitoring dashboards.
                 </p>
               </article>
-            )
+            ),
           )}
         </div>
       </section>

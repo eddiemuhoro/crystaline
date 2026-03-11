@@ -9,7 +9,7 @@ export function PageBanner({ eyebrow, title, subtitle }: PageBannerProps) {
     <section className="rounded-3xl border border-slate-100 bg-white px-6 py-16 shadow-sm sm:px-10">
       <div className="space-y-4 text-center">
         {eyebrow ? (
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-500">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-600">
             {eyebrow}
           </p>
         ) : null}

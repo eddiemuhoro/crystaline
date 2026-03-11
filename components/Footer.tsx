@@ -61,13 +61,35 @@ export function Footer() {
         </div>
         <div>
           <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-slate-500">
-            Solutions
+            Industries
           </p>
           <ul className="space-y-2">
-            <li>Retail & Hospitality</li>
-            <li>Wholesale & Distribution</li>
-            <li>Professional Services</li>
-            <li>Partner Program</li>
+            <li>
+              <Link
+                href="/industries/supermarkets"
+                className="hover:text-slate-900"
+              >
+                Supermarkets
+              </Link>
+            </li>
+            <li>
+              <Link href="/industries/bars" className="hover:text-slate-900">
+                Bars & Clubs
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/industries/restaurants"
+                className="hover:text-slate-900"
+              >
+                Restaurants
+              </Link>
+            </li>
+            <li>
+              <Link href="/industries/retail" className="hover:text-slate-900">
+                Retail Stores
+              </Link>
+            </li>
           </ul>
         </div>
         <div>

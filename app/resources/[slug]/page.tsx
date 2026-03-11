@@ -73,7 +73,7 @@ export default async function ResourcePage({ params }: Props) {
           { name: meta.title, path: `/resources/${slug}` },
         ]}
       />
-      <article className="prose prose-slate max-w-none prose-headings:font-bold prose-headings:text-black prose-h2:text-3xl prose-h2:mt-8 prose-h3:text-xl prose-h3:mt-6 prose-p:text-black prose-p:leading-relaxed prose-li:text-black prose-ul:text-black prose-strong:text-black prose-strong:font-semibold prose-a:text-indigo-600 prose-a:font-medium hover:prose-a:underline">
+      <article className="prose prose-slate max-w-none prose-headings:font-bold prose-headings:text-black prose-h2:text-3xl prose-h2:mt-8 prose-h3:text-xl prose-h3:mt-6 prose-p:text-black prose-p:leading-relaxed prose-li:text-black prose-ul:text-black prose-strong:text-black prose-strong:font-semibold prose-a:text-brand-700 prose-a:font-medium hover:prose-a:underline">
         <ReactMarkdown>{content}</ReactMarkdown>
       </article>
     </div>

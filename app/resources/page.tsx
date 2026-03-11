@@ -33,7 +33,7 @@ export default async function ResourcesPage() {
               key={article.slug}
               className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-500">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-600">
                 {new Date(article.date).toLocaleDateString("en-KE", {
                   month: "short",
                   day: "numeric",
@@ -51,7 +51,7 @@ export default async function ResourcesPage() {
               </div>
               <Link
                 href={`/resources/${article.slug}`}
-                className="mt-6 inline-flex items-center text-sm font-semibold text-indigo-600 underline-offset-4 hover:underline"
+                className="mt-6 inline-flex items-center text-sm font-semibold text-brand-700 underline-offset-4 hover:underline"
               >
                 Read article →
               </Link>

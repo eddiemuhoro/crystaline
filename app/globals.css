@@ -1,15 +1,21 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-:root {
-  --background: #ffffff;
-}
+@theme {
+  --color-brand-50: #e8f5ed;
+  --color-brand-100: #c7e8d4;
+  --color-brand-200: #a3dab8;
+  --color-brand-600: #01ab43;
+  --color-brand-700: #018a36;
+  --color-brand-800: #016a29;
+  --color-brand-900: #083419;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,6 +27,11 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), system-ui, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:
+    var(--font-geist-sans),
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 }

@@ -58,7 +58,7 @@ export default function HomePage() {
           Explore every automation block in detail on the{" "}
           <Link
             href="/features"
-            className="font-semibold text-indigo-600 underline-offset-4 hover:underline"
+            className="font-semibold text-brand-700 underline-offset-4 hover:underline"
           >
             Crystal ERP feature map
           </Link>
@@ -68,7 +68,7 @@ export default function HomePage() {
 
       <section
         id="services"
-        className="space-y-10 rounded-3xl border border-slate-100 bg-white p-8 shadow-sm"
+        className="space-y-10 rounded-3xl border border-brand-100 bg-brand-50 p-8 shadow-sm"
       >
         <SectionHeading
           eyebrow="Industry playbooks"
@@ -79,7 +79,7 @@ export default function HomePage() {
           {solutionPillars.map((pillar) => (
             <article
               key={pillar.name}
-              className="flex h-full flex-col rounded-2xl border border-slate-200/60 bg-slate-50 p-6"
+              className="flex h-full flex-col rounded-2xl border border-brand-200/60 bg-white p-6"
             >
               <h3 className="text-lg font-semibold text-slate-900">
                 {pillar.name}
@@ -111,38 +111,38 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="space-y-6 rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
+      <section className="space-y-6 rounded-3xl border border-brand-100 bg-brand-50 p-8 shadow-sm">
         <SectionHeading
           eyebrow="Local expertise"
           title="Embedded in Nairobi, trusted countrywide."
           description="Our rollout squads operate from the CBD and support outlets in Mombasa, Kisumu, Eldoret, and every county in between."
         />
         <div className="grid gap-6 md:grid-cols-2">
-          <article className="rounded-2xl border border-slate-100 bg-slate-50 p-6 text-sm text-slate-600">
+          <article className="rounded-2xl border border-brand-200/60 bg-white p-6 text-sm text-slate-600">
             <p>
               Visit our{" "}
               <Link
                 href="/about#contact"
-                className="font-semibold text-indigo-600 underline-offset-4 hover:underline"
+                className="font-semibold text-brand-700 underline-offset-4 hover:underline"
               >
                 Nairobi HQ
               </Link>{" "}
               for onsite demos or book a remote consultation. We also ship{" "}
               <Link
                 href="/products#classic"
-                className="font-semibold text-indigo-600 underline-offset-4 hover:underline"
+                className="font-semibold text-brand-700 underline-offset-4 hover:underline"
               >
                 POS hardware kits
               </Link>{" "}
               with pre-configured Crystal ERP builds.
             </p>
           </article>
-          <article className="rounded-2xl border border-slate-100 bg-slate-50 p-6 text-sm text-slate-600">
+          <article className="rounded-2xl border border-brand-200/60 bg-white p-6 text-sm text-slate-600">
             <p>
               Need deeper feature guidance? Jump into the{" "}
               <Link
                 href="/features"
-                className="font-semibold text-indigo-600 underline-offset-4 hover:underline"
+                className="font-semibold text-brand-700 underline-offset-4 hover:underline"
               >
                 feature map
               </Link>{" "}
@@ -150,7 +150,7 @@ export default function HomePage() {
               deployment models on our{" "}
               <Link
                 href="/products"
-                className="font-semibold text-indigo-600 underline-offset-4 hover:underline"
+                className="font-semibold text-brand-700 underline-offset-4 hover:underline"
               >
                 products page
               </Link>
@@ -160,7 +160,7 @@ export default function HomePage() {
               Looking for rollout playbooks? Visit the{" "}
               <Link
                 href="/resources"
-                className="font-semibold text-indigo-600 underline-offset-4 hover:underline"
+                className="font-semibold text-brand-700 underline-offset-4 hover:underline"
               >
                 resources hub
               </Link>{" "}
@@ -172,7 +172,7 @@ export default function HomePage() {
 
       <section
         id="faq"
-        className="space-y-8 rounded-3xl border border-slate-100 bg-white p-8 shadow-sm"
+        className="space-y-8 rounded-3xl border border-brand-100 bg-brand-50 p-8 shadow-sm"
       >
         <SectionHeading
           eyebrow="FAQ"
@@ -183,7 +183,7 @@ export default function HomePage() {
           {faqEntries.map((faq) => (
             <details
               key={faq.question}
-              className="rounded-2xl border border-slate-100 p-4"
+              className="rounded-2xl border border-brand-200/60 bg-white p-4"
             >
               <summary className="cursor-pointer text-base font-semibold text-slate-900">
                 {faq.question}

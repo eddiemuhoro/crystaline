@@ -1,3 +1,5 @@
+import { Package, DollarSign, Users, BarChart3 } from "lucide-react";
+
 export const siteConfig = {
   name: "Crystal ERP & POS Software",
   shortName: "Crystal ERP",
@@ -36,25 +38,25 @@ export const featureHighlights = [
     title: "Unified Inventory",
     description:
       "Track stock levels, transfers, breakages, and supplier deliveries in real time with automated alerts and batch controls.",
-    icon: "inventory",
+    icon: Package,
   },
   {
     title: "Finance & Tax Control",
     description:
       "Get instant P&Ls, VAT-ready tax reports, multi-currency banking, and spend approvals that sync with your accountant’s workflow.",
-    icon: "finance",
+    icon: DollarSign,
   },
   {
     title: "People & Payroll",
     description:
       "Manage rosters, performance reviews, payroll, and compliance from the same dashboard your HR team already lives in.",
-    icon: "people",
+    icon: Users,
   },
   {
     title: "Advanced Reporting",
     description:
       "Surface KPIs across devices with pixel-perfect dashboards, scheduled email digests, and embedded analytics for every department.",
-    icon: "reporting",
+    icon: BarChart3,
   },
 ];
 

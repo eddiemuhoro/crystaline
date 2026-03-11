@@ -93,7 +93,7 @@ export default async function ProductsPage() {
         </div>
       </section>
 
-      <section className="space-y-8 rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
+      <section className="space-y-8 rounded-3xl border border-brand-100 bg-brand-50 p-8 shadow-sm">
         <SectionHeading
           eyebrow="Onboarding"
           title="Launch in as little as three days."
@@ -103,9 +103,9 @@ export default async function ProductsPage() {
           {onboardingSteps.map((step, index) => (
             <article
               key={step.title}
-              className="rounded-2xl border border-slate-100 p-6"
+              className="rounded-2xl border border-brand-200/60 bg-white p-6"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-500">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-600">
                 Step {index + 1}
               </p>
               <h3 className="mt-3 text-lg font-semibold text-slate-900">
