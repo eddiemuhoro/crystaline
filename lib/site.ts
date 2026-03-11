@@ -5,7 +5,7 @@ export const siteConfig = {
   shortName: "Crystal ERP",
   description:
     "Crystal ERP delivers modern ERP and POS software that helps Kenyan businesses streamline sales, inventory, finance, and people operations from one secure cloud platform.",
-  url: "https://crytalian.co.ke",
+  url: "https://erp.crystaline.co.ke",
   keywords: [
     "ERP software Kenya",
     "POS software Kenya",
@@ -17,7 +17,7 @@ export const siteConfig = {
   authors: [
     {
       name: "Crystal ERP Software",
-      url: "https://crytalian.co.ke",
+      url: "https://erp.crystaline.co.ke",
     },
   ],
   contact: {
