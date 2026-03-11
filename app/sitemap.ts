@@ -11,17 +11,27 @@ const staticRoutes = [
   { path: "/resources", priority: 0.7, changeFrequency: "weekly" as const },
   { path: "/terms", priority: 0.5, changeFrequency: "yearly" as const },
   { path: "/privacy", priority: 0.5, changeFrequency: "yearly" as const },
-];
-
-const routes = [
-  "",
-  "/about",
-  "/features",
-  "/products",
-  "/industries/supermarkets",
-  "/industries/bars",
-  "/industries/restaurants",
-  "/industries/retail",
+  // Industry pages
+  {
+    path: "/industries/supermarkets",
+    priority: 0.8,
+    changeFrequency: "monthly" as const,
+  },
+  {
+    path: "/industries/bars",
+    priority: 0.8,
+    changeFrequency: "monthly" as const,
+  },
+  {
+    path: "/industries/restaurants",
+    priority: 0.8,
+    changeFrequency: "monthly" as const,
+  },
+  {
+    path: "/industries/retail",
+    priority: 0.8,
+    changeFrequency: "monthly" as const,
+  },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
