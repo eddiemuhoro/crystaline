@@ -82,25 +82,59 @@ export default function AboutPage() {
       <section className="space-y-8">
         <SectionHeading
           eyebrow="Leadership"
-          title="A multidisciplinary team of product operators."
-          description="Our founders span retail operations, finance, and product engineering—ensuring the platform speaks your language."
+          title="Built by operators who understand Kenyan commerce."
+          description="Our leadership team combines decades of retail operations, software engineering, and customer success experience across East Africa."
         />
         <div className="grid gap-6 md:grid-cols-3">
-          {["Operations", "Product", "Customer Success"].map((track) => (
-            <article
-              key={track}
-              className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm"
-            >
-              <h3 className="text-lg font-semibold text-slate-900">
-                {track} Office
-              </h3>
-              <p className="mt-3 text-sm text-slate-600">
-                Seasoned leads partner with Kenyan retailers, wholesalers, and
-                manufacturers to co-design resilient workflows centered on
-                measurable ROI.
-              </p>
-            </article>
-          ))}
+          <article className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
+            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-50 text-2xl font-bold text-brand-700">
+              SK
+            </div>
+            <h3 className="text-lg font-semibold text-slate-900">
+              Sammy Kinyua
+            </h3>
+            <p className="text-sm font-medium text-brand-600">
+              Senior Director & Founder
+            </p>
+            <p className="mt-3 text-sm text-slate-600">
+              Over 15 years of experience in the IT field. Holds a degree in
+              business management from Kenyatta University and a diploma in
+              computer science. Pioneered Crystal ERP&apos;s vision to modernize
+              African commerce.
+            </p>
+          </article>
+          <article className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
+            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-50 text-2xl font-bold text-brand-700">
+              NG
+            </div>
+            <h3 className="text-lg font-semibold text-slate-900">
+              Nahashon Gathai
+            </h3>
+            <p className="text-sm font-medium text-brand-600">CEO & Director</p>
+            <p className="mt-3 text-sm text-slate-600">
+              8+ years of leadership experience. Former CEO at Collection Africa
+              Ltd, Senior Auditor at Ernst & Young, and Group Finance Manager at
+              Swivel Group. Certified Information Systems Auditor (CISA) and
+              CPA-K.
+            </p>
+          </article>
+          <article className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
+            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-50 text-2xl font-bold text-brand-700">
+              TN
+            </div>
+            <h3 className="text-lg font-semibold text-slate-900">
+              Timothy Ndegwa
+            </h3>
+            <p className="text-sm font-medium text-brand-600">
+              Marketing Manager & Director
+            </p>
+            <p className="mt-3 text-sm text-slate-600">
+              IT specialist with 7+ years of experience. Served as General
+              Manager at Sajsoft for three years. Has installed and managed IT
+              platforms for dozens of Kenyan businesses including Crystal ERP
+              deployments.
+            </p>
+          </article>
         </div>
       </section>
 
