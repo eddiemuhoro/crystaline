@@ -138,7 +138,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased text-slate-900`}
       >
         <Navbar />
-        <main className="mx-auto w-full max-w-6xl px-4 py-12 lg:px-6">
+        <main className="mx-auto w-full max-w-7xl px-2 py-12 lg:px-4">
           {children}
         </main>
         <Footer />
