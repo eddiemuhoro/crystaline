@@ -1,7 +1,8 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
+@import "@tailwindcss/typography";
 
 @theme {
+  /* Existing brand colors */
   --color-brand-50: #e8f5ed;
   --color-brand-100: #c7e8d4;
   --color-brand-200: #a3dab8;
@@ -10,8 +11,74 @@
   --color-brand-800: #016a29;
   --color-brand-900: #083419;
 
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Pro shadows */
+  --shadow-brand-glow: 0 25px 50px -12px rgb(1 171 67 / 0.25);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  
+  /* Typography scale */
+  --font-heading: var(--font-geist-sans);
+  
+  /* Spacing refinements */
+  --section-spacing: 5rem;
+  
+  /* Button vars */
+  --btn-primary-bg: linear-gradient(135deg, var(--color-brand-700) 0%, var(--color-brand-600) 100%);
+  --btn-primary-glow: 0 0 0 1px rgb(1 171 67 / 0.5);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes hoverLift {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
+}
+
+.pro-hero-heading {
+  animation: fadeInUp 1s ease-out;
+}
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-2xl), var(--shadow-brand-glow);
+}
+
+.btn-primary {
+  background: var(--btn-primary-bg);
+  box-shadow: var(--shadow-xl), var(--shadow-brand-glow);
+  transition: all 0.3s ease;
+  border: 1px solid rgb(1 171 67 / 0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--shadow-2xl), 0 0 0 1px rgb(1 171 67 / 0.5);
+  background: linear-gradient(135deg, var(--color-brand-800) 0%, var(--color-brand-700) 100%);
+}
+
+.btn-secondary {
+  border-color: rgb(1 171 67 / 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgb(1 171 67 / 0.08);
+  border-color: var(--color-brand-600);
+  box-shadow: var(--shadow-brand-glow);
 }
 
 :root {
@@ -27,11 +94,18 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family:
-    var(--font-geist-sans),
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
 }
+
+section {
+  padding-top: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
+}
+
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+}
+

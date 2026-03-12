@@ -21,7 +21,7 @@ const industries = [
 ]
 
 export function Navbar() {
-const mobileMenuRef = useRef<HTMLDetailsElement | null>(null)
+  const mobileMenuRef = useRef<HTMLDetailsElement | null>(null)
 
   const closeMobileMenu = () => {
     if (mobileMenuRef.current) {
@@ -30,43 +30,44 @@ const mobileMenuRef = useRef<HTMLDetailsElement | null>(null)
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-black/5 bg-white/95 backdrop-blur-md shadow-sm">
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-6 px-2 py-4 lg:px-4">
-        <Link href="/" aria-label="Crystal ERP home">
+    <header className="sticky top-0 z-50 border-b border-slate-100/50 bg-white/95 backdrop-blur-xl shadow-md shadow-slate-100/50">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-6 px-4 py-4 lg:px-6">
+        <Link href="/" aria-label="Crystaline home" className="group">
           <Image
             src="/crystaline_logo-02.png"
-            alt="Crystal ERP"
+            alt="Crystaline"
             width={200}
             height={48}
-            className="h-10 w-auto sm:h-12"
+            className="h-12 w-auto transition-all duration-300 group-hover:scale-105 hover:shadow-md rounded-lg"
             priority
           />
         </Link>
-        <nav className="hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex">
+        <nav className="hidden items-center gap-8 text-base font-semibold text-slate-700 md:flex lg:gap-10">
           {navLinks.slice(0, 2).map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="transition hover:text-slate-900 hover:underline underline-offset-4 font-medium"
+              className="relative transition-all duration-300 hover:text-brand-700 hover:underline hover:underline-offset-4 font-semibold after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-gradient-to-r after:from-brand-600 after:to-brand-700 after:transition-all after:duration-300 hover:after:w-full"
             >
               {link.label}
             </Link>
           ))}
 
           <div className="group relative">
-            <button className="flex items-center gap-1 transition hover:text-slate-900">
+            <button className="flex items-center gap-1.5 text-base font-semibold text-slate-700 transition-all duration-300 hover:text-brand-700">
               Industries
-              <span aria-hidden className="text-xs">
+              <span aria-hidden className="text-sm transition-transform duration-300 group-hover:rotate-180">
                 ▾
               </span>
             </button>
-            <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition-all group-hover:visible group-hover:opacity-100">
-              <div className="rounded-xl border border-slate-100 bg-white p-2 shadow-lg">
+            <div className="invisible absolute left-0 top-full z-10 mt-2 opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100">
+              <div className="card-hover rounded-2xl border border-slate-100/50 bg-white/95 p-4 shadow-2xl shadow-slate-200/50 backdrop-blur-md w-64">
                 {industries.map((industry) => (
                   <Link
                     key={industry.href}
                     href={industry.href}
-                    className="block whitespace-nowrap rounded-lg px-4 py-2 text-sm text-slate-600 transition hover:bg-brand-50 hover:text-brand-700"
+                    className="block whitespace-nowrap rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition-all hover:bg-brand-50/80 hover:text-brand-700 hover:shadow-brand-glow"
+                    onClick={closeMobileMenu}
                   >
                     {industry.label}
                   </Link>
@@ -79,25 +80,25 @@ const mobileMenuRef = useRef<HTMLDetailsElement | null>(null)
             <Link
               key={link.href}
               href={link.href}
-              className="transition hover:text-slate-900 hover:underline underline-offset-4 font-medium"
+              className="relative transition-all duration-300 hover:text-brand-700 hover:underline hover:underline-offset-4 font-semibold after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-gradient-to-r after:from-brand-600 after:to-brand-700 after:transition-all after:duration-300 hover:after:w-full"
             >
               {link.label}
             </Link>
           ))}
         </nav>
         <Link
-          href="https://wa.me/254725473779?text=I'm%20inquiring%20about%20Crystal ERP"
+          href="https://wa.me/254725473779?text=I'm%20interested%20in%20Crystaline%20ERP"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden rounded-full bg-brand-700 px-5 py-2 text-sm font-semibold text-white transition hover:bg-brand-800 shadow-md hover:shadow-lg md:inline-flex"
+          className="hidden btn-primary rounded-2xl px-6 py-3 text-sm font-bold text-white shadow-lg hover:shadow-2xl md:inline-flex lg:px-8 lg:py-3.5 lg:text-base bg-gradient-to-r from-brand-700 to-brand-600"
         >
-          Talk to sales
+          Talk to Sales
         </Link>
 
         <details className="md:hidden" ref={mobileMenuRef}>
-          <summary className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border border-slate-200 text-slate-700 transition hover:bg-slate-50 active:bg-slate-100">
+          <summary className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-xl border-2 border-slate-200 bg-white/80 text-slate-700 shadow-sm backdrop-blur-sm transition-all hover:border-brand-300 hover:bg-brand-50/50 hover:shadow-md hover:shadow-brand-200/30 active:scale-95">
             <svg
-              className="h-5 w-5"
+              className="h-6 w-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -112,24 +113,24 @@ const mobileMenuRef = useRef<HTMLDetailsElement | null>(null)
             </svg>
             <span className="sr-only">Open menu</span>
           </summary>
-          <div className="absolute left-0 right-0 top-full mt-1 border-b border-slate-100 bg-white shadow-lg">
-            <nav className="mx-auto flex max-w-7xl flex-col px-2 py-3">
+          <div className="absolute left-0 right-0 top-full mt-1 border-t border-slate-100/50 bg-white/95 shadow-2xl shadow-slate-200/50 backdrop-blur-xl">
+            <nav className="mx-auto flex max-w-md flex-col px-4 py-6">
               {navLinks.slice(0, 2).map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={closeMobileMenu}
-                  className="rounded-lg px-4 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-50 active:bg-slate-100"
+                  className="group rounded-xl px-5 py-4 text-lg font-semibold text-slate-800 transition-all hover:bg-brand-50 hover:text-brand-700 hover:shadow-md"
                 >
                   {link.label}
                 </Link>
               ))}
 
-              <details className="group/submenu">
-                <summary className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-50 active:bg-slate-100">
+              <details className="group">
+                <summary className="flex cursor-pointer items-center justify-between rounded-xl px-5 py-4 text-lg font-semibold text-slate-800 transition-all hover:bg-brand-50 hover:text-brand-700 group-hover:shadow-md">
                   <span>Industries</span>
                   <svg
-                    className="h-4 w-4 transition-transform group-open/submenu:rotate-180"
+                    className="h-5 w-5 transition-transform duration-300 group-open:rotate-180"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -143,13 +144,13 @@ const mobileMenuRef = useRef<HTMLDetailsElement | null>(null)
                     />
                   </svg>
                 </summary>
-                <div className="ml-4 border-l-2 border-slate-100 pl-3">
+                <div className="ml-6 mt-2 border-l-2 border-brand-200 pl-4">
                   {industries.map((industry) => (
                     <Link
                       key={industry.href}
                       href={industry.href}
                       onClick={closeMobileMenu}
-                      className="block rounded-lg px-4 py-2.5 text-sm text-slate-600 transition hover:bg-brand-50 hover:text-brand-700 active:bg-brand-100"
+                      className="block rounded-lg px-4 py-3 text-base font-semibold text-slate-700 transition-all hover:bg-brand-100 hover:text-brand-700 hover:shadow-sm"
                     >
                       {industry.label}
                     </Link>
@@ -162,29 +163,29 @@ const mobileMenuRef = useRef<HTMLDetailsElement | null>(null)
                   key={link.href}
                   href={link.href}
                   onClick={closeMobileMenu}
-                  className="rounded-lg px-4 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-50 active:bg-slate-100"
+                  className="group rounded-xl px-5 py-4 text-lg font-semibold text-slate-800 transition-all hover:bg-brand-50 hover:text-brand-700 hover:shadow-md"
                 >
                   {link.label}
                 </Link>
               ))}
 
-              <div className="mt-2 border-t border-slate-100 pt-3">
+              <div className="mt-6 border-t border-slate-100 pt-6">
                 <Link
-                  href="https://wa.me/254725473779?text=I'm%20inquiring%20about%20Crystal ERP"
+                  href="https://wa.me/254725473779?text=I'm%20interested%20in%20Crystaline%20ERP"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={closeMobileMenu}
-                  className="flex items-center justify-center gap-2 rounded-lg bg-brand-700 px-4 py-3 text-base font-semibold text-white transition hover:bg-brand-800 active:bg-brand-900 shadow-lg hover:shadow-xl"
+                  className="btn-primary flex items-center justify-center gap-2 rounded-2xl px-6 py-4 text-base font-bold text-white shadow-xl hover:shadow-2xl hover:shadow-brand-glow transition-all duration-300 bg-gradient-to-r from-brand-700 to-brand-600"
                 >
                   <svg
-                    className="h-5 w-5"
+                    className="h-6 w-6 flex-shrink-0"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
                   >
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z\" />
+                    <path fillRule="evenodd" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35m-5.42 7.4h-.004a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.74.98.998-3.65-.24-.37a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.36-9.88 9.89-9.88c2.64 0 5.12 1.03 6.99 2.89a9.825 9.825 2.89 6.99c-.003 5.45-4.37 9.88-9.89 9.88m8.41-18.3A11.81 9.88 12.05 0C5.49 0 .16 5.35 .16 11.89c0 2.09 .55 4.42 1.59 5.95L.06 24l6.31-1.65a11.88 2.89 6.99h.005c6.55 0 11.89-5.35 11.89-11.89a11.81 11.81 0 00-3.48-8.41Z" clipRule="evenodd" />
                   </svg>
-                  Talk to sales
+                  Talk to Sales
                 </Link>
               </div>
             </nav>
