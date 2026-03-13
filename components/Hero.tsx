@@ -12,7 +12,7 @@ export function Hero() {
           Trusted ERP & POS in Kenya
         </p>
         <div className="space-y-6">
-          <h1 className="pro-hero-heading text-4xl font-black leading-none tracking-tight text-slate-900 bg-gradient-to-r from-slate-900 via-brand-800 to-slate-900 bg-clip-text drop-shadow-2xl sm:text-5xl lg:text-6xl xl:text-7xl">
+          <h1 className="pro-hero-heading text-5xl font-black leading-none tracking-tight text-slate-900 bg-gradient-to-r from-slate-900 via-brand-800 to-slate-900 bg-clip-text drop-shadow-2xl">
             Run every store, team,<br className="hidden md:inline" />
             <span className="bg-gradient-to-r from-brand-700 via-brand-600 to-brand-800 bg-clip-text text-transparent drop-shadow-2xl">channel </span>
             from one control panel.
@@ -50,7 +50,7 @@ export function Hero() {
       <div className="mt-16 flex flex-1 justify-center lg:mt-0 lg:pl-8 xl:pl-12">
         <div className="relative max-w-4xl card-hover">
           <Image
-            src="/hero.png"
+            src="/hero.webp"
             alt="Professional Crystal ERP dashboard and operations showcase"
             width={900}
             height={560}
