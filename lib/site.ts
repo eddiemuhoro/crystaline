@@ -1,4 +1,12 @@
-import { Package, DollarSign, Users, BarChart3, ShoppingBag, Truck, Briefcase } from "lucide-react";
+import {
+  Package,
+  DollarSign,
+  Users,
+  BarChart3,
+  ShoppingBag,
+  Truck,
+  Briefcase,
+} from "lucide-react";
 
 export const siteConfig = {
   name: "Crystal ERP & POS Software",
@@ -136,6 +144,7 @@ export const productPlans = [
   {
     id: "classic",
     name: "Crystal ERP Classic",
+    image: "/blog.jpg",
     description:
       "Battle-tested desktop and hybrid deployment trusted by 3,000+ Kenyan terminals for everyday POS and accounting.",
     price: "From KES 2,900 / month",
@@ -149,6 +158,7 @@ export const productPlans = [
   {
     id: "cloud",
     name: "Crystal ERP Cloud Suite",
+    image: "/blog.jpg",
     description:
       "Modern web-first ERP with mobile dashboards, embedded payments, and AI forecasting for multi-location operators.",
     price: "From KES 6,500 / month",
@@ -162,6 +172,8 @@ export const productPlans = [
   {
     id: "partners",
     name: "Partner & Reseller Program",
+    image: "/blog.jpg",
+
     description:
       "Co-brand Crystal ERP, earn recurring revenue, and access enablement kits designed for ICT and telco partners.",
     price: "Custom margins",
@@ -175,8 +187,8 @@ export const productPlans = [
 ];
 
 export const stats = [
-{ label: "Clients", value: "300+" },
-{ label: "Projects", value: "600" },
-{ label: "Support hours", value: "6k+" },
-{ label: "Experts", value: "18" },
+  { label: "Clients", value: "300+" },
+  { label: "Projects", value: "600" },
+  { label: "Support hours", value: "6k+" },
+  { label: "Experts", value: "18" },
 ];

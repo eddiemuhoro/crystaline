@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type ProductCardProps = {
   _id?: string;
   title: string;
@@ -6,6 +8,7 @@ type ProductCardProps = {
   price: number;
   href: string;
   highlights: string[];
+  image?: string;
 };
 
 export function ProductCard({
@@ -13,11 +16,22 @@ export function ProductCard({
   subtitle,
   description,
   price,
+  image,
 }: ProductCardProps) {
   return (
     <div className="flex h-full flex-col rounded-2xl border border-slate-100 bg-white p-6 shadow-sm shadow-slate-900/5">
       <div className="space-y-3">
+        {image && (
+          <Image
+            src={image}
+            width={500}
+            height={500}
+            alt="Product image"
+            className="w-full h-48 object-cover rounded-xl"
+          />
+        )}
         <h3 className="text-xl font-semibold text-slate-900">{title}</h3>
+
         <p className="text-sm text-slate-600">{subtitle}</p>
         <p className="text-sm text-slate-600">{description}</p>
         <p className="text-base font-semibold text-slate-900">
