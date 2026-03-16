@@ -3,25 +3,26 @@ import { PageBanner } from "@/components/PageBanner";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProductCard } from "@/components/ProductCard";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
-import { productPlans } from "@/lib/site";
 
-type Product = {
-  id: string;
-  name: string;
+type SanityProduct = {
+  _id: string;
+  title: string;
+  subtitle: string;
   description: string;
-  price: string;
-  href: string;
-  highlights: string[];
+  price?: number;
+  slug: string;
+  highlights?: string[];
   image?: string;
+  publishedAt: string;
 };
 
-// TODO: Uncomment when Sanity CMS is configured
-// import { client } from "@/sanity/client";
-// const POSTS_QUERY = `*[
-//   _type == "products"
-//   && defined(slug.current)
-// ]|order(publishedAt desc)[0...12]{_id, title, slug, price, "description": pt::text(description), subtitle, publishedAt}`;
-// const options = { next: { revalidate: 60 } };
+import { client } from "@/sanity/client";
+
+const POSTS_QUERY = `*[
+  _type == "products"
+  && defined(slug.current)
+]|order(publishedAt desc)[0...12]{_id, title, "slug": slug.current, price, "description": pt::text(description), subtitle, highlights, "image": image.asset->url, publishedAt}`;
+const options = { next: { revalidate: 60 } };
 
 const onboardingSteps = [
   {
@@ -64,10 +65,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ProductsPage() {
-  // TODO: Fetch from Sanity when CMS is configured
-  // const posts = await client.fetch(POSTS_QUERY, {}, options);
-  const products = productPlans;
+export default async function ProductsPage() {
+  const products = await client.fetch<SanityProduct[]>(
+    POSTS_QUERY,
+    {},
+    options,
+  );
 
   return (
     <div className="space-y-16">
@@ -88,15 +91,15 @@ export default function ProductsPage() {
           description="Every plan includes core POS, inventory, finance, and analytics plus 24/7 Kenyan support."
         />
         <div className="grid gap-6 lg:grid-cols-3">
-          {products.map((product: Product) => (
+          {products?.map((product) => (
             <ProductCard
-              key={product.id}
-              title={product.name}
-              subtitle={product.price}
+              key={product._id}
+              title={product.title}
+              subtitle={product.subtitle}
               description={product.description}
-              price={0}
-              href={product.href}
-              highlights={product.highlights}
+              price={product.price || 0}
+              href={`/products/${product.slug}`}
+              highlights={product.highlights || []}
               image={product.image}
             />
           ))}

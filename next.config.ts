@@ -7,6 +7,15 @@ const nextConfig: NextConfig = {
   generateEtags: true,
   trailingSlash: false,
 
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+      },
+    ],
+  },
+
   // Enable static exports for better SEO
   output: undefined, // Keep as server-side for dynamic sitemap
 
