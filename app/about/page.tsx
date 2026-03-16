@@ -85,7 +85,7 @@ export default function AboutPage() {
           title="Built by operators who understand Kenyan commerce."
           description="Our leadership team combines decades of retail operations, software engineering, and customer success experience across East Africa."
         />
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           <article className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
             <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-50 text-2xl font-bold text-brand-700">
               SK
@@ -133,6 +133,23 @@ export default function AboutPage() {
               Manager at Sajsoft for three years. Has installed and managed IT
               platforms for dozens of Kenyan businesses including Crystal ERP
               deployments.
+            </p>
+          </article>
+          <article className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
+            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-50 text-2xl font-bold text-brand-700">
+              JM
+            </div>
+            <h3 className="text-lg font-semibold text-slate-900">
+              Joseph Moshi
+            </h3>
+            <p className="text-sm font-medium text-brand-600">
+              Chief Technology Officer
+            </p>
+            <p className="mt-3 text-sm text-slate-600">
+              Leads Crystal ERP&apos;s engineering strategy, platform
+              reliability, and product architecture. Focused on scalable
+              systems, secure integrations, and delivery practices that keep
+              mission- critical retail and finance workflows running smoothly.
             </p>
           </article>
         </div>
