@@ -3,6 +3,7 @@ import Script from "next/script";
 import { Hero } from "@/components/Hero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { FeatureCard } from "@/components/FeatureCard";
+import { ProductCard } from "@/components/ProductCard";
 import { StatGrid } from "@/components/StatGrid";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { CallToAction } from "@/components/CallToAction";
@@ -13,6 +14,8 @@ import {
   solutionPillars,
   testimonialQuotes,
   faqEntries,
+  productPlans,
+  siteConfig,
 } from "@/lib/site";
 
 export default function HomePage() {
@@ -66,9 +69,35 @@ export default function HomePage() {
         </p>
       </section>
 
+      <section id="products" className="space-y-8 animate-fade-in-up">
+        <SectionHeading
+          eyebrow="Deployment options"
+          title="Choose your Crystal ERP stack."
+          description="From classic POS terminals to full cloud ERP suites, pick the perfect fit for your scale."
+        />
+        <div className="grid gap-6 lg:grid-cols-3">
+          {productPlans.map((plan) => (
+            <ProductCard
+              key={plan.id}
+              title={plan.name}
+              subtitle={plan.price}
+              description={plan.description}
+              price={2900}
+              href={plan.href}
+              highlights={plan.highlights}
+            />
+          ))}
+        </div>
+        <p className="text-sm text-slate-500">
+          <Link href="/products" className="font-semibold text-brand-700 underline-offset-4 hover:underline">
+            See all products →
+          </Link>
+        </p>
+      </section>
+
       <section
         id="services"
-        className="space-y-10 rounded-3xl border border-brand-100 bg-brand-50 p-8 shadow-sm"
+        className="space-y-10 rounded-3xl border border-brand-100 bg-brand-50 p-8 shadow-sm animate-fade-in-up"
       >
         <SectionHeading
           eyebrow="Industry playbooks"
@@ -77,23 +106,12 @@ export default function HomePage() {
         />
         <div className="grid gap-6 lg:grid-cols-3">
           {solutionPillars.map((pillar) => (
-            <article
+            <FeatureCard 
               key={pillar.name}
-              className="flex h-full flex-col rounded-2xl border border-brand-200/60 bg-white p-6"
-            >
-              <h3 className="text-lg font-semibold text-slate-900">
-                {pillar.name}
-              </h3>
-              <p className="mt-3 text-sm text-slate-600">{pillar.summary}</p>
-              <ul className="mt-4 space-y-2 text-sm text-slate-600">
-                {pillar.points.map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <span aria-hidden>•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
+              icon={pillar.icon}
+              title={pillar.name}
+              description={`${pillar.summary} ${pillar.points.join('; ')}`}
+            />
           ))}
         </div>
       </section>
@@ -200,6 +218,81 @@ export default function HomePage() {
           {JSON.stringify(faqJsonLd)}
         </Script>
       </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="space-y-8">
+        <SectionHeading
+          eyebrow="Contact Us"
+          title="We'd love to hear from you"
+          description="Reach out to our team in Nairobi for demos, support, or partnership inquiries."
+          align="center"
+        />
+
+        <div className="grid gap-6 md:grid-cols-3">
+          {/* Location card */}
+          <div className="group flex flex-col items-center gap-5 rounded-2xl border border-brand-200/60 bg-white p-8 text-center shadow-sm transition-all duration-300 hover:border-brand-300 hover:shadow-md hover:shadow-brand-600/10">
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-600 shadow-lg shadow-brand-600/25 transition-transform duration-300 group-hover:scale-110">
+              <svg className="h-7 w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <div className="space-y-1.5">
+              <h3 className="text-base font-bold text-slate-900">Our Location</h3>
+              <p className="text-sm leading-relaxed text-slate-500">
+                {siteConfig.contact.addressLine}
+              </p>
+            </div>
+            <a
+              href="https://maps.google.com/?q=The+Bazaar+Nairobi+CBD+Kenya"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-auto text-xs font-semibold text-brand-700 transition-colors hover:text-brand-800"
+            >
+              View on map →
+            </a>
+          </div>
+
+          {/* Phone card */}
+          <div className="group flex flex-col items-center gap-5 rounded-2xl border border-brand-200/60 bg-white p-8 text-center shadow-sm transition-all duration-300 hover:border-brand-300 hover:shadow-md hover:shadow-brand-600/10">
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-600 shadow-lg shadow-brand-600/25 transition-transform duration-300 group-hover:scale-110">
+              <svg className="h-7 w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+            </div>
+            <div className="space-y-1.5">
+              <h3 className="text-base font-bold text-slate-900">Phone Number</h3>
+              <p className="text-sm text-slate-500">24hrs support</p>
+            </div>
+            <a
+              href={`tel:${siteConfig.contact.phone}`}
+              className="mt-auto text-sm font-semibold text-brand-700 transition-colors hover:text-brand-800"
+            >
+              {siteConfig.contact.phone}
+            </a>
+          </div>
+
+          {/* Email card */}
+          <div className="group flex flex-col items-center gap-5 rounded-2xl border border-brand-200/60 bg-white p-8 text-center shadow-sm transition-all duration-300 hover:border-brand-300 hover:shadow-md hover:shadow-brand-600/10">
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-600 shadow-lg shadow-brand-600/25 transition-transform duration-300 group-hover:scale-110">
+              <svg className="h-7 w-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div className="space-y-1.5">
+              <h3 className="text-base font-bold text-slate-900">Email Address</h3>
+              <p className="text-sm text-slate-500">We reply within 24 hours</p>
+            </div>
+            <a
+              href={`mailto:${siteConfig.contact.email}`}
+              className="mt-auto text-sm font-semibold text-brand-700 transition-colors hover:text-brand-800"
+            >
+              {siteConfig.contact.email}
+            </a>
+          </div>
+        </div>
+      </section>
+
 
       <CallToAction />
     </div>

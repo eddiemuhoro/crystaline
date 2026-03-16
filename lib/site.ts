@@ -1,4 +1,4 @@
-import { Package, DollarSign, Users, BarChart3 } from "lucide-react";
+import { Package, DollarSign, Users, BarChart3, ShoppingBag, Truck, Briefcase } from "lucide-react";
 
 export const siteConfig = {
   name: "Crystal ERP & POS Software",
@@ -23,7 +23,7 @@ export const siteConfig = {
   contact: {
     email: "info@sajsoft.co.ke",
     phone: "+254 725 473779",
-    addressLine: "The Bazaar, 10th Floor, Nairobi CBD, Kenya",
+    addressLine: "Raja Building, Nairobi, CBD, Kenya",
   },
   social: {
     twitter: "https://twitter.com/crystaline",
@@ -63,6 +63,7 @@ export const featureHighlights = [
 export const solutionPillars = [
   {
     name: "Retail & Hospitality",
+    icon: ShoppingBag,
     summary:
       "Fast omnichannel POS with kitchen display, table tracking, and loyalty tools built for high-volume stores.",
     points: [
@@ -73,6 +74,7 @@ export const solutionPillars = [
   },
   {
     name: "Wholesale & Distribution",
+    icon: Truck,
     summary:
       "Forecast demand, optimize purchasing, and control fleet routing with supply chain visibility.",
     points: [
@@ -83,6 +85,7 @@ export const solutionPillars = [
   },
   {
     name: "Service Businesses",
+    icon: Briefcase,
     summary:
       "Project, field-service, and subscription billing built for agencies, clinics, and professional firms.",
     points: [
@@ -172,8 +175,8 @@ export const productPlans = [
 ];
 
 export const stats = [
-  { label: "Clients", value: "244+" },
-  { label: "Projects", value: "521" },
-  { label: "Support hours", value: "5,463" },
-  { label: "Experts", value: "15" },
+{ label: "Clients", value: "300+" },
+{ label: "Projects", value: "600" },
+{ label: "Support hours", value: "6k+" },
+{ label: "Experts", value: "18" },
 ];
