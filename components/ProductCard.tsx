@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type ProductCardProps = {
   _id?: string;
   title: string;
@@ -13,6 +15,8 @@ export function ProductCard({
   subtitle,
   description,
   price,
+  href,
+  highlights,
 }: ProductCardProps) {
   return (
     <div className="flex h-full flex-col rounded-2xl border border-slate-100 bg-white p-6 shadow-sm shadow-slate-900/5">
@@ -25,9 +29,23 @@ export function ProductCard({
         </p>
       </div>
 
-      <a className="mt-6 inline-flex items-center justify-center rounded-full border border-slate-200 px-5 py-2 text-sm font-semibold text-slate-900 transition hover:border-slate-900">
+      {highlights && highlights.length > 0 && (
+        <ul className="mt-4 space-y-2 text-sm text-slate-600">
+          {highlights.map((item) => (
+            <li key={item} className="flex items-start gap-2">
+              <span aria-hidden="true">✓</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <Link
+        href={href}
+        className="mt-6 inline-flex items-center justify-center rounded-full border border-slate-200 px-5 py-2 text-sm font-semibold text-slate-900 transition hover:border-slate-900"
+      >
         View details
-      </a>
+      </Link>
     </div>
   );
 }
