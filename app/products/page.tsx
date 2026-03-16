@@ -12,6 +12,7 @@ type Product = {
   price: string;
   href: string;
   highlights: string[];
+  image?: string;
 };
 
 // TODO: Uncomment when Sanity CMS is configured
@@ -96,6 +97,7 @@ export default function ProductsPage() {
               price={0}
               href={product.href}
               highlights={product.highlights}
+              image={product.image}
             />
           ))}
         </div>

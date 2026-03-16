@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PageBanner } from "@/components/PageBanner";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { getAllResources } from "@/lib/resources";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Crystal ERP Blog",
@@ -33,13 +34,14 @@ export default async function BlogsPage() {
               key={article.slug}
               className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-600">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-600 pb-4">
                 {new Date(article.date).toLocaleDateString("en-KE", {
                   month: "short",
                   day: "numeric",
                   year: "numeric",
                 })}
               </p>
+              <Image src="/blog.jpg" width={800} height={500} alt="blog pic" className="w-full h-60 object-cover rounded-xl" />
               <h2 className="mt-3 text-xl font-semibold text-slate-900">
                 <Link href={`/blogs/${article.slug}`}>{article.title}</Link>
               </h2>
