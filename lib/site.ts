@@ -192,3 +192,46 @@ export const stats = [
   { label: "Support hours", value: "6k+" },
   { label: "Experts", value: "18" },
 ];
+
+export const pricingPackages = [
+  {
+    name: "Basic",
+    price: 2900,
+    description: "For single-store retail or small service teams",
+    features: [
+      "Point of Sale (POS)",
+      "Basic Inventory Tracking",
+      "Daily Sales Reporting",
+      "1 User License"
+    ],
+    isPopular: false,
+    buttonText: "Get Started"
+  },
+  {
+    name: "Professional",
+    price: 6500,
+    description: "For multi-store and growing businesses",
+    features: [
+      "Advanced Inventory & Transfers",
+      "Finance & Tax Automation",
+      "Supplier Management",
+      "Up to 5 User Licenses"
+    ],
+    isPopular: true,
+    buttonText: "Upgrade to Professional"
+  },
+  {
+    name: "Enterprise",
+    price: 15000,
+    description: "For full-scale operations and large teams",
+    features: [
+      "People, HR & Payroll",
+      "Advanced Custom Dashboards",
+      "API Access & Integrations",
+      "Unlimited Users"
+    ],
+    isPopular: false,
+    buttonText: "Contact Sales"
+  }
+];
+
