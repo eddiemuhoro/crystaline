@@ -107,18 +107,28 @@ export const solutionPillars = [
 export const testimonialQuotes = [
   {
     quote:
-      "Crystal ERP replaced five disconnected tools and gave every store manager real-time visibility into sales, waste, and payroll.",
-    author: "Faith W., Friendly Five Supermarket",
+      "We have been using this ERP software for our retail business for the past 6 years and it transformed the way we manage my inventory and finances. The HR management tools are user-friendly. We highly recommend this software to businesses looking to streamline their operations.",
+    author: "Friendly Five Supermarket",
   },
   {
     quote:
-      "We deployed new branches twice as fast because inventory, ecommerce, and in-store POS now run on the same blueprint.",
-    author: "Brian K., Backyard Shoes",
+      "As a small business owner, I was looking for an all-in-one solution to manage my HR, inventory, and finances. This ERP software has exceeded my expectations and has made my life so much easier. The point of sale system is fast and efficient and helped me identify growth areas.",
+    author: "Marksy Electricals",
   },
   {
     quote:
-      "Scheduling, commissions, and compliance audits are no longer weekend tasks—Crystal ERP automates them in minutes.",
-    author: "Lydia M., Marksy Electricals",
+      "I am extremely impressed with the functionality and ease of use of this ERP software. The HR management tools are top-notch and the inventory management system as well as the data visualization features has saved me so much time and effort. I highly recommend this software.",
+    author: "Monross Hardware Ltd",
+  },
+  {
+    quote:
+      "Using this ERP software for my manufacturing business for the past year and it has been a game changer. The inventory management system is extremely efficient and the accounting and finance tools are very user-friendly. The point of sale system was a great addition to our work.",
+    author: "Cindy Electricals",
+  },
+  {
+    quote:
+      "I was looking for an ERP software that could handle all of my business needs and this one has exceeded my expectations. The HR management tools are very user-friendly, the inventory management system is efficient. I couldn't be happier with my decision to switch to this software.",
+    author: "Backyard Shoes",
   },
 ];
 

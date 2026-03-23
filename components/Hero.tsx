@@ -32,7 +32,7 @@ export function Hero() {
             Explore Products
           </Link>
           <Link
-            href="/features"
+            href="/about"
             className="btn-secondary group inline-flex items-center gap-3 rounded-2xl px-8 py-4 text-lg font-bold text-slate-900 no-underline h-full"
           >
             See Full Features

@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { PackageCard } from "@/components/PackageCard";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { CallToAction } from "@/components/CallToAction";
-import { TestimonialCard } from "@/components/TestimonialCard";
+import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { pricingPackages, faqEntries, testimonialQuotes } from "@/lib/site";
 
 
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     "Compare Crystal ERP pricing plans and packages to pick the right deployment for your team.",
   alternates: {
-    canonical: "/packages",
+    canonical: "/pricing",
   },
   keywords: [
     "Crystal ERP pricing",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "ERP plans",
   ],
   openGraph: {
-    url: "/packages",
+    url: "/pricing",
   },
   twitter: {
     title: "Crystal ERP Pricing Packages",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function PackagesPage() {
+export default function PricingPage() {
   return (
     <div className="space-y-16 pb-16">
       <PageBanner
@@ -40,8 +40,8 @@ export default function PackagesPage() {
         subtitle="Straightforward pricing with no hidden fees. All plans include free onboarding and local support."
       />
       <BreadcrumbJsonLd
-        id="breadcrumb-packages"
-        items={[{ name: "Home" }, { name: "Packages", path: "/packages" }]}
+        id="breadcrumb-pricing"
+        items={[{ name: "Home" }, { name: "Pricing", path: "/pricing" }]}
       />
 
       <section className="space-y-8">
@@ -63,11 +63,7 @@ export default function PackagesPage() {
           title="See what teams are saying about our packages."
           description="Hear from Kenyan businesses already running on our stack."
         />
-        <div className="mx-auto grid max-w-6xl gap-6 px-4 md:grid-cols-3 lg:px-6">
-          {testimonialQuotes.map((testimonial) => (
-            <TestimonialCard key={testimonial.author} {...testimonial} />
-          ))}
-        </div>
+        <TestimonialSlider />
       </section>
 
       <section

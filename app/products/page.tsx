@@ -3,6 +3,7 @@ import { PageBanner } from "@/components/PageBanner";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProductCard } from "@/components/ProductCard";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
+import { ArrowRight } from "lucide-react";
 
 type SanityProduct = {
   _id: string;
@@ -23,7 +24,6 @@ const POSTS_QUERY = `*[
   && defined(slug.current)
 ]|order(publishedAt desc)[0...12]{_id, title, "slug": slug.current, price, "description": pt::text(description), subtitle, highlights, "image": image.asset->url, publishedAt}`;
 const options = { next: { revalidate: 60 } };
-
 
 export const metadata: Metadata = {
   title: "Crystal ERP Products",
@@ -58,9 +58,9 @@ export default async function ProductsPage() {
   return (
     <div className="space-y-16">
       <PageBanner
-        eyebrow="Product suite"
-        title="Pick the deployment that fits your rollout."
-        subtitle="From offline-ready desktops to modern cloud suites and partner toolkits, Crystal ERP meets you where you are and scales without limits."
+        eyebrow="Products"
+        title="Hardware & Software Solutions"
+        subtitle="Complete POS hardware packages designed to work seamlessly with our software."
       />
       <BreadcrumbJsonLd
         id="breadcrumb-products"
@@ -68,11 +68,6 @@ export default async function ProductsPage() {
       />
 
       <section className="space-y-8">
-        <SectionHeading
-          eyebrow="Products"
-          title="Simple packages with transparent pricing."
-          description="Every plan includes core POS, inventory, finance, and analytics plus 24/7 Kenyan support."
-        />
         <div className="grid gap-6 lg:grid-cols-3">
           {products?.map((product) => (
             <ProductCard
@@ -86,6 +81,17 @@ export default async function ProductsPage() {
               image={product.image}
             />
           ))}
+        </div>
+        <div className="mt-1 text-center -mb-14 lg:-mb-16">
+          <a
+            href="https://wa.me/254725473779?text=I'm%20interested%20in%20Crystaline%20ERP"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-700 to-brand-600 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-emerald-600/30 transition-all hover:bg-emerald-700"
+          >
+            Request a Quote
+            <ArrowRight className="h-5 w-5" />
+          </a>
         </div>
       </section>
     </div>

@@ -26,7 +26,7 @@ export function CallToAction() {
             Book a demo
           </Link>
           <Link
-            href="/features"
+            href="/about"
             className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
           >
             Download brochure

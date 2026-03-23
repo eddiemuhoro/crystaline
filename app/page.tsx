@@ -5,7 +5,7 @@ import { Hero } from "@/components/Hero";
 import { PackageCard } from "@/components/PackageCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { StatGrid } from "@/components/StatGrid";
-import { TestimonialCard } from "@/components/TestimonialCard";
+import { TestimonialSlider } from "@/components/TestimonialSlider";
 import {
   faqEntries,
   featureHighlights,
@@ -63,7 +63,7 @@ export default function HomePage() {
           <p className="text-sm text-slate-500">
             Explore every automation block in detail on the{" "}
             <Link
-              href="/features"
+              href="/about"
               className="font-semibold text-brand-700 underline-offset-4 hover:underline"
             >
               Crystal ERP feature map
@@ -98,7 +98,7 @@ export default function HomePage() {
         </p>
       </section> */}
 
-        <section id="packages" className="space-y-6 animate-fade-in-up">
+        <section id="pricing" className="space-y-6 animate-fade-in-up">
           <SectionHeading
             eyebrow="Pricing plans"
             title="Packages for every stage of growth."
@@ -138,11 +138,7 @@ export default function HomePage() {
             title="Teams trust Crystal ERP to make data-driven moves."
             description="Hear from Kenyan retailers, wholesalers, and service providers already running on our stack."
           />
-          <div className="grid gap-6 md:grid-cols-3">
-            {testimonialQuotes.map((testimonial) => (
-              <TestimonialCard key={testimonial.author} {...testimonial} />
-            ))}
-          </div>
+          <TestimonialSlider />
         </section>
 
         <section className="space-y-6 rounded-3xl border border-brand-100 bg-brand-50 p-6 sm:p-8 shadow-sm">
@@ -175,7 +171,7 @@ export default function HomePage() {
               <p>
                 Need deeper feature guidance? Jump into the{" "}
                 <Link
-                  href="/features"
+                  href="/about"
                   className="font-semibold text-brand-700 underline-offset-4 hover:underline"
                 >
                   feature map
