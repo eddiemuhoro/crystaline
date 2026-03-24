@@ -40,7 +40,7 @@ export default function HomePage() {
       <BreadcrumbJsonLd id="breadcrumb-home" items={[{ name: "Home" }]} />
 
       <div className="mt-6 sm:mt-4 lg:mt-12 space-y-8 sm:space-y-10 md:space-y-12 lg:space-y-16 px-4 sm:px-6 lg:px-8 pb-16">
-        <section id="about" className="space-y-4 ">
+        <section id="about" className="space-y-4 -mt-10 lg:-mt-12 -mb-2">
           <SectionHeading
             eyebrow="Why Crystal ERP"
             title="ERP precision with POS speed."
@@ -49,7 +49,10 @@ export default function HomePage() {
           <StatGrid stats={stats} />
         </section>
 
-        <section id="features" className="space-y-4 ">
+        <section
+          id="features"
+          className="space-y-8 -mb-2 sm:space-y-10 rounded-3xl border border-brand-100 bg-brand-50 p-6 sm:p-8 shadow-sm animate-fade-in-up"
+        >
           <SectionHeading
             eyebrow="Feature snapshot"
             title="Tools that keep every department in flow."
@@ -98,7 +101,7 @@ export default function HomePage() {
         </p>
       </section> */}
 
-        <section id="pricing" className="space-y-6 animate-fade-in-up">
+        <section id="pricing" className="space-y-6 -mb-2 animate-fade-in-up">
           <SectionHeading
             eyebrow="Pricing plans"
             title="Packages for every stage of growth."
@@ -109,11 +112,25 @@ export default function HomePage() {
               <PackageCard key={pkg.name} {...pkg} />
             ))}
           </div>
+          <div className="mt-12 text-center">
+            <p className="text-gray-600">
+              Need a custom solution?{' '}
+              <a
+                href="https://wa.me/254725473779?text=I'm%20interested%20in%20Crystaline%20ERP"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-emerald-600 hover:text-emerald-700"
+              >
+                Contact us
+              </a>{' '}
+              for enterprise pricing.
+            </p>
+          </div>
         </section>
 
         <section
           id="services"
-          className="space-y-8 sm:space-y-10 rounded-3xl border border-brand-100 bg-brand-50 p-6 sm:p-8 shadow-sm animate-fade-in-up"
+          className="space-y-8 -mb-2 sm:space-y-10 rounded-3xl border border-brand-100 bg-brand-50 p-6 sm:p-8 shadow-sm animate-fade-in-up"
         >
           <SectionHeading
             eyebrow="Industry playbooks"
@@ -132,7 +149,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="space-y-8">
+        <section className="space-y-8 ">
           <SectionHeading
             eyebrow="Customer love"
             title="Teams trust Crystal ERP to make data-driven moves."
@@ -141,7 +158,7 @@ export default function HomePage() {
           <TestimonialSlider />
         </section>
 
-        <section className="space-y-6 rounded-3xl border border-brand-100 bg-brand-50 p-6 sm:p-8 shadow-sm">
+        {/* <section className="space-y-6 rounded-3xl border border-brand-100 bg-brand-50 p-6 sm:p-8 shadow-sm">
           <SectionHeading
             eyebrow="Local expertise"
             title="Embedded in Nairobi, trusted countrywide."
@@ -198,11 +215,11 @@ export default function HomePage() {
               </p>
             </article>
           </div>
-        </section>
+        </section> */}
 
         <section
           id="faq"
-          className="space-y-8 rounded-3xl border border-brand-100 bg-brand-50 p-6 sm:p-8 shadow-sm"
+          className="space-y-8 -mb-2 rounded-3xl border border-brand-100 bg-brand-50 p-6 sm:p-8 shadow-sm"
         >
           <SectionHeading
             eyebrow="FAQ"
@@ -232,7 +249,7 @@ export default function HomePage() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="space-y-8">
+        <section id="contact" className="space-y-8 -mb-2">
           <SectionHeading
             eyebrow="Contact Us"
             title="We'd love to hear from you"

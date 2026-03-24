@@ -44,7 +44,7 @@ export default function PricingPage() {
         items={[{ name: "Home" }, { name: "Pricing", path: "/pricing" }]}
       />
 
-      <section className="space-y-8">
+      <section className="space-y-8 -mb-14 lg:-mb-16">
         <SectionHeading
           eyebrow="Our Plans"
           title="Choose your Crystal ERP stack."
@@ -55,6 +55,20 @@ export default function PricingPage() {
             <PackageCard key={pkg.name} {...pkg} />
           ))}
         </div>
+        <div className="mt-12 text-center">
+            <p className="text-gray-600">
+              Need a custom solution?{' '}
+              <a
+                href="https://wa.me/254725473779?text=I'm%20interested%20in%20Crystaline%20ERP"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-emerald-600 hover:text-emerald-700"
+              >
+                Contact us
+              </a>{' '}
+              for enterprise pricing.
+            </p>
+          </div>
       </section>
 
       <section className="space-y-8 animate-fade-in-up">

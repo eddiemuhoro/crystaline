@@ -1,9 +1,8 @@
-import type { Metadata } from "next";
-import { PageBanner } from "@/components/PageBanner";
-import { SectionHeading } from "@/components/SectionHeading";
-import { ProductCard } from "@/components/ProductCard";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
+import { PageBanner } from "@/components/PageBanner";
+import { ProductCard } from "@/components/ProductCard";
 import { ArrowRight } from "lucide-react";
+import type { Metadata } from "next";
 
 type SanityProduct = {
   _id: string;
