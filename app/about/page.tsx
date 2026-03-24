@@ -41,14 +41,14 @@ const automationTracks = [
 ];
 
 export const metadata: Metadata = {
-  title: "About Crystal ERP",
+  title: "About Crystaline ERP",
   description:
-    "Learn how Crystal ERP empowers Kenyan retailers, wholesalers, and service teams with dependable POS, inventory, finance, and HR automation.",
+    "Learn how Crystaline ERP empowers Kenyan retailers, wholesalers, and service teams with dependable POS, inventory, finance, and HR automation.",
   alternates: {
     canonical: "/about",
   },
   keywords: [
-    "Crystal ERP company",
+    "Crystaline ERP company",
     "Kenya POS provider",
     "ERP implementation Nairobi",
   ],
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     url: "/about",
   },
   twitter: {
-    title: "About Crystal ERP",
+    title: "About Crystaline ERP",
     description:
       "Meet the Kenyan team modernizing ERP and POS for ambitious businesses.",
   },
@@ -68,7 +68,7 @@ export default function AboutPage() {
       <PageBanner
         eyebrow="Our story"
         title="We build mission-critical software for African commerce."
-        subtitle="Crystal ERP blends two decades of POS experience with a cloud-native ERP approach so Kenyan businesses can modernize without sacrificing reliability."
+        subtitle="Crystaline ERP blends two decades of POS experience with a cloud-native ERP approach so Kenyan businesses can modernize without sacrificing reliability."
       />
       <BreadcrumbJsonLd
         id="breadcrumb-about"
@@ -163,7 +163,7 @@ export default function AboutPage() {
             {
               title: "Configuration & training",
               detail:
-                "Crystal ERP specialists tailor roles, automations, and dashboards while coaching your champions.",
+                "Crystaline ERP specialists tailor roles, automations, and dashboards while coaching your champions.",
             },
             {
               title: "Go-live & optimization",
@@ -213,7 +213,7 @@ export default function AboutPage() {
       <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <SectionHeading
           eyebrow="Integrations"
-          title="Connect Crystal ERP to the rest of your stack."
+          title="Connect Crystaline ERP to the rest of your stack."
           description="Open APIs, pre-built connectors, and secure webhooks keep your finance, ecommerce, and fulfillment flows in sync."
         />
         <div className="grid gap-6 md:grid-cols-3">
@@ -257,7 +257,7 @@ export default function AboutPage() {
             <p className="mt-3 text-sm text-slate-600">
               Over 15 years of experience in the IT field. Holds a degree in
               business management from Kenyatta University and a diploma in
-              computer science. Pioneered Crystal ERP&apos;s vision to modernize
+              computer science. Pioneered Crystaline ERP&apos;s vision to modernize
               African commerce.
             </p>
           </article>
@@ -289,7 +289,7 @@ export default function AboutPage() {
             <p className="mt-3 text-sm text-slate-600">
               IT specialist with 7+ years of experience. Served as General
               Manager at Sajsoft for three years. Has installed and managed IT
-              platforms for dozens of Kenyan businesses including Crystal ERP
+              platforms for dozens of Kenyan businesses including Crystaline ERP
               deployments.
             </p>
           </article>
@@ -304,7 +304,7 @@ export default function AboutPage() {
               Chief Technology Officer
             </p>
             <p className="mt-3 text-sm text-slate-600">
-              Leads Crystal ERP&apos;s engineering strategy, platform
+              Leads Crystaline ERP&apos;s engineering strategy, platform
               reliability, and product architecture. Focused on scalable
               systems, secure integrations, and delivery practices that keep
               mission- critical retail and finance workflows running smoothly.

@@ -6,9 +6,9 @@ import { getAllResources } from "@/lib/resources";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Crystal ERP Blog",
+  title: "Crystaline ERP Blog",
   description:
-    "Guides and checklists for launching POS, ERP, and retail operations across Kenya using Crystal ERP.",
+    "Guides and checklists for launching POS, ERP, and retail operations across Kenya using Crystaline ERP.",
   alternates: {
     canonical: "/blogs",
   },
@@ -21,7 +21,7 @@ export default async function BlogsPage() {
       <PageBanner
         eyebrow="Blog"
         title="Field-tested playbooks for Kenyan retailers."
-        subtitle="Deploy Crystal ERP with confidence using rollout checklists, compliance tips, and partner insights."
+        subtitle="Deploy Crystaline ERP with confidence using rollout checklists, compliance tips, and partner insights."
       />
       <BreadcrumbJsonLd
         id="breadcrumb-blogs"

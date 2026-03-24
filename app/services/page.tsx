@@ -6,7 +6,7 @@ import { CallToAction } from "@/components/CallToAction";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Crystal ERP Services",
+  title: "Crystaline ERP Services",
   description:
     "Explore our services: Hardware and software installation, card payment solutions, product cataloging, and support.",
   alternates: {
@@ -31,11 +31,11 @@ const services: {
     alt: "Happy customer being served through Crystaline POS system",
   },
   // {
-  //   title: "Crystal ERP card payment solution",
+  //   title: "Crystaline ERP card payment solution",
   //   description:
   //     "Seamlessly process transactions with our integrated card payment solutions. We support a wide array of payment methods ensuring convenience for your customers.",
   //   image: "/services/payment.jpg",
-  //   alt: "Crystal ERP card payment solution",
+  //   alt: "Crystaline ERP card payment solution",
   // },
   {
     title: "Product and service cataloging",

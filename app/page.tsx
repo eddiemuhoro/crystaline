@@ -42,9 +42,9 @@ export default function HomePage() {
       <div className="mt-6 sm:mt-4 lg:mt-12 space-y-8 sm:space-y-10 md:space-y-12 lg:space-y-16 px-4 sm:px-6 lg:px-8 pb-16">
         <section id="about" className="space-y-4 -mt-10 lg:-mt-12 -mb-2">
           <SectionHeading
-            eyebrow="Why Crystal ERP"
+            eyebrow="Why Crystaline ERP"
             title="ERP precision with POS speed."
-            description="From head office to tills, Crystal ERP unifies every workflow in one secure Kenyan platform so you can scale faster with fewer tools."
+            description="From head office to tills, Crystaline ERP unifies every workflow in one secure Kenyan platform so you can scale faster with fewer tools."
           />
           <StatGrid stats={stats} />
         </section>
@@ -69,7 +69,7 @@ export default function HomePage() {
               href="/about"
               className="font-semibold text-brand-700 underline-offset-4 hover:underline"
             >
-              Crystal ERP feature map
+              Crystaline ERP feature map
             </Link>
             .
           </p>
@@ -78,7 +78,7 @@ export default function HomePage() {
         {/* <section id="products" className="space-y-8 animate-fade-in-up">
         <SectionHeading
           eyebrow="Deployment options"
-          title="Choose your Crystal ERP stack."
+          title="Choose your Crystaline ERP stack."
           description="From classic POS terminals to full cloud ERP suites, pick the perfect fit for your scale."
         />
         <div className="grid gap-6 lg:grid-cols-3">
@@ -152,7 +152,7 @@ export default function HomePage() {
         <section className="space-y-8 ">
           <SectionHeading
             eyebrow="Customer love"
-            title="Teams trust Crystal ERP to make data-driven moves."
+            title="Teams trust Crystaline ERP to make data-driven moves."
             description="Hear from Kenyan retailers, wholesalers, and service providers already running on our stack."
           />
           <TestimonialSlider />
@@ -181,7 +181,7 @@ export default function HomePage() {
                 >
                   POS hardware kits
                 </Link>{" "}
-                with pre-configured Crystal ERP builds.
+                with pre-configured Crystaline ERP builds.
               </p>
             </article>
             <article className="rounded-2xl border border-brand-200/60 bg-white p-6 text-sm text-slate-600">

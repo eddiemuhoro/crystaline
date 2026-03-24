@@ -12,7 +12,7 @@ RED='\033[0;31m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
-echo -e "${BOLD}🔍 Crystal ERP SEO Health Check${NC}"
+echo -e "${BOLD}🔍 Crystaline ERP SEO Health Check${NC}"
 echo -e "Testing: ${YELLOW}$DOMAIN${NC}\n"
 
 # Function to check if URL returns 200
@@ -68,7 +68,7 @@ echo ""
 
 # Check meta tags
 echo -e "${BOLD}4. Meta Tags & Structured Data${NC}"
-check_content "$DOMAIN" "Crystal ERP" "Page Title"
+check_content "$DOMAIN" "Crystaline ERP" "Page Title"
 check_content "$DOMAIN" "og:title" "OpenGraph Tags"
 check_content "$DOMAIN" "twitter:card" "Twitter Card"
 check_content "$DOMAIN" '"@type":"Organization"' "Structured Data (Organization)"

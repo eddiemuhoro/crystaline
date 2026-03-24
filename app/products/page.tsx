@@ -25,15 +25,15 @@ const POSTS_QUERY = `*[
 const options = { next: { revalidate: 60 } };
 
 export const metadata: Metadata = {
-  title: "Crystal ERP Products",
+  title: "Crystaline ERP Products",
   description:
-    "Compare Crystal ERP Classic, Crystal ERP Cloud Suite, and the partner program to pick the right deployment for your team.",
+    "Compare Crystaline ERP Classic, Crystaline ERP Cloud Suite, and the partner program to pick the right deployment for your team.",
   alternates: {
     canonical: "/products",
   },
   keywords: [
-    "Crystal ERP pricing",
-    "Crystal ERP cloud",
+    "Crystaline ERP pricing",
+    "Crystaline ERP cloud",
     "POS packages",
     "ERP partner program",
   ],
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     url: "/products",
   },
   twitter: {
-    title: "Crystal ERP Products",
+    title: "Crystaline ERP Products",
     description:
       "Choose the plan that matches your retail, wholesale, or services operation.",
   },

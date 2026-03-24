@@ -7,9 +7,9 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { ShoppingBag, Shirt, Star, Store } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Retail POS Software Kenya | Crystal ERP",
+  title: "Retail POS Software Kenya | Crystaline ERP",
   description:
-    "Complete retail POS and inventory management system for Kenyan retail stores. Handle sales, track stock, manage customers, and grow with Crystal ERP.",
+    "Complete retail POS and inventory management system for Kenyan retail stores. Handle sales, track stock, manage customers, and grow with Crystaline ERP.",
   alternates: {
     canonical: "/industries/retail",
   },
@@ -23,12 +23,12 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     url: "/industries/retail",
-    title: "Retail POS Software Kenya | Crystal ERP",
+    title: "Retail POS Software Kenya | Crystaline ERP",
     description:
       "Complete retail management system with POS, inventory tracking, and customer management for Kenyan retail stores.",
   },
   twitter: {
-    title: "Retail POS Software Kenya | Crystal ERP",
+    title: "Retail POS Software Kenya | Crystaline ERP",
     description:
       "Modern POS system built for Kenyan retail stores and boutiques.",
   },
@@ -85,7 +85,7 @@ export default function RetailPage() {
       <PageBanner
         eyebrow="Retail Stores & Boutiques"
         title="Retail POS system built for Kenyan shop owners."
-        subtitle="From fashion boutiques to electronics stores, Crystal ERP handles sales, inventory, customer loyalty, and multi-location management."
+        subtitle="From fashion boutiques to electronics stores, Crystaline ERP handles sales, inventory, customer loyalty, and multi-location management."
       />
       <BreadcrumbJsonLd
         id="breadcrumb-retail"
@@ -100,7 +100,7 @@ export default function RetailPage() {
         <SectionHeading
           eyebrow="Common challenges"
           title="Built for modern retail complexity."
-          description="Crystal ERP addresses the inventory, customer, and omnichannel challenges facing Kenyan retailers today."
+          description="Crystaline ERP addresses the inventory, customer, and omnichannel challenges facing Kenyan retailers today."
         />
         <div className="grid gap-6 md:grid-cols-3">
           {retailChallenges.map((challenge) => (
@@ -135,13 +135,13 @@ export default function RetailPage() {
       <section className="space-y-8">
         <SectionHeading
           eyebrow="Success story"
-          title="How Trendy Boutique grew to 5 locations with Crystal ERP."
+          title="How Trendy Boutique grew to 5 locations with Crystaline ERP."
           description="See how a Nairobi fashion retailer scaled operations and improved margins."
         />
         <div className="rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
           <blockquote className="space-y-4">
             <p className="text-lg italic text-slate-700">
-              &ldquo;Crystal ERP&apos;s variant tracking was a game-changer for
+              &ldquo;Crystaline ERP&apos;s variant tracking was a game-changer for
               our fashion business. We can now manage thousands of SKUs across
               sizes and colors effortlessly. The customer loyalty program helped
               us increase repeat purchases by 35%, and multi-location sync lets

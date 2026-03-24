@@ -32,7 +32,7 @@ export default function TwitterImage() {
             color: "#818cf8",
           }}
         >
-          Crystal ERP
+          Crystaline ERP
         </p>
         <h1 style={{ fontSize: 70, lineHeight: 1.1, marginTop: 24 }}>
           Modern ERP & POS software for ambitious Kenyan businesses.

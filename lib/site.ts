@@ -9,22 +9,22 @@ import {
 } from "lucide-react";
 
 export const siteConfig = {
-  name: "Crystal ERP & POS Software",
-  shortName: "Crystal ERP",
+  name: "Crystaline ERP & POS Software",
+  shortName: "Crystaline ERP",
   description:
-    "Crystal ERP delivers modern ERP and POS software that helps Kenyan businesses streamline sales, inventory, finance, and people operations from one secure cloud platform.",
+    "Crystaline ERP delivers modern ERP and POS software that helps Kenyan businesses streamline sales, inventory, finance, and people operations from one secure cloud platform.",
   url: "https://erp.crystaline.co.ke",
   keywords: [
     "ERP software Kenya",
     "POS software Kenya",
     "inventory management",
     "cloud retail system",
-    "Crystal ERP",
+    "Crystaline ERP",
     "business management platform",
   ],
   authors: [
     {
-      name: "Crystal ERP Software",
+      name: "Crystaline ERP Software",
       url: "https://erp.crystaline.co.ke",
     },
   ],
@@ -136,7 +136,7 @@ export const faqEntries = [
   {
     question: "How long does implementation take?",
     answer:
-      "Typical deployments go live in 3–5 days with data migration, hardware pairing, and staff onboarding handled by the Crystal ERP success team.",
+      "Typical deployments go live in 3–5 days with data migration, hardware pairing, and staff onboarding handled by the Crystaline ERP success team.",
   },
   {
     question: "Can I integrate existing accounting tools?",
@@ -146,14 +146,14 @@ export const faqEntries = [
   {
     question: "Do you support multiple locations or franchises?",
     answer:
-      "Crystal ERP manages unlimited outlets with centralized approvals, role-based access, and consolidated analytics.",
+      "Crystaline ERP manages unlimited outlets with centralized approvals, role-based access, and consolidated analytics.",
   },
 ];
 
 export const productPlans = [
   {
     id: "classic",
-    name: "Crystal ERP Classic",
+    name: "Crystaline ERP Classic",
     image: "/blog.jpg",
     description:
       "Battle-tested desktop and hybrid deployment trusted by 3,000+ Kenyan terminals for everyday POS and accounting.",
@@ -167,7 +167,7 @@ export const productPlans = [
   },
   {
     id: "cloud",
-    name: "Crystal ERP Cloud Suite",
+    name: "Crystaline ERP Cloud Suite",
     image: "/blog.jpg",
     description:
       "Modern web-first ERP with mobile dashboards, embedded payments, and AI forecasting for multi-location operators.",
@@ -185,7 +185,7 @@ export const productPlans = [
     image: "/blog.jpg",
 
     description:
-      "Co-brand Crystal ERP, earn recurring revenue, and access enablement kits designed for ICT and telco partners.",
+      "Co-brand Crystaline ERP, earn recurring revenue, and access enablement kits designed for ICT and telco partners.",
     price: "Custom margins",
     href: "/products#partners",
     highlights: [

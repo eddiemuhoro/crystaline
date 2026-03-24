@@ -9,15 +9,15 @@ import { pricingPackages, faqEntries, testimonialQuotes } from "@/lib/site";
 
 
 export const metadata: Metadata = {
-  title: "Crystal ERP Pricing Packages",
+  title: "Crystaline ERP Pricing Packages",
   description:
-    "Compare Crystal ERP pricing plans and packages to pick the right deployment for your team.",
+    "Compare Crystaline ERP pricing plans and packages to pick the right deployment for your team.",
   alternates: {
     canonical: "/pricing",
   },
   keywords: [
-    "Crystal ERP pricing",
-    "Crystal ERP packages",
+    "Crystaline ERP pricing",
+    "Crystaline ERP packages",
     "POS packages",
     "ERP plans",
   ],
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     url: "/pricing",
   },
   twitter: {
-    title: "Crystal ERP Pricing Packages",
+    title: "Crystaline ERP Pricing Packages",
     description:
       "Choose the pricing plan that matches your retail, wholesale, or services operation.",
   },
@@ -47,7 +47,7 @@ export default function PricingPage() {
       <section className="space-y-8 -mb-14 lg:-mb-16">
         <SectionHeading
           eyebrow="Our Plans"
-          title="Choose your Crystal ERP stack."
+          title="Choose your Crystaline ERP stack."
           description="From single-store retail to multi-location enterprises, pick the perfect fit for your scale."
         />
         <div className="mx-auto grid max-w-6xl gap-6 px-4 md:grid-cols-3 lg:px-6">
