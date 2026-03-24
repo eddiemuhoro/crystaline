@@ -6,7 +6,7 @@ import { getAllResources } from "@/lib/resources";
 const staticRoutes = [
   { path: "", priority: 1.0, changeFrequency: "weekly" as const },
   { path: "/about", priority: 0.8, changeFrequency: "monthly" as const },
-  { path: "/features", priority: 0.9, changeFrequency: "monthly" as const },
+  { path: "/services", priority: 0.9, changeFrequency: "monthly" as const },
   { path: "/products", priority: 0.9, changeFrequency: "monthly" as const },
   { path: "/blogs", priority: 0.7, changeFrequency: "weekly" as const },
   { path: "/terms", priority: 0.5, changeFrequency: "yearly" as const },

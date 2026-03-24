@@ -35,7 +35,7 @@ export default function OgImage() {
             border: "1px solid rgba(67,56,202,0.2)",
           }}
         >
-          Crystal ERP
+          Crystaline ERP
         </div>
         <h1
           style={{

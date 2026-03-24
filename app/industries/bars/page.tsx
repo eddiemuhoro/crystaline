@@ -7,9 +7,9 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { Wine, BarChart3, Zap, CreditCard } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Bar & Club POS Software Kenya | Crystal ERP",
+  title: "Bar & Club POS Software Kenya | Crystaline ERP",
   description:
-    "Complete bar and nightclub POS system for Kenya. Manage tabs, track inventory, split bills, handle Mpesa payments, and monitor stock with Crystal ERP.",
+    "Complete bar and nightclub POS system for Kenya. Manage tabs, track inventory, split bills, handle Mpesa payments, and monitor stock with Crystaline ERP.",
   alternates: {
     canonical: "/industries/bars",
   },
@@ -23,12 +23,12 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     url: "/industries/bars",
-    title: "Bar & Club POS Software Kenya | Crystal ERP",
+    title: "Bar & Club POS Software Kenya | Crystaline ERP",
     description:
       "Complete bar and nightclub management system with POS, inventory tracking, and tab management for Kenyan venues.",
   },
   twitter: {
-    title: "Bar & Club POS Software Kenya | Crystal ERP",
+    title: "Bar & Club POS Software Kenya | Crystaline ERP",
     description:
       "Modern POS system built for Kenyan bars, pubs, and nightclubs.",
   },
@@ -85,7 +85,7 @@ export default function BarsPage() {
       <PageBanner
         eyebrow="Bars, Pubs & Nightclubs"
         title="POS software designed for Kenyan bar and nightclub operations."
-        subtitle="Handle tabs, track inventory, process payments fast, and keep service flowing during peak hours with Crystal ERP."
+        subtitle="Handle tabs, track inventory, process payments fast, and keep service flowing during peak hours with Crystaline ERP."
       />
       <BreadcrumbJsonLd
         id="breadcrumb-bars"
@@ -100,7 +100,7 @@ export default function BarsPage() {
         <SectionHeading
           eyebrow="Common challenges"
           title="Built for the unique demands of bar service."
-          description="Crystal ERP handles the fast-paced, complex requirements of running a successful bar or nightclub."
+          description="Crystaline ERP handles the fast-paced, complex requirements of running a successful bar or nightclub."
         />
         <div className="grid gap-6 md:grid-cols-3">
           {barChallenges.map((challenge) => (
@@ -136,12 +136,12 @@ export default function BarsPage() {
         <SectionHeading
           eyebrow="Success story"
           title="How Westlands Lounge improved service speed by 40%."
-          description="Learn how a popular Nairobi bar streamlined operations and boosted revenue with Crystal ERP."
+          description="Learn how a popular Nairobi bar streamlined operations and boosted revenue with Crystaline ERP."
         />
         <div className="rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
           <blockquote className="space-y-4">
             <p className="text-lg italic text-slate-700">
-              &ldquo;Crystal ERP&apos;s tab management completely changed our
+              &ldquo;Crystaline ERP&apos;s tab management completely changed our
               Friday night operations. Bartenders can now serve customers 40%
               faster, and we&apos;ve eliminated tab disputes. The beverage
               inventory tracking also helped us identify and stop stock

@@ -7,9 +7,9 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { Package, ShoppingCart, TrendingUp, Tag } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Supermarket POS Software Kenya | Crystal ERP",
+  title: "Supermarket POS Software Kenya | Crystaline ERP",
   description:
-    "Complete supermarket POS and inventory management system for Kenyan supermarkets. Track stock, manage suppliers, handle tills, and automate reorders with Crystal ERP.",
+    "Complete supermarket POS and inventory management system for Kenyan supermarkets. Track stock, manage suppliers, handle tills, and automate reorders with Crystaline ERP.",
   alternates: {
     canonical: "/industries/supermarkets",
   },
@@ -23,12 +23,12 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     url: "/industries/supermarkets",
-    title: "Supermarket POS Software Kenya | Crystal ERP",
+    title: "Supermarket POS Software Kenya | Crystaline ERP",
     description:
       "Complete supermarket management system with POS, inventory tracking, and supplier management for Kenyan supermarkets.",
   },
   twitter: {
-    title: "Supermarket POS Software Kenya | Crystal ERP",
+    title: "Supermarket POS Software Kenya | Crystaline ERP",
     description:
       "Modern POS and inventory system built for Kenyan supermarkets and grocery stores.",
   },
@@ -85,7 +85,7 @@ export default function SupermarketsPage() {
       <PageBanner
         eyebrow="Supermarkets & Grocery Stores"
         title="POS and inventory management built for Kenyan supermarkets."
-        subtitle="From single stores to chains, Crystal ERP handles checkout, stock tracking, supplier management, and branch coordination in one system."
+        subtitle="From single stores to chains, Crystaline ERP handles checkout, stock tracking, supplier management, and branch coordination in one system."
       />
       <BreadcrumbJsonLd
         id="breadcrumb-supermarkets"
@@ -100,7 +100,7 @@ export default function SupermarketsPage() {
         <SectionHeading
           eyebrow="Common challenges"
           title="Built to solve real supermarket problems."
-          description="Crystal ERP addresses the daily headaches that slow down Kenyan supermarket operators."
+          description="Crystaline ERP addresses the daily headaches that slow down Kenyan supermarket operators."
         />
         <div className="grid gap-6 md:grid-cols-3">
           {supermarketChallenges.map((challenge) => (
@@ -135,13 +135,13 @@ export default function SupermarketsPage() {
       <section className="space-y-8">
         <SectionHeading
           eyebrow="Success story"
-          title="How QuickMart scaled to 12 branches with Crystal ERP."
+          title="How QuickMart scaled to 12 branches with Crystaline ERP."
           description="See how a Nairobi supermarket chain streamlined operations and reduced stock-outs by 60%."
         />
         <div className="rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
           <blockquote className="space-y-4">
             <p className="text-lg italic text-slate-700">
-              &ldquo;Crystal ERP transformed how we manage inventory across our
+              &ldquo;Crystaline ERP transformed how we manage inventory across our
               branches. We now have real-time visibility into stock levels,
               automated reordering, and accurate expiry tracking. Stock-outs
               dropped by 60% in the first quarter.&rdquo;

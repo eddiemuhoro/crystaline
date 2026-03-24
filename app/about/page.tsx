@@ -1,19 +1,54 @@
 import type { Metadata } from "next";
 import { PageBanner } from "@/components/PageBanner";
 import { SectionHeading } from "@/components/SectionHeading";
-import { StatGrid } from "@/components/StatGrid";
+import { FeatureCard } from "@/components/FeatureCard";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
-import { stats, siteConfig } from "@/lib/site";
+import { featureHighlights, siteConfig } from "@/lib/site";
+
+const automationTracks = [
+  {
+    title: "Real-time inventory intelligence",
+    bullets: [
+      "SKU, batch, and serial tracking with reorder automation",
+      "Supplier scorecards with landed-cost calculations",
+      "Omnichannel catalog sync across web, POS, and marketplaces",
+    ],
+  },
+  {
+    title: "Finance, tax, and compliance",
+    bullets: [
+      "Automated journal entries and expense workflows",
+      "VAT and ETIMS-ready reporting with audit trails",
+      "Bank feeds, Mpesa reconciliation, and treasury dashboards",
+    ],
+  },
+  {
+    title: "People and productivity",
+    bullets: [
+      "Attendance, rostering, and biometric-ready timesheets",
+      "Performance reviews linked to goals and incentives",
+      "Learning modules and SOP acknowledgements",
+    ],
+  },
+  {
+    title: "Executive intelligence",
+    bullets: [
+      "Drag-and-drop dashboards with device-aware layout",
+      "Scheduled KPI digests for email and WhatsApp",
+      "Embedded analytics via secure, sharable links",
+    ],
+  },
+];
 
 export const metadata: Metadata = {
-  title: "About Crystal ERP",
+  title: "About Crystaline ERP",
   description:
-    "Learn how Crystal ERP empowers Kenyan retailers, wholesalers, and service teams with dependable POS, inventory, finance, and HR automation.",
+    "Learn how Crystaline ERP empowers Kenyan retailers, wholesalers, and service teams with dependable POS, inventory, finance, and HR automation.",
   alternates: {
     canonical: "/about",
   },
   keywords: [
-    "Crystal ERP company",
+    "Crystaline ERP company",
     "Kenya POS provider",
     "ERP implementation Nairobi",
   ],
@@ -21,7 +56,7 @@ export const metadata: Metadata = {
     url: "/about",
   },
   twitter: {
-    title: "About Crystal ERP",
+    title: "About Crystaline ERP",
     description:
       "Meet the Kenyan team modernizing ERP and POS for ambitious businesses.",
   },
@@ -29,18 +64,18 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="space-y-16">
+    <div className="space-y-16 pb-16">
       <PageBanner
         eyebrow="Our story"
         title="We build mission-critical software for African commerce."
-        subtitle="Crystal ERP blends two decades of POS experience with a cloud-native ERP approach so Kenyan businesses can modernize without sacrificing reliability."
+        subtitle="Crystaline ERP blends two decades of POS experience with a cloud-native ERP approach so Kenyan businesses can modernize without sacrificing reliability."
       />
       <BreadcrumbJsonLd
         id="breadcrumb-about"
         items={[{ name: "Home" }, { name: "About", path: "/about" }]}
       />
 
-      <section className="space-y-8">
+      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <SectionHeading
           eyebrow="Mission"
           title="Digitize every workflow that powers Kenyan entrepreneurs."
@@ -70,16 +105,139 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="space-y-8 rounded-3xl border border-brand-100 bg-brand-50 p-8 shadow-sm">
+      {/* Brought over from Features Page */}
+      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <SectionHeading
-          eyebrow="Snapshot"
-          title="Crystal ERP by the numbers."
-          description="Thousands of daily transactions and support hours keep shaping our roadmap."
+          eyebrow="Core pillars"
+          title="Full-stack ERP for retail and services."
+          description="Every module shares the same dataset so you can trust numbers, accelerate approvals, and adapt faster."
         />
-        <StatGrid stats={stats} />
+        <div className="grid gap-6 md:grid-cols-2">
+          {featureHighlights.map((feature) => (
+            <FeatureCard key={feature.title} {...feature} />
+          ))}
+        </div>
       </section>
 
-      <section className="space-y-8">
+      <section className="space-y-8 rounded-3xl border border-brand-100 bg-brand-50 p-6 sm:p-8 shadow-sm mx-4 sm:mx-6 lg:mx-8 max-w-7xl lg:mx-auto">
+        <SectionHeading
+          eyebrow="Automation tracks"
+          title="Switch on only what you need—scale when ready."
+          description="Mix and match automation packs that plug into your current stack via REST or file-based integrations."
+        />
+        <div className="grid gap-6 lg:grid-cols-2">
+          {automationTracks.map((track) => (
+            <article
+              key={track.title}
+              className="rounded-2xl border border-brand-200/60 bg-white p-6"
+            >
+              <h3 className="text-lg font-semibold text-slate-900">
+                {track.title}
+              </h3>
+              <ul className="mt-4 space-y-2 text-sm text-slate-600">
+                {track.bullets.map((bullet) => (
+                  <li key={bullet} className="flex items-start gap-2">
+                    <span aria-hidden className="text-brand-500">•</span>
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <SectionHeading
+          eyebrow="Onboarding"
+          title="Launch in as little as three days."
+          description="Our success engineers follow a proven three-phase playbook."
+        />
+        <div className="grid gap-6 md:grid-cols-3">
+          {[
+            {
+              title: "Blueprint & migration",
+              detail:
+                "We map your current workflows, cleanse data, and import inventory, price lists, and HR records.",
+            },
+            {
+              title: "Configuration & training",
+              detail:
+                "Crystaline ERP specialists tailor roles, automations, and dashboards while coaching your champions.",
+            },
+            {
+              title: "Go-live & optimization",
+              detail:
+                "Hands-on hypercare plus quarterly business reviews keep new features aligned with growth.",
+            },
+          ].map((step, index) => (
+            <article
+              key={step.title}
+              className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm"
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-600">
+                Step {index + 1}
+              </p>
+              <h3 className="mt-3 text-lg font-semibold text-slate-900">
+                {step.title}
+              </h3>
+              <p className="mt-2 text-sm text-slate-600">{step.detail}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <SectionHeading
+          eyebrow="What's included"
+          title="Every deployment ships with"
+          description="Full-stack coverage from hardware provisioning to stakeholder reporting."
+        />
+        <div className="grid gap-6 md:grid-cols-2">
+          {[
+            "POS terminals, printers, and mobile kits sourced and configured to your network.",
+            "Hybrid storage with automated cloud backups and offline continuity.",
+            "Role-based security, MFA, and audit logs that satisfy franchise standards.",
+            "Unlimited analytics views plus executive scorecards tailored to your KPIs.",
+          ].map((item) => (
+            <article
+              key={item}
+              className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm"
+            >
+              <p className="text-sm text-slate-600">{item}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <SectionHeading
+          eyebrow="Integrations"
+          title="Connect Crystaline ERP to the rest of your stack."
+          description="Open APIs, pre-built connectors, and secure webhooks keep your finance, ecommerce, and fulfillment flows in sync."
+        />
+        <div className="grid gap-6 md:grid-cols-3">
+          {["Mpesa & Payments", "Accounting", "Ecommerce & Marketplaces"].map(
+            (category) => (
+              <article
+                key={category}
+                className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm"
+              >
+                <h3 className="text-lg font-semibold text-slate-900">
+                  {category}
+                </h3>
+                <p className="mt-3 text-sm text-slate-600">
+                  Secure connectors for {category.toLowerCase()} with rate
+                  limits, sandbox access, and dedicated monitoring dashboards.
+                </p>
+              </article>
+            ),
+          )}
+        </div>
+      </section>
+      {/* End Brought over from Features Page */}
+
+      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <SectionHeading
           eyebrow="Leadership"
           title="Built by operators who understand Kenyan commerce."
@@ -99,7 +257,7 @@ export default function AboutPage() {
             <p className="mt-3 text-sm text-slate-600">
               Over 15 years of experience in the IT field. Holds a degree in
               business management from Kenyatta University and a diploma in
-              computer science. Pioneered Crystal ERP&apos;s vision to modernize
+              computer science. Pioneered Crystaline ERP&apos;s vision to modernize
               African commerce.
             </p>
           </article>
@@ -131,7 +289,7 @@ export default function AboutPage() {
             <p className="mt-3 text-sm text-slate-600">
               IT specialist with 7+ years of experience. Served as General
               Manager at Sajsoft for three years. Has installed and managed IT
-              platforms for dozens of Kenyan businesses including Crystal ERP
+              platforms for dozens of Kenyan businesses including Crystaline ERP
               deployments.
             </p>
           </article>
@@ -146,47 +304,12 @@ export default function AboutPage() {
               Chief Technology Officer
             </p>
             <p className="mt-3 text-sm text-slate-600">
-              Leads Crystal ERP&apos;s engineering strategy, platform
+              Leads Crystaline ERP&apos;s engineering strategy, platform
               reliability, and product architecture. Focused on scalable
               systems, secure integrations, and delivery practices that keep
               mission- critical retail and finance workflows running smoothly.
             </p>
           </article>
-        </div>
-      </section>
-
-      <section className="space-y-6 rounded-3xl border border-brand-100 bg-brand-50 p-8 shadow-sm">
-        <SectionHeading
-          eyebrow="Contact"
-          title="Let's meet at our Nairobi HQ."
-          description="Book a discovery call or drop by our offices for a tailored walkthrough."
-        />
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="space-y-3 rounded-2xl border border-slate-100 bg-slate-50 p-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
-              Address
-            </p>
-            <p className="text-base text-slate-900">
-              {siteConfig.contact.addressLine}
-            </p>
-          </div>
-          <div className="space-y-3 rounded-2xl border border-slate-100 bg-slate-50 p-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
-              Support
-            </p>
-            <a
-              className="block text-base text-slate-900"
-              href={`tel:${siteConfig.contact.phone}`}
-            >
-              {siteConfig.contact.phone}
-            </a>
-            <a
-              className="block text-base text-slate-900"
-              href={`mailto:${siteConfig.contact.email}`}
-            >
-              {siteConfig.contact.email}
-            </a>
-          </div>
         </div>
       </section>
     </div>

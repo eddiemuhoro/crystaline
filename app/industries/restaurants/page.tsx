@@ -7,9 +7,9 @@ import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { Utensils, ChefHat, ClipboardList, LineChart } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Restaurant POS Software Kenya | Crystal ERP",
+  title: "Restaurant POS Software Kenya | Crystaline ERP",
   description:
-    "Complete restaurant POS and management system for Kenya. Handle orders, manage tables, track kitchen operations, and process payments with Crystal ERP.",
+    "Complete restaurant POS and management system for Kenya. Handle orders, manage tables, track kitchen operations, and process payments with Crystaline ERP.",
   alternates: {
     canonical: "/industries/restaurants",
   },
@@ -23,12 +23,12 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     url: "/industries/restaurants",
-    title: "Restaurant POS Software Kenya | Crystal ERP",
+    title: "Restaurant POS Software Kenya | Crystaline ERP",
     description:
       "Complete restaurant management system with POS, kitchen display, table management, and order tracking for Kenyan restaurants.",
   },
   twitter: {
-    title: "Restaurant POS Software Kenya | Crystal ERP",
+    title: "Restaurant POS Software Kenya | Crystaline ERP",
     description:
       "Modern POS and management system built for Kenyan restaurants and cafes.",
   },
@@ -85,7 +85,7 @@ export default function RestaurantsPage() {
       <PageBanner
         eyebrow="Restaurants & Cafes"
         title="Restaurant POS system built for Kenyan dining operations."
-        subtitle="From quick-service to fine dining, Crystal ERP handles orders, kitchen coordination, table management, and payments seamlessly."
+        subtitle="From quick-service to fine dining, Crystaline ERP handles orders, kitchen coordination, table management, and payments seamlessly."
       />
       <BreadcrumbJsonLd
         id="breadcrumb-restaurants"
@@ -100,7 +100,7 @@ export default function RestaurantsPage() {
         <SectionHeading
           eyebrow="Common challenges"
           title="Built for the pace and precision of restaurant service."
-          description="Crystal ERP solves the coordination and timing challenges that keep restaurant operators up at night."
+          description="Crystaline ERP solves the coordination and timing challenges that keep restaurant operators up at night."
         />
         <div className="grid gap-6 md:grid-cols-3">
           {restaurantChallenges.map((challenge) => (
@@ -136,7 +136,7 @@ export default function RestaurantsPage() {
         <SectionHeading
           eyebrow="Success story"
           title="How Java House improved order accuracy to 99.8%."
-          description="See how a leading Kenyan restaurant chain streamlined operations with Crystal ERP."
+          description="See how a leading Kenyan restaurant chain streamlined operations with Crystaline ERP."
         />
         <div className="rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
           <blockquote className="space-y-4">

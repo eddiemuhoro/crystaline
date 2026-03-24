@@ -32,7 +32,7 @@ export function Hero() {
             Explore Products
           </Link>
           <Link
-            href="/features"
+            href="/about"
             className="btn-secondary group inline-flex items-center gap-3 rounded-2xl px-8 py-4 text-lg font-bold text-slate-900 no-underline h-full"
           >
             See Full Features
@@ -51,7 +51,7 @@ export function Hero() {
         <div className="relative max-w-4xl card-hover">
           <Image
             src="/hero.webp"
-            alt="Professional Crystal ERP dashboard and operations showcase"
+            alt="Professional Crystaline ERP dashboard and operations showcase"
             width={900}
             height={560}
             className="w-full max-w-5xl rounded-3xl shadow-2xl shadow-slate-200/60 object-contain sm:object-cover lg:object-contain mx-auto"

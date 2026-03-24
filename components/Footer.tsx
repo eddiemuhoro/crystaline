@@ -79,7 +79,7 @@ export function Footer() {
           <ul className="space-y-3">
             {[
               { href: "/about", label: "About Us" },
-              { href: "/features", label: "Platform Overview" },
+              { href: "/services", label: "Services" },
               { href: "/products", label: "Our Products" },
               { href: "/blogs", label: "Insights & News" },
             ].map((link) => (
