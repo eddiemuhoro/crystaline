@@ -42,7 +42,7 @@ export default function HomePage() {
       <div className="mt-6 sm:mt-4 lg:mt-12 space-y-8 sm:space-y-10 md:space-y-12 lg:space-y-16 px-4 sm:px-6 lg:px-8 pb-16">
         <section id="about" className="space-y-4 -mt-10 lg:-mt-12 -mb-2">
           <SectionHeading
-            eyebrow="Why Crystaline ERP"
+            eyebrow="Why Crystaline ERP .."
             title="ERP precision with POS speed."
             description="From head office to tills, Crystaline ERP unifies every workflow in one secure Kenyan platform so you can scale faster with fewer tools."
           />

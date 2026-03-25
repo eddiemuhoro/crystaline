@@ -65,7 +65,7 @@ export default function ServicesPage() {
         items={[{ name: "Home" }, { name: "Services", path: "/services" }]}
       />
 
-      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
+      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16 -mb-2">
         <div className="space-y-20 lg:space-y-32">
           {services.map((service, index) => (
             <div

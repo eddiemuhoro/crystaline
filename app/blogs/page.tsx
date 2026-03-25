@@ -4,6 +4,7 @@ import { PageBanner } from "@/components/PageBanner";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { getAllResources } from "@/lib/resources";
 import Image from "next/image";
+import { ArrowRight, Calendar, Clock, User } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Crystaline ERP Blog",
@@ -20,8 +21,8 @@ export default async function BlogsPage() {
     <div className="space-y-12">
       <PageBanner
         eyebrow="Blog"
-        title="Field-tested playbooks for Kenyan retailers."
-        subtitle="Deploy Crystaline ERP with confidence using rollout checklists, compliance tips, and partner insights."
+        title="Latest insights and updates"
+        subtitle="Stay informed with the latest trends, tips, and news from the world of business technology."
       />
       <BreadcrumbJsonLd
         id="breadcrumb-blogs"
@@ -32,31 +33,50 @@ export default async function BlogsPage() {
           {articles.map((article) => (
             <article
               key={article.slug}
-              className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white transition-all hover:border-emerald-200 hover:shadow-xl"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-600 pb-4">
-                {new Date(article.date).toLocaleDateString("en-KE", {
-                  month: "short",
-                  day: "numeric",
-                  year: "numeric",
-                })}
-              </p>
-              <Image src="/blog.jpg" width={800} height={500} alt="blog pic" className="w-full h-60 object-cover rounded-xl" />
-              <h2 className="mt-3 text-xl font-semibold text-slate-900">
-                <Link href={`/blogs/${article.slug}`}>{article.title}</Link>
-              </h2>
-              <p className="mt-2 text-sm text-slate-600">{article.excerpt}</p>
-              <div className="mt-4 flex flex-wrap gap-3 text-xs text-slate-500">
-                <span>{article.readingTime}</span>
-                <span>{"•"}</span>
-                <span>{article.author}</span>
+              <Image
+                src="/blog.jpg"
+                width={800}
+                height={500}
+                alt="blog pic"
+                className="w-full h-56 object-cover rounded-xl"
+              />
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="mb-3 text-xl font-bold text-gray-900 transition-colors group-hover:text-emerald-600">
+                  <Link href={`/blogs/${article.slug}`}>{article.title}</Link>
+                </h3>
+                <p className="mb-4 flex-1 text-gray-600">{article.excerpt}</p>
+                <div className="flex items-center gap-4 border-t border-gray-100 pt-4 text-sm text-gray-500">
+                  <div className="flex items-center gap-1">
+                    <User className="h-4 w-4" />
+                    <span>{article.author}</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Calendar className="h-4 w-4" />
+                    <span>
+                      {new Date(article.date).toLocaleDateString("en-KE", {
+                        month: "short",
+                        day: "numeric",
+                        year: "numeric",
+                      })}
+                    </span>
+                  </div>
+                </div>
+                <div className="mt-3 flex items-center justify-between">
+                  <div className="flex items-center gap-1 text-sm text-gray-500">
+                    <Clock className="h-4 w-4" />{" "}
+                    <span>{article.readingTime}</span>
+                  </div>
+                  <Link
+                    href={`/blogs/${article.slug}`}
+                    className="inline-flex items-center gap-1 text-sm font-medium text-emerald-600 transition-colors hover:text-emerald-700"
+                  >
+                    Read more
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
               </div>
-              <Link
-                href={`/blogs/${article.slug}`}
-                className="mt-6 inline-flex items-center text-sm font-semibold text-brand-700 underline-offset-4 hover:underline"
-              >
-                Read article →
-              </Link>
             </article>
           ))}
         </div>
