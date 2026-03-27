@@ -66,7 +66,7 @@ export default function AboutPage() {
   return (
     <div className="space-y-16 pb-16">
       <PageBanner
-        eyebrow="Our story"
+        eyebrow="About us"
         title="We build mission-critical software for African commerce."
         subtitle="Crystaline ERP blends two decades of POS experience with a cloud-native ERP approach so Kenyan businesses can modernize without sacrificing reliability."
       />
@@ -75,7 +75,7 @@ export default function AboutPage() {
         items={[{ name: "Home" }, { name: "About", path: "/about" }]}
       />
 
-      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto -mb-14 lg:-mb-16">
         <SectionHeading
           eyebrow="Mission"
           title="Digitize every workflow that powers Kenyan entrepreneurs."
@@ -106,7 +106,7 @@ export default function AboutPage() {
       </section>
 
       {/* Brought over from Features Page */}
-      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto -mb-1">
         <SectionHeading
           eyebrow="Core pillars"
           title="Full-stack ERP for retail and services."
@@ -119,7 +119,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="space-y-8 rounded-3xl border border-brand-100 bg-brand-50 p-6 sm:p-8 shadow-sm mx-4 sm:mx-6 lg:mx-8 max-w-7xl lg:mx-auto">
+      <section className="space-y-8 rounded-3xl border border-brand-100 bg-brand-50 p-6 sm:p-8 shadow-sm mx-4 sm:mx-6 lg:mx-8 max-w-7xl lg:mx-auto -mb-1">
         <SectionHeading
           eyebrow="Automation tracks"
           title="Switch on only what you need—scale when ready."
@@ -147,7 +147,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto -mb-14 lg:-mb-16">
         <SectionHeading
           eyebrow="Onboarding"
           title="Launch in as little as three days."
@@ -187,7 +187,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto -mb-14 lg:-mb-16">
         <SectionHeading
           eyebrow="What's included"
           title="Every deployment ships with"
@@ -210,7 +210,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto -mb-14 lg:-mb-16">
         <SectionHeading
           eyebrow="Integrations"
           title="Connect Crystaline ERP to the rest of your stack."
@@ -237,7 +237,7 @@ export default function AboutPage() {
       </section>
       {/* End Brought over from Features Page */}
 
-      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto -mb-14 lg:-mb-24">
         <SectionHeading
           eyebrow="Leadership"
           title="Built by operators who understand Kenyan commerce."
