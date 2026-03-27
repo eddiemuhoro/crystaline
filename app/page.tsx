@@ -42,7 +42,7 @@ export default function HomePage() {
       <div className="mt-6 sm:mt-4 lg:mt-12 space-y-8 sm:space-y-10 md:space-y-12 lg:space-y-16 px-4 sm:px-6 lg:px-8 pb-16">
         <section id="about" className="space-y-4 -mt-10 lg:-mt-12 -mb-2">
           <SectionHeading
-            eyebrow="Why Crystaline ERP .."
+            eyebrow="Why Crystaline ERP"
             title="ERP precision with POS speed."
             description="From head office to tills, Crystaline ERP unifies every workflow in one secure Kenyan platform so you can scale faster with fewer tools."
           />
@@ -114,7 +114,7 @@ export default function HomePage() {
           </div>
           <div className="mt-12 text-center">
             <p className="text-gray-600">
-              Need a custom solution?{' '}
+              Need a custom solution?{" "}
               <a
                 href="https://wa.me/254725473779?text=I'm%20interested%20in%20Crystaline%20ERP"
                 target="_blank"
@@ -122,7 +122,7 @@ export default function HomePage() {
                 className="font-semibold text-emerald-600 hover:text-emerald-700"
               >
                 Contact us
-              </a>{' '}
+              </a>{" "}
               for enterprise pricing.
             </p>
           </div>
