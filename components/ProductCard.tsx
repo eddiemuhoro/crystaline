@@ -33,19 +33,23 @@ export function ProductCard({
   return (
     <>
       <div className="group flex flex-col rounded-2xl border border-gray-100 bg-white overflow-hidden transition-all hover:border-emerald-200 hover:shadow-xl">
-        {/* image */}
-        {image && (
-          <Image
-            src={image}
-            width={500}
-            height={500}
-            alt="Product image"
-            className="w-full h-48 object-cover "
-          />
-        )}
+        <div className="relative h-48 bg-gradient-to-br from-emerald-50 to-emerald-100 p-6">
+          <div className="absolute inset-0 flex items-center justify-center p-4">
+            {/* image */}
+            {image && (
+              <Image
+                src={image}
+                width={500}
+                height={500}
+                alt="Product image"
+                className="w-full h-full object-contain"
+              />
+            )}
+          </div>
+        </div>
 
         {/* content */}
-        <div className="flex flex-1 flex-col p-6">
+        <div className="flex flex-1 flex-col p-6 bg-gray-50">
           <h3 className="mb-2 text-lg font-bold text-gray-900">{title}</h3>
           <div className="relative">
             <p className="text-sm text-gray-600  ">{subtitle}</p>
@@ -62,9 +66,7 @@ export function ProductCard({
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </button>
           </div>
-          
         </div>
-        
       </div>
 
       {/* Modal */}
@@ -101,7 +103,7 @@ export function ProductCard({
                     src={image}
                     fill
                     alt={title}
-                    className="object-cover rounded-t-3xl"
+                    className="object-contain rounded-t-3xl"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent pointer-events-none rounded-t-3xl" />
                   <div className="absolute bottom-6 left-6 right-6">

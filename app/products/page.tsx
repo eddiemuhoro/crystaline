@@ -1,7 +1,7 @@
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { PageBanner } from "@/components/PageBanner";
 import { ProductCard } from "@/components/ProductCard";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
 
 type SanityProduct = {
@@ -17,11 +17,15 @@ type SanityProduct = {
 };
 
 import { client } from "@/sanity/client";
+import Link from "next/link";
 
 const POSTS_QUERY = `*[
   _type == "products"
   && defined(slug.current)
-]|order(publishedAt desc)[0...12]{_id, title, "slug": slug.current, price, "description": pt::text(description), subtitle, highlights, "image": image.asset->url, publishedAt}`;
+]|order(publishedAt desc)[$start...$end]{_id, title, "slug": slug.current, price, "description": pt::text(description), subtitle, highlights, "image": image.asset->url, publishedAt}`;
+
+const TOTAL_QUERY = `count(*[_type == "products" && defined(slug.current)])`;
+
 const options = { next: { revalidate: 60 } };
 
 export const metadata: Metadata = {
@@ -47,12 +51,26 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function ProductsPage() {
-  const products = await client.fetch<SanityProduct[]>(
-    POSTS_QUERY,
-    {},
-    options,
-  );
+export default async function ProductsPage(props: {
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }> | { [key: string]: string | string[] | undefined };
+}) {
+  const searchParams = await Promise.resolve(props.searchParams);
+  const pageStr = searchParams?.page;
+  const currentPage = typeof pageStr === "string" ? parseInt(pageStr, 10) || 1 : 1;
+  const itemsPerPage = 12;
+  const start = (currentPage - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+
+  const [products, totalCount] = await Promise.all([
+    client.fetch<SanityProduct[]>(
+      POSTS_QUERY,
+      { start, end },
+      options,
+    ),
+    client.fetch<number>(TOTAL_QUERY, {}, options),
+  ]);
+
+  const totalPages = Math.ceil(totalCount / itemsPerPage);
 
   return (
     <div className="space-y-16">
@@ -81,6 +99,46 @@ export default async function ProductsPage() {
             />
           ))}
         </div>
+
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="flex items-center justify-center gap-6 pt-10 pb-4">
+            {currentPage > 1 ? (
+              <Link
+                href={`/products?page=${currentPage - 1}`}
+                className="group flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-emerald-600 transition-colors"
+              >
+                <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+                Previous
+              </Link>
+            ) : (
+              <span className="flex items-center gap-2 text-sm font-semibold text-gray-300 cursor-not-allowed">
+                <ArrowLeft className="h-4 w-4" />
+                Previous
+              </span>
+            )}
+            
+            <span className="flex items-center justify-center rounded-full bg-emerald-100 px-4 py-1 text-sm font-semibold text-emerald-800">
+              Page {currentPage} of {totalPages}
+            </span>
+
+            {currentPage < totalPages ? (
+              <Link
+                href={`/products?page=${currentPage + 1}`}
+                className="group flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-emerald-600 transition-colors"
+              >
+                Next
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            ) : (
+              <span className="flex items-center gap-2 text-sm font-semibold text-gray-300 cursor-not-allowed">
+                Next
+                <ArrowRight className="h-4 w-4" />
+              </span>
+            )}
+          </div>
+        )}
+
         <div className="mt-1 text-center -mb-14 lg:-mb-16">
           <a
             href="https://wa.me/254725473779?text=I'm%20interested%20in%20Crystaline%20ERP"

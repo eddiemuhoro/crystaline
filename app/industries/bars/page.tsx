@@ -96,7 +96,7 @@ export default function BarsPage() {
         ]}
       />
 
-      <section className="space-y-8">
+      <section className="space-y-8 -mb-2">
         <SectionHeading
           eyebrow="Common challenges"
           title="Built for the unique demands of bar service."
@@ -119,7 +119,7 @@ export default function BarsPage() {
         </div>
       </section>
 
-      <section className="space-y-8 rounded-3xl border border-brand-100 bg-brand-50 p-8 shadow-sm">
+      <section className="space-y-8 rounded-3xl border border-brand-100 bg-brand-50 p-8 shadow-sm -mb-2">
         <SectionHeading
           eyebrow="Bar features"
           title="Everything you need to manage a busy bar."
@@ -132,7 +132,7 @@ export default function BarsPage() {
         </div>
       </section>
 
-      <section className="space-y-8">
+      <section className="space-y-8 -mb-2">
         <SectionHeading
           eyebrow="Success story"
           title="How Westlands Lounge improved service speed by 40%."
