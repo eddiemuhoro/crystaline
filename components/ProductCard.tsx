@@ -3,12 +3,14 @@
 import Image from "next/image";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { PortableText, type PortableTextBlock } from "next-sanity";
 
 type ProductCardProps = {
   _id?: string;
   title: string;
   subtitle: string;
-  description: string;
+  overview: string;
+  description: PortableTextBlock[] | string;
   price: number;
   href: string;
   highlights: string[];
@@ -19,6 +21,7 @@ export function ProductCard({
   title,
   subtitle,
   description,
+  overview,
   price,
   image,
 }: ProductCardProps) {
@@ -98,56 +101,71 @@ export function ProductCard({
 
             <div className="flex flex-col">
               {image && (
-                <div className="w-full h-64 sm:h-80 relative">
+                <div className="w-full h-64 sm:h-80 relative bg-gradient-to-br from-emerald-50/50 to-emerald-100/50 rounded-t-3xl border-b border-slate-100 p-8">
                   <Image
                     src={image}
                     fill
                     alt={title}
-                    className="object-contain rounded-t-3xl"
+                    className="object-contain p-6"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent pointer-events-none rounded-t-3xl" />
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <h2 className="text-3xl font-bold text-white drop-shadow-md">
-                      {title}
-                    </h2>
-                    {/* <p className="mt-1 text-brand-300 font-medium text-lg drop-shadow-md">{subtitle}</p> */}
-                  </div>
                 </div>
               )}
 
-              <div className="p-6 sm:p-8 space-y-6">
-                {!image && (
-                  <div>
-                    <h2 className="text-3xl font-bold text-slate-900">
-                      {title}
-                    </h2>
-                  </div>
-                )}
-
-                <div className="prose prose-slate max-w-none">
-                  <p className="mt-1 text-brand-600 font-medium text-lg">
+              <div className="p-6 sm:p-8 space-y-8">
+                <div className="space-y-2">
+                  <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                    {title}
+                  </h2>
+                  <p className="text-brand-600 font-semibold text-xl">
                     {subtitle}
-                  </p>
-                  <p className="text-slate-700 text-lg leading-relaxed">
-                    {description}
                   </p>
                 </div>
 
+                <div className="prose prose-slate max-w-none">
+                  {overview && (
+                    <div className="mb-8">
+                      <h4 className="text-slate-900 font-bold text-lg mb-3 flex items-center gap-2">
+                        <span className="w-1.5 h-6 bg-emerald-500 rounded-full inline-block"></span>
+                        Overview
+                      </h4>
+                      <p className="text-slate-600 text-lg leading-relaxed">
+                        {overview}
+                      </p>
+                    </div>
+                  )}
+                  
+                  {description && (
+                    <div>
+                      <h4 className="text-slate-900 font-bold text-lg mb-3 flex items-center gap-2">
+                        <span className="w-1.5 h-6 bg-brand-500 rounded-full inline-block"></span>
+                        Key Features
+                      </h4>
+                      <div className="text-slate-600 text-lg leading-relaxed prose-p:my-2 prose-ul:my-2 prose-ul:list-disc prose-ul:pl-6 prose-li:my-1 prose-li:marker:text-emerald-500">
+                        {typeof description === 'string' ? (
+                          <p>{description}</p>
+                        ) : (
+                          <PortableText value={description} />
+                        )}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
                 {price ? (
-                  <div className="py-4 border-y border-slate-100">
-                    <p className="text-sm text-slate-500 uppercase tracking-wider font-semibold">
+                  <div className="py-6 border-y border-slate-100 bg-slate-50/50 -mx-6 sm:-mx-8 px-6 sm:px-8">
+                    <p className="text-sm text-slate-500 uppercase tracking-wider font-bold mb-1">
                       Pricing
                     </p>
-                    <p className="text-2xl font-bold text-slate-900 mt-1">
+                    <p className="text-3xl font-black text-emerald-600">
                       KSH {price.toLocaleString()}
                     </p>
                   </div>
                 ) : null}
 
-                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <div className="flex flex-col sm:flex-row gap-4 pt-2">
                   <button
                     onClick={() => setIsModalOpen(false)}
-                    className="order-2 sm:order-1 flex-1 py-3.5 rounded-xl border-2 border-slate-100 font-bold text-slate-600 transition-all hover:bg-slate-50 hover:border-slate-200 hover:text-slate-900"
+                    className="order-2 sm:order-1 flex-1 py-4 rounded-xl border-2 border-slate-200 font-bold text-slate-600 transition-all hover:bg-slate-50 hover:border-slate-300 hover:text-slate-900 active:scale-95"
                   >
                     Back to Products
                   </button>
@@ -155,7 +173,7 @@ export function ProductCard({
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="order-1 sm:order-2 flex-1 flex items-center justify-center gap-2 py-3.5 rounded-xl bg-gradient-to-r from-brand-700 to-brand-600 font-bold text-white shadow-xl shadow-brand-500/20 transition-all hover:shadow-2xl hover:shadow-brand-500/40 hover:-translate-y-0.5 active:translate-y-0"
+                    className="order-1 sm:order-2 flex-1 flex items-center justify-center gap-2 py-4 rounded-xl bg-gradient-to-r from-brand-700 to-brand-600 font-bold text-white shadow-xl shadow-brand-500/20 transition-all hover:shadow-2xl hover:shadow-brand-500/40 hover:-translate-y-0.5 active:translate-y-0 active:scale-95"
                   >
                     Order Now
                   </a>

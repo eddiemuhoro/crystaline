@@ -107,10 +107,18 @@ export default function HomePage() {
             title="Packages for every stage of growth."
             description="Straightforward pricing with no hidden fees. All plans include free onboarding and local support."
           />
-          <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-3">
-            {pricingPackages.map((pkg) => (
+          <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {pricingPackages.slice(0, 4).map((pkg) => (
               <PackageCard key={pkg.name} {...pkg} />
             ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link
+              href="/pricing"
+              className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-3 text-sm font-bold text-slate-900 border border-slate-200 shadow-sm transition-all hover:bg-slate-50 hover:border-slate-300 active:scale-95"
+            >
+              View more packages →
+            </Link>
           </div>
           <div className="mt-12 text-center">
             <p className="text-gray-600">
@@ -206,7 +214,7 @@ export default function HomePage() {
               <p className="mt-3">
                 Looking for rollout playbooks? Visit the{" "}
                 <Link
-                  href="/blogs"
+                  href="/blog"
                   className="font-medium text-brand-700 underline underline-offset-4 hover:no-underline"
                 >
                   blog

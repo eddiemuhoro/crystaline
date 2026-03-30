@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 
-const resourcesDirectory = path.join(process.cwd(), "content/blogs");
+const resourcesDirectory = path.join(process.cwd(), "content/blog");
 
 export type ResourceMeta = {
   slug: string;

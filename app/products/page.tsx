@@ -3,12 +3,14 @@ import { PageBanner } from "@/components/PageBanner";
 import { ProductCard } from "@/components/ProductCard";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
+import type { PortableTextBlock } from "next-sanity";
 
 type SanityProduct = {
   _id: string;
   title: string;
   subtitle: string;
-  description: string;
+  overview?: string;
+  description: PortableTextBlock[] | string;
   price?: number;
   slug: string;
   highlights?: string[];
@@ -22,7 +24,7 @@ import Link from "next/link";
 const POSTS_QUERY = `*[
   _type == "products"
   && defined(slug.current)
-]|order(publishedAt desc)[$start...$end]{_id, title, "slug": slug.current, price, "description": pt::text(description), subtitle, highlights, "image": image.asset->url, publishedAt}`;
+]|order(publishedAt desc)[$start...$end]{_id, title, "slug": slug.current, price, description, subtitle, "overview": coalesce(pt::text(overview), overview), highlights, "image": image.asset->url, publishedAt}`;
 
 const TOTAL_QUERY = `count(*[_type == "products" && defined(slug.current)])`;
 
@@ -91,6 +93,7 @@ export default async function ProductsPage(props: {
               key={product._id}
               title={product.title}
               subtitle={product.subtitle}
+              overview={product.overview || ""}
               description={product.description}
               price={product.price || 0}
               href={`/products/${product.slug}`}

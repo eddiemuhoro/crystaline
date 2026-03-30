@@ -7,7 +7,6 @@ import { CallToAction } from "@/components/CallToAction";
 import { TestimonialSlider } from "@/components/TestimonialSlider";
 import { pricingPackages, faqEntries, testimonialQuotes } from "@/lib/site";
 
-
 export const metadata: Metadata = {
   title: "Crystaline ERP Pricing Packages",
   description:
@@ -36,8 +35,8 @@ export default function PricingPage() {
     <div className="space-y-16 pb-16">
       <PageBanner
         eyebrow="Pricing & Packages"
-        title="Packages for every stage of growth."
-        subtitle="Straightforward pricing with no hidden fees. All plans include free onboarding and local support."
+        title="Simple, transparent pricing"
+        subtitle="The packages only include software only not hardware prices."
       />
       <BreadcrumbJsonLd
         id="breadcrumb-pricing"
@@ -48,27 +47,28 @@ export default function PricingPage() {
         <SectionHeading
           eyebrow="Our Plans"
           title="Choose your Crystaline ERP stack."
-          description="From single-store retail to multi-location enterprises, pick the perfect fit for your scale."
+          description="The annual license fee is 20% of the total price of the software installed."
         />
-        <div className="mx-auto grid max-w-6xl gap-6 px-4 md:grid-cols-3 lg:px-6">
+
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 sm:grid-cols-2 lg:grid-cols-4 xl:px-8">
           {pricingPackages.map((pkg) => (
             <PackageCard key={pkg.name} {...pkg} />
           ))}
         </div>
         <div className="mt-12 text-center">
-            <p className="text-gray-600">
-              Need a custom solution?{' '}
-              <a
-                href="https://wa.me/254725473779?text=I'm%20interested%20in%20Crystaline%20ERP"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-emerald-600 hover:text-emerald-700"
-              >
-                Contact us
-              </a>{' '}
-              for enterprise pricing.
-            </p>
-          </div>
+          <p className="text-gray-600">
+            Need a custom solution?{" "}
+            <a
+              href="https://wa.me/254725473779?text=I'm%20interested%20in%20Crystaline%20ERP"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-emerald-600 hover:text-emerald-700"
+            >
+              Contact us
+            </a>{" "}
+            for enterprise pricing.
+          </p>
+        </div>
       </section>
 
       <section className="space-y-8 animate-fade-in-up">

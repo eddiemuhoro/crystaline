@@ -11,9 +11,7 @@ import {
 export const siteConfig = {
   name: "Crystaline ERP & POS Software",
   shortName: "Crystaline ERP",
-  description:
-    "Crystaline ERP delivers modern ERP and POS software that helps Kenyan businesses streamline sales, inventory, finance, and people operations from one secure cloud platform.",
-  url: "https://erp.crystaline.co.ke",
+  url: "https://crystaline.co.ke",
   keywords: [
     "ERP software Kenya",
     "POS software Kenya",
@@ -25,7 +23,7 @@ export const siteConfig = {
   authors: [
     {
       name: "Crystaline ERP Software",
-      url: "https://erp.crystaline.co.ke",
+      url: "https://crystaline.co.ke",
     },
   ],
   contact: {
@@ -205,43 +203,93 @@ export const stats = [
 
 export const pricingPackages = [
   {
-    name: "Basic",
-    price: 2900,
-    description: "For single-store retail or small service teams",
+    name: "Crystaline Server Edition",
+    price: 45000,
+    pricePrefix: "from",
+
     features: [
-      "Point of Sale (POS)",
-      "Basic Inventory Tracking",
-      "Daily Sales Reporting",
-      "1 User License"
-    ],
-    isPopular: false,
-    buttonText: "Get Started"
-  },
-  {
-    name: "Professional",
-    price: 6500,
-    description: "For multi-store and growing businesses",
-    features: [
-      "Advanced Inventory & Transfers",
-      "Finance & Tax Automation",
-      "Supplier Management",
-      "Up to 5 User Licenses"
+      "Server Software Installation",
+      "Centralized Database",
+      "Network Management Tools",
     ],
     isPopular: true,
-    buttonText: "Upgrade to Professional"
+    buttonText: "Get Server Edition",
   },
   {
-    name: "Enterprise",
-    price: 15000,
-    description: "For full-scale operations and large teams",
+    name: "Crystaline Client Edition",
+    price: 30000,
+    pricePrefix: "from",
+
     features: [
-      "People, HR & Payroll",
-      "Advanced Custom Dashboards",
-      "API Access & Integrations",
-      "Unlimited Users"
+      "Client Software Installation",
+      "Connect to Server Database",
+      "User-friendly Interface",
     ],
     isPopular: false,
-    buttonText: "Contact Sales"
-  }
-];
+    buttonText: "Get Client Edition",
+  },
+  {
+    name: "Crystaline Client-Server Edition",
+    price: 50000,
+    pricePrefix: "from",
+    features: [
+      "Server Software Installation",
+      "Client Software Installation",
+      "Unified System Management",
+    ],
+    isPopular: false,
+    buttonText: "Get Client-Server Edition",
+  },
+  {
+    name: "Crystaline Mobile App Edition",
+    price: 2500,
+    priceSuffix: "/mo",
+    description: "Software only. Can sell and make orders with it.",
+    features: [
+      "Make Sales and Orders",
+      "Mobile Accessibility",
+      "Real-time Setup",
+    ],
+    isPopular: false,
+    buttonText: "Get Mobile App Edition",
+  },
+  {
+    name: "e-TIMS Integration",
+    price: 60000,
+    pricePrefix: "from",
 
+    features: [
+      "Seamless e-TIMS Setup",
+      "Automated Tax Compliance",
+      "Real-time KRA Sync",
+    ],
+    isPopular: false,
+    buttonText: "Get e-TIMS Integration",
+  },
+  {
+    name: "M-Pesa Integration (without STK push)",
+    price: 10000,
+    pricePrefix: "from",
+
+    features: [
+      "Process M-Pesa Payments",
+      "Automated Reconciliation",
+      "Payment Tracking",
+    ],
+    isPopular: false,
+    buttonText: "Get M-Pesa Integration",
+  },
+  {
+    name: "M-Pesa Integration (with STK push)",
+    price: 20000,
+    pricePrefix: "from",
+
+    features: [
+      "Direct STK Push to Customers",
+      "Faster Checkouts",
+      "Enhanced Customer Experience",
+    ],
+    isPopular: false,
+    buttonText: "Get Fast M-Pesa Integration",
+  },
+];

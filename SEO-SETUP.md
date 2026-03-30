@@ -84,7 +84,7 @@ You have 3 options to verify:
    - `/features`
    - `/products`
    - `/about`
-   - `/blogs`
+   - `/blog`
 
 ### Step 4: Check Coverage & Errors
 
@@ -135,7 +135,7 @@ curl -I https://erp.crystaline.co.ke
 
 ### Content Recommendations
 
-1. **Blog Regularly**: Your `/blogs` section is great - aim for 1-2 posts/month
+1. **Blog Regularly**: Your `/blog` section is great - aim for 1-2 posts/month
 2. **Local SEO Keywords**: Focus on "Kenya", "Nairobi", "KES" in content
 3. **Case Studies**: Add more testimonials with business names and locations
 
@@ -189,7 +189,7 @@ This is normal for new sites. Indexing can take:
 ### "Missing meta description"
 
 - All main pages have descriptions ✅
-- Verify dynamic blog pages in `/blogs/[slug]/page.tsx`
+- Verify dynamic blog pages in `/blog/[slug]/page.tsx`
 
 ## 📞 Support
 
