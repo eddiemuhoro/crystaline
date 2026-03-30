@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Guides and checklists for launching POS, ERP, and retail operations across Kenya using Crystaline ERP.",
   alternates: {
-    canonical: "/blogs",
+    canonical: "/blog",
   },
 };
 
@@ -26,7 +26,7 @@ export default async function BlogsPage() {
       />
       <BreadcrumbJsonLd
         id="breadcrumb-blogs"
-        items={[{ name: "Home" }, { name: "Blog", path: "/blogs" }]}
+        items={[{ name: "Home" }, { name: "Blog", path: "/blog" }]}
       />
       <section className="space-y-6">
         <div className="grid gap-6 md:grid-cols-2">
@@ -44,7 +44,7 @@ export default async function BlogsPage() {
               />
               <div className="flex flex-1 flex-col p-6">
                 <h3 className="mb-3 text-xl font-bold text-gray-900 transition-colors group-hover:text-emerald-600">
-                  <Link href={`/blogs/${article.slug}`}>{article.title}</Link>
+                  <Link href={`/blog/${article.slug}`}>{article.title}</Link>
                 </h3>
                 <p className="mb-4 flex-1 text-gray-600">{article.excerpt}</p>
                 <div className="flex items-center gap-4 border-t border-gray-100 pt-4 text-sm text-gray-500">
@@ -69,7 +69,7 @@ export default async function BlogsPage() {
                     <span>{article.readingTime}</span>
                   </div>
                   <Link
-                    href={`/blogs/${article.slug}`}
+                    href={`/blog/${article.slug}`}
                     className="inline-flex items-center gap-1 text-sm font-medium text-emerald-600 transition-colors hover:text-emerald-700"
                   >
                     Read more
