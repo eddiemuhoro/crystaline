@@ -96,7 +96,7 @@ export default function SupermarketsPage() {
         ]}
       />
 
-      <section className="space-y-8 -mb-1">
+      <section className="space-y-8">
         <SectionHeading
           eyebrow="Common challenges"
           title="Built to solve real supermarket problems."
@@ -119,7 +119,7 @@ export default function SupermarketsPage() {
         </div>
       </section>
 
-      <section className="space-y-8 rounded-3xl border border-brand-100 bg-brand-50 p-8 shadow-sm -mb-1">
+      <section className="space-y-8 rounded-3xl border border-brand-100 bg-brand-50 p-8 shadow-sm">
         <SectionHeading
           eyebrow="Supermarket features"
           title="Everything you need to run a modern supermarket."
@@ -132,7 +132,7 @@ export default function SupermarketsPage() {
         </div>
       </section>
 
-      <section className="space-y-8 -mb-1">
+      <section className="space-y-8">
         <SectionHeading
           eyebrow="Success story"
           title="How QuickMart scaled to 12 branches with Crystaline ERP."

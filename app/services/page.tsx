@@ -65,14 +65,14 @@ export default function ServicesPage() {
         items={[{ name: "Home" }, { name: "Services", path: "/services" }]}
       />
 
-      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16 -mb-2">
+      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
         <div className="space-y-20 lg:space-y-32">
           {services.map((service, index) => (
             <div
               key={service.title}
               className={`flex flex-col lg:flex-row gap-10 lg:gap-16 items-center ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}
             >
-              <div className="flex-1 w-full relative h-[350px] sm:h-[450px] rounded-[2rem] overflow-hidden shadow-xl ring-1 ring-slate-900/5 bg-white flex items-center justify-center">
+              <div className="order-2 lg:order-0 w-full lg:flex-1 relative h-[220px] sm:h-[380px] lg:h-[450px] rounded-4xl overflow-hidden shadow-xl ring-1 ring-slate-900/5 bg-white flex items-center justify-center">
                 <Image
                   src={service.image}
                   alt={service.alt}
@@ -81,12 +81,12 @@ export default function ServicesPage() {
                   sizes="(min-width: 1024px) 50vw, 100vw"
                 />
               </div>
-              <div className="flex-1 space-y-6">
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
+              <div className="order-1 lg:order-0 flex-1 space-y-6">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
                   {service.title}
                 </h2>
                 <div className="w-12 h-1.5 bg-brand-500 rounded-full"></div>
-                <p className="text-lg text-slate-600 leading-relaxed">
+                <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
                   {service.description}
                 </p>
               </div>

@@ -43,7 +43,7 @@ export default function PricingPage() {
         items={[{ name: "Home" }, { name: "Pricing", path: "/pricing" }]}
       />
 
-      <section className="space-y-8 -mb-14 lg:-mb-16">
+      <section className="space-y-8">
         <SectionHeading
           eyebrow="Our Plans"
           title="Choose your Crystaline ERP stack."
@@ -56,7 +56,7 @@ export default function PricingPage() {
           ))}
         </div>
         <div className="mt-12 text-center">
-          <p className="text-gray-600">
+          <p className="text-gray-600 text-sm">
             Need a custom solution?{" "}
             <a
               href="https://wa.me/254725473779?text=I'm%20interested%20in%20Crystaline%20ERP"

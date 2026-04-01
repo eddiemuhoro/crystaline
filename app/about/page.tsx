@@ -76,7 +76,7 @@ export default function AboutPage() {
         items={[{ name: "Home" }, { name: "About", path: "/about" }]}
       />
 
-      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto -mb-14 lg:-mb-16">
+      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <SectionHeading
           eyebrow="Mission"
           title="Digitize every workflow that powers Kenyan entrepreneurs."
@@ -84,17 +84,17 @@ export default function AboutPage() {
         />
         <div className="grid gap-6 lg:grid-cols-2">
           <article className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm">
-            <h3 className="text-lg font-semibold text-slate-900">
+            <h3 className="text-base sm:text-lg font-semibold text-slate-900">
               Customer-first rollouts
             </h3>
-            <p className="mt-3 text-sm text-slate-600">
+            <p className="mt-3 text-sm  text-slate-600">
               Implementation engineers co-create blueprints with your finance,
               HR, and retail leads. Every switch-over includes data validation,
               playbook training, and on-site go-live assistance.
             </p>
           </article>
           <article className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm">
-            <h3 className="text-lg font-semibold text-slate-900">
+            <h3 className="text-base sm:text-lg font-semibold text-slate-900">
               Local innovation
             </h3>
             <p className="mt-3 text-sm text-slate-600">
@@ -107,7 +107,7 @@ export default function AboutPage() {
       </section>
 
       {/* Brought over from Features Page */}
-      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto -mb-1">
+      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <SectionHeading
           eyebrow="Core pillars"
           title="Full-stack ERP for retail and services."
@@ -120,7 +120,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="space-y-8 rounded-3xl border border-brand-100 bg-brand-50 p-6 sm:p-8 shadow-sm mx-4 sm:mx-6 max-w-7xl lg:mx-auto -mb-1">
+      <section className="space-y-8 rounded-3xl border border-brand-100 bg-brand-50 p-6 sm:p-8 shadow-sm mx-4 sm:mx-6 max-w-7xl lg:mx-auto">
         <SectionHeading
           eyebrow="Automation tracks"
           title="Switch on only what you need—scale when ready."
@@ -132,7 +132,7 @@ export default function AboutPage() {
               key={track.title}
               className="rounded-2xl border border-brand-200/60 bg-white p-6"
             >
-              <h3 className="text-lg font-semibold text-slate-900">
+              <h3 className="text-base sm:text-lg font-semibold text-slate-900">
                 {track.title}
               </h3>
               <ul className="mt-4 space-y-2 text-sm text-slate-600">
@@ -150,7 +150,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto -mb-14 lg:-mb-16">
+      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto ">
         <SectionHeading
           eyebrow="Onboarding"
           title="Launch in as little as three days."
@@ -181,7 +181,7 @@ export default function AboutPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-600">
                 Step {index + 1}
               </p>
-              <h3 className="mt-3 text-lg font-semibold text-slate-900">
+              <h3 className="mt-3 text-base sm:text-lg font-semibold text-slate-900">
                 {step.title}
               </h3>
               <p className="mt-2 text-sm text-slate-600">{step.detail}</p>
@@ -190,7 +190,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto -mb-14 lg:-mb-16">
+      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <SectionHeading
           eyebrow="What's included"
           title="Every deployment ships with"
@@ -213,7 +213,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto -mb-14 lg:-mb-16">
+      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto ">
         <SectionHeading
           eyebrow="Integrations"
           title="Connect Crystaline ERP to the rest of your stack."
@@ -226,7 +226,7 @@ export default function AboutPage() {
                 key={category}
                 className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm"
               >
-                <h3 className="text-lg font-semibold text-slate-900">
+                <h3 className="text-base sm:text-lg font-semibold text-slate-900">
                   {category}
                 </h3>
                 <p className="mt-3 text-sm text-slate-600">
@@ -240,7 +240,7 @@ export default function AboutPage() {
       </section>
       {/* End Brought over from Features Page */}
 
-      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto -mb-14 lg:-mb-24">
+      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <SectionHeading
           eyebrow="Leadership"
           title="Built by operators who understand Kenyan commerce."

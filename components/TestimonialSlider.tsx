@@ -5,7 +5,7 @@ import { testimonialQuotes } from "@/lib/site";
 
 export function TestimonialSlider() {
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)] -mb-12 lg:-mb-20">
+    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes scrollX {
           from { transform: translateX(0); }

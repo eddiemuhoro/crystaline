@@ -116,7 +116,7 @@ export default async function ProductsPage(props: {
         {products?.length === 0 ? (
           <div className="text-center py-16 text-gray-500 bg-gray-50 rounded-2xl border border-gray-100">
             <h3 className="text-xl font-semibold text-gray-900 mb-2">No products found</h3>
-            <p className="text-base">We couldn't find anything matching "{searchQuery}".</p>
+            <p className="text-base">We couldn&apos;t find anything matching &quot;{searchQuery}&quot;.</p>
             <p className="text-sm mt-1">Try adjusting your search terms.</p>
           </div>
         ) : (
@@ -176,7 +176,7 @@ export default async function ProductsPage(props: {
           </div>
         )}
 
-        <div className="mt-1 text-center -mb-14 lg:-mb-16">
+        <div className="mt-1 text-center">
           <a
             href="https://wa.me/254725473779?text=I'm%20interested%20in%20Crystaline%20ERP"
             target="_blank"

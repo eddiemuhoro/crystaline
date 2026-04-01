@@ -13,7 +13,6 @@ import {
   siteConfig,
   solutionPillars,
   stats,
-  testimonialQuotes,
 } from "@/lib/site";
 import Link from "next/link";
 import Script from "next/script";
@@ -34,13 +33,13 @@ export default function HomePage() {
 
   return (
     <>
-      <div className="px-4 sm:px-6 lg:px-8 pt-4 sm:pt-2">
+      <div className="">
         <Hero />
       </div>
       <BreadcrumbJsonLd id="breadcrumb-home" items={[{ name: "Home" }]} />
 
       <div className="mt-6 sm:mt-4 lg:mt-12 space-y-8 sm:space-y-10 md:space-y-12 lg:space-y-16 px-4 sm:px-6 lg:px-8 pb-16">
-        <section id="about" className="space-y-4 -mt-10 lg:-mt-12 -mb-2">
+        <section id="about" className="space-y-4 ">
           <SectionHeading
             eyebrow="Why Crystaline ERP"
             title="ERP precision with POS speed."
@@ -51,7 +50,7 @@ export default function HomePage() {
 
         <section
           id="features"
-          className="space-y-8 -mb-2 sm:space-y-10 rounded-3xl border border-brand-100 bg-brand-50 p-6 sm:p-8 shadow-sm animate-fade-in-up"
+          className="space-y-8 sm:space-y-10 rounded-3xl border border-brand-100 bg-brand-50 p-6 sm:p-8 shadow-sm animate-fade-in-up"
         >
           <SectionHeading
             eyebrow="Feature snapshot"
@@ -63,7 +62,7 @@ export default function HomePage() {
               <FeatureCard key={feature.title} {...feature} />
             ))}
           </div>
-          <p className="text-sm text-slate-500">
+          <p className="text-xs sm:text-sm text-slate-500">
             Explore every automation block in detail on the{" "}
             <Link
               href="/about"
@@ -75,33 +74,7 @@ export default function HomePage() {
           </p>
         </section>
 
-        {/* <section id="products" className="space-y-8 animate-fade-in-up">
-        <SectionHeading
-          eyebrow="Deployment options"
-          title="Choose your Crystaline ERP stack."
-          description="From classic POS terminals to full cloud ERP suites, pick the perfect fit for your scale."
-        />
-        <div className="grid gap-6 lg:grid-cols-3">
-          {productPlans.map((plan) => (
-            <ProductCard
-              key={plan.id}
-              title={plan.name}
-              subtitle={plan.price}
-              description={plan.description}
-              price={2900}
-              href={plan.href}
-              highlights={plan.highlights}
-            />
-          ))}
-        </div>
-        <p className="text-sm text-slate-500">
-          <Link href="/products" className="font-semibold text-brand-700 underline-offset-4 hover:underline">
-            See all products →
-          </Link>
-        </p>
-      </section> */}
-
-        <section id="pricing" className="space-y-6 -mb-2 animate-fade-in-up">
+        <section id="pricing" className="space-y-6 animate-fade-in-up">
           <SectionHeading
             eyebrow="Pricing plans"
             title="Packages for every stage of growth."
@@ -138,7 +111,7 @@ export default function HomePage() {
 
         <section
           id="services"
-          className="space-y-8 -mb-2 sm:space-y-10 rounded-3xl border border-brand-100 bg-brand-50 p-6 sm:p-8 shadow-sm animate-fade-in-up"
+          className="space-y-8 sm:space-y-10 rounded-3xl border border-brand-100 bg-brand-50 p-6 sm:p-8 shadow-sm animate-fade-in-up"
         >
           <SectionHeading
             eyebrow="Industry playbooks"
@@ -166,68 +139,9 @@ export default function HomePage() {
           <TestimonialSlider />
         </section>
 
-        {/* <section className="space-y-6 rounded-3xl border border-brand-100 bg-brand-50 p-6 sm:p-8 shadow-sm">
-          <SectionHeading
-            eyebrow="Local expertise"
-            title="Embedded in Nairobi, trusted countrywide."
-            description="Our rollout squads operate from the CBD and support outlets in Mombasa, Kisumu, Eldoret, and every county in between."
-          />
-          <div className="grid gap-6 md:grid-cols-2">
-            <article className="rounded-2xl border border-brand-200/60 bg-white p-6 text-sm text-slate-600">
-              <p>
-                Visit our{" "}
-                <Link
-                  href="/about#contact"
-                  className="font-semibold text-brand-700 underline-offset-4 hover:underline"
-                >
-                  Nairobi HQ
-                </Link>{" "}
-                for onsite demos or book a remote consultation. We also ship{" "}
-                <Link
-                  href="/products#classic"
-                  className="font-semibold text-brand-700 underline-offset-4 hover:underline"
-                >
-                  POS hardware kits
-                </Link>{" "}
-                with pre-configured Crystaline ERP builds.
-              </p>
-            </article>
-            <article className="rounded-2xl border border-brand-200/60 bg-white p-6 text-sm text-slate-600">
-              <p>
-                Need deeper feature guidance? Jump into the{" "}
-                <Link
-                  href="/about"
-                  className="font-semibold text-brand-700 underline-offset-4 hover:underline"
-                >
-                  feature map
-                </Link>{" "}
-                to explore accounting, inventory, and HR automations, or compare
-                deployment models on our{" "}
-                <Link
-                  href="/products"
-                  className="font-semibold text-brand-700 underline-offset-4 hover:underline"
-                >
-                  products page
-                </Link>
-                .
-              </p>
-              <p className="mt-3">
-                Looking for rollout playbooks? Visit the{" "}
-                <Link
-                  href="/blog"
-                  className="font-medium text-brand-700 underline underline-offset-4 hover:no-underline"
-                >
-                  blog
-                </Link>{" "}
-                for detailed guides.
-              </p>
-            </article>
-          </div>
-        </section> */}
-
         <section
           id="faq"
-          className="space-y-8 -mb-2 rounded-3xl border border-brand-100 bg-brand-50 p-6 sm:p-8 shadow-sm"
+          className="space-y-8 rounded-3xl border border-brand-100 bg-brand-50 p-6 sm:p-8 shadow-sm"
         >
           <SectionHeading
             eyebrow="FAQ"
@@ -257,7 +171,7 @@ export default function HomePage() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="space-y-8 -mb-2">
+        <section id="contact" className="space-y-8">
           <SectionHeading
             eyebrow="Contact Us"
             title="We'd love to hear from you"

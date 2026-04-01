@@ -98,10 +98,6 @@ body {
   line-height: 1.6;
 }
 
-section {
-  padding-top: var(--section-spacing);
-  padding-bottom: var(--section-spacing);
-}
 
 @layer utilities {
   .animate-fade-in-up {
