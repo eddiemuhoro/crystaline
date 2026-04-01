@@ -17,7 +17,7 @@ const navLinks = [
 const industries = [
   { href: "/industries/supermarkets", label: "Supermarkets" },
   { href: "/industries/bars", label: "Bars & Clubs" },
-  { href: "/industries/restaurants", label: "Restaurants" },
+  { href: "/industries/restaurants", label: "Hotels and Restaurants" },
   { href: "/industries/retail", label: "Retail Stores" },
 ];
 

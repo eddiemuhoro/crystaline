@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageBanner } from "@/components/PageBanner";
 import { SectionHeading } from "@/components/SectionHeading";
 import { FeatureCard } from "@/components/FeatureCard";
@@ -245,8 +246,8 @@ export default function AboutPage() {
         />
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           <article className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-50 text-2xl font-bold text-brand-700">
-              SK
+            <div className="mb-4 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-brand-50">
+              <Image src="/sammy.jpg" alt="Sammy Kinyua" width={64} height={64} className="h-full w-full object-cover" />
             </div>
             <h3 className="text-lg font-semibold text-slate-900">
               Sammy Kinyua
@@ -262,8 +263,8 @@ export default function AboutPage() {
             </p>
           </article>
           <article className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-50 text-2xl font-bold text-brand-700">
-              NG
+            <div className="mb-4 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-brand-50">
+              <Image src="/nahashon.jpg" alt="Nahashon Gathai" width={64} height={64} className="h-full w-full object-cover" />
             </div>
             <h3 className="text-lg font-semibold text-slate-900">
               Nahashon Gathai
@@ -277,8 +278,8 @@ export default function AboutPage() {
             </p>
           </article>
           <article className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-50 text-2xl font-bold text-brand-700">
-              TN
+            <div className="mb-4 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-brand-50">
+              <Image src="/tim.jpg" alt="Timothy Ndegwa" width={64} height={64} className="h-full w-full object-cover" />
             </div>
             <h3 className="text-lg font-semibold text-slate-900">
               Timothy Ndegwa

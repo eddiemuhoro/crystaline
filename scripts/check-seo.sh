@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# SEO Health Check Script for erp.crystaline.co.ke
+# SEO Health Check Script for crystaline.co.ke
 # Run this after deployment to verify SEO setup
 # Usage: ./check-seo.sh [domain]
 # Example: ./check-seo.sh http://localhost:3000
 
-DOMAIN="${1:-https://erp.crystaline.co.ke}"
+DOMAIN="${1:-https://crystaline.co.ke}"
 BOLD='\033[1m'
 GREEN='\033[0;32m'
 RED='\033[0;31m'

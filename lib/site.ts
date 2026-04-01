@@ -11,6 +11,8 @@ import {
 export const siteConfig = {
   name: "Crystaline ERP & POS Software",
   shortName: "Crystaline ERP",
+  description:
+    "Crystaline ERP delivers modern ERP and POS software that helps Kenyan businesses streamline sales, inventory, finance, and people operations from one secure cloud platform.",
   url: "https://crystaline.co.ke",
   keywords: [
     "ERP software Kenya",
