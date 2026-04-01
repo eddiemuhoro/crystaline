@@ -21,18 +21,23 @@ type SanityProduct = {
 import { client } from "@/sanity/client";
 import Link from "next/link";
 import { ProductSearch } from "@/components/ProductSearch";
+import { ProductCategoryFilter } from "@/components/ProductCategoryFilter";
 
-const getPostsQuery = (hasSearch: boolean) => `*[
+const getPostsQuery = (hasSearch: boolean, hasCategory: boolean) => `*[
   _type == "products"
   && defined(slug.current)
   ${hasSearch ? '&& (title match $searchQuery || subtitle match $searchQuery)' : ''}
+  ${hasCategory ? '&& category == $category' : ''}
 ]|order(publishedAt desc)[$start...$end]{_id, title, "slug": slug.current, price, description, subtitle, "overview": coalesce(pt::text(overview), overview), highlights, "image": image.asset->url, publishedAt}`;
 
-const getTotalQuery = (hasSearch: boolean) => `count(*[
+const getTotalQuery = (hasSearch: boolean, hasCategory: boolean) => `count(*[
   _type == "products" 
   && defined(slug.current)
   ${hasSearch ? '&& (title match $searchQuery || subtitle match $searchQuery)' : ''}
+  ${hasCategory ? '&& category == $category' : ''}
 ])`;
+
+const getCategoriesQuery = `array::unique(*[_type == "products" && defined(category)].category) | order(@)`;
 
 const options = { next: { revalidate: 60 } };
 
@@ -65,25 +70,29 @@ export default async function ProductsPage(props: {
   const searchParams = await Promise.resolve(props.searchParams);
   const pageStr = searchParams?.page;
   const qStr = searchParams?.q;
+  const catStr = searchParams?.category;
   const currentPage = typeof pageStr === "string" ? parseInt(pageStr, 10) || 1 : 1;
   const searchQuery = typeof qStr === "string" ? qStr : "";
+  const activeCategory = typeof catStr === "string" ? catStr : "";
   const hasSearch = Boolean(searchQuery);
+  const hasCategory = Boolean(activeCategory);
   const searchParamValue = searchQuery ? `${searchQuery}*` : '';
   const itemsPerPage = 12;
   const start = (currentPage - 1) * itemsPerPage;
   const end = start + itemsPerPage;
 
-  const [products, totalCount] = await Promise.all([
+  const [products, totalCount, categories] = await Promise.all([
     client.fetch<SanityProduct[]>(
-      getPostsQuery(hasSearch),
-      { start, end, ...(hasSearch && { searchQuery: searchParamValue }) },
+      getPostsQuery(hasSearch, hasCategory),
+      { start, end, ...(hasSearch && { searchQuery: searchParamValue }), ...(hasCategory && { category: activeCategory }) },
       options,
     ),
     client.fetch<number>(
-      getTotalQuery(hasSearch),
-      { ...(hasSearch && { searchQuery: searchParamValue }) },
+      getTotalQuery(hasSearch, hasCategory),
+      { ...(hasSearch && { searchQuery: searchParamValue }), ...(hasCategory && { category: activeCategory }) },
       options,
     ),
+    client.fetch<string[]>(getCategoriesQuery, {}, options),
   ]);
 
   const totalPages = Math.ceil(totalCount / itemsPerPage);
@@ -101,6 +110,7 @@ export default async function ProductsPage(props: {
       />
 
       <section className="space-y-8">
+        <ProductCategoryFilter categories={categories} />
         <ProductSearch />
         
         {products?.length === 0 ? (
@@ -132,7 +142,7 @@ export default async function ProductsPage(props: {
           <div className="flex items-center justify-center gap-6 pt-10 pb-4">
             {currentPage > 1 ? (
               <Link
-                href={`/products?page=${currentPage - 1}${searchQuery ? `&q=${encodeURIComponent(searchQuery)}` : ''}`}
+                href={`/products?page=${currentPage - 1}${searchQuery ? `&q=${encodeURIComponent(searchQuery)}` : ''}${activeCategory ? `&category=${encodeURIComponent(activeCategory)}` : ''}`}
                 className="group flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-emerald-600 transition-colors"
               >
                 <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
@@ -151,7 +161,7 @@ export default async function ProductsPage(props: {
 
             {currentPage < totalPages ? (
               <Link
-                href={`/products?page=${currentPage + 1}${searchQuery ? `&q=${encodeURIComponent(searchQuery)}` : ''}`}
+                href={`/products?page=${currentPage + 1}${searchQuery ? `&q=${encodeURIComponent(searchQuery)}` : ''}${activeCategory ? `&category=${encodeURIComponent(activeCategory)}` : ''}`}
                 className="group flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-emerald-600 transition-colors"
               >
                 Next

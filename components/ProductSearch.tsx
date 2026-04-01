@@ -2,20 +2,14 @@
 
 import { Search, X, Loader2 } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useState, useTransition, Suspense, useRef, useEffect } from "react";
+import { useState, useTransition, Suspense, useRef } from "react";
 
 function SearchForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [query, setQuery] = useState(searchParams.get("q") || "");
+  const [query, setQuery] = useState(() => searchParams.get("q") || "");
   const [isPending, startTransition] = useTransition();
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  // Sync state if URL changes externally (e.g. back button)
-  useEffect(() => {
-    const urlQuery = searchParams.get("q") || "";
-    setQuery(urlQuery);
-  }, [searchParams]);
 
   const triggerSearch = (value: string) => {
     const params = new URLSearchParams(searchParams.toString());
@@ -72,7 +66,7 @@ function SearchForm() {
         <input
           type="search"
           name="q"
-          className="block w-full py-4 pl-12 pr-[140px] text-base text-gray-900 border-2 border-transparent rounded-full bg-transparent focus:ring-0 focus:border-emerald-500 focus:outline-none placeholder-gray-400"
+          className="block w-full py-3.5 pl-12 pr-[140px] text-base text-gray-900 border-2 border-transparent rounded-full bg-transparent focus:ring-0 focus:border-emerald-500 focus:outline-none placeholder-gray-400"
           placeholder="Search products by name or features..."
           value={query}
           onChange={handleInputChange}

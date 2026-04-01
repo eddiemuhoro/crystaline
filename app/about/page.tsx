@@ -4,7 +4,7 @@ import { PageBanner } from "@/components/PageBanner";
 import { SectionHeading } from "@/components/SectionHeading";
 import { FeatureCard } from "@/components/FeatureCard";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
-import { featureHighlights, siteConfig } from "@/lib/site";
+import { featureHighlights } from "@/lib/site";
 
 const automationTracks = [
   {
@@ -120,7 +120,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="space-y-8 rounded-3xl border border-brand-100 bg-brand-50 p-6 sm:p-8 shadow-sm mx-4 sm:mx-6 lg:mx-8 max-w-7xl lg:mx-auto -mb-1">
+      <section className="space-y-8 rounded-3xl border border-brand-100 bg-brand-50 p-6 sm:p-8 shadow-sm mx-4 sm:mx-6 max-w-7xl lg:mx-auto -mb-1">
         <SectionHeading
           eyebrow="Automation tracks"
           title="Switch on only what you need—scale when ready."
@@ -138,7 +138,9 @@ export default function AboutPage() {
               <ul className="mt-4 space-y-2 text-sm text-slate-600">
                 {track.bullets.map((bullet) => (
                   <li key={bullet} className="flex items-start gap-2">
-                    <span aria-hidden className="text-brand-500">•</span>
+                    <span aria-hidden className="text-brand-500">
+                      •
+                    </span>
                     <span>{bullet}</span>
                   </li>
                 ))}
@@ -247,7 +249,13 @@ export default function AboutPage() {
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           <article className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
             <div className="mb-4 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-brand-50">
-              <Image src="/sammy.jpg" alt="Sammy Kinyua" width={64} height={64} className="h-full w-full object-cover" />
+              <Image
+                src="/sammy.jpg"
+                alt="Sammy Kinyua"
+                width={64}
+                height={64}
+                className="h-full w-full object-cover"
+              />
             </div>
             <h3 className="text-lg font-semibold text-slate-900">
               Sammy Kinyua
@@ -258,13 +266,19 @@ export default function AboutPage() {
             <p className="mt-3 text-sm text-slate-600">
               Over 15 years of experience in the IT field. Holds a degree in
               business management from Kenyatta University and a diploma in
-              computer science. Pioneered Crystaline ERP&apos;s vision to modernize
-              African commerce.
+              computer science. Pioneered Crystaline ERP&apos;s vision to
+              modernize African commerce.
             </p>
           </article>
           <article className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
             <div className="mb-4 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-brand-50">
-              <Image src="/nahashon.jpg" alt="Nahashon Gathai" width={64} height={64} className="h-full w-full object-cover" />
+              <Image
+                src="/nahashon.jpg"
+                alt="Nahashon Gathai"
+                width={64}
+                height={64}
+                className="h-full w-full object-cover"
+              />
             </div>
             <h3 className="text-lg font-semibold text-slate-900">
               Nahashon Gathai
@@ -279,7 +293,13 @@ export default function AboutPage() {
           </article>
           <article className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
             <div className="mb-4 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-brand-50">
-              <Image src="/tim.jpg" alt="Timothy Ndegwa" width={64} height={64} className="h-full w-full object-cover" />
+              <Image
+                src="/tim.jpg"
+                alt="Timothy Ndegwa"
+                width={64}
+                height={64}
+                className="h-full w-full object-cover"
+              />
             </div>
             <h3 className="text-lg font-semibold text-slate-900">
               Timothy Ndegwa
