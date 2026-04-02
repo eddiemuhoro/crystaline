@@ -96,7 +96,7 @@ export default function BarsPage() {
         ]}
       />
 
-      <section className="space-y-8 -mb-2">
+      <section className="space-y-8">
         <SectionHeading
           eyebrow="Common challenges"
           title="Built for the unique demands of bar service."
@@ -108,7 +108,7 @@ export default function BarsPage() {
               key={challenge.title}
               className="rounded-2xl border border-brand-200/60 bg-white p-6 shadow-sm"
             >
-              <h3 className="text-lg font-semibold text-slate-900">
+              <h3 className="text-base sm:text-lg font-semibold text-slate-900">
                 {challenge.title}
               </h3>
               <p className="mt-3 text-sm text-slate-600">
@@ -119,7 +119,7 @@ export default function BarsPage() {
         </div>
       </section>
 
-      <section className="space-y-8 rounded-3xl border border-brand-100 bg-brand-50 p-8 shadow-sm -mb-2">
+      <section className="space-y-8 rounded-3xl border border-brand-100 bg-brand-50 p-8 shadow-sm">
         <SectionHeading
           eyebrow="Bar features"
           title="Everything you need to manage a busy bar."
@@ -132,7 +132,7 @@ export default function BarsPage() {
         </div>
       </section>
 
-      <section className="space-y-8 -mb-2">
+      <section className="space-y-8">
         <SectionHeading
           eyebrow="Success story"
           title="How Westlands Lounge improved service speed by 40%."
@@ -140,7 +140,7 @@ export default function BarsPage() {
         />
         <div className="rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
           <blockquote className="space-y-4">
-            <p className="text-lg italic text-slate-700">
+            <p className="text-base sm:text-lg italic text-slate-700">
               &ldquo;Crystaline ERP&apos;s tab management completely changed our
               Friday night operations. Bartenders can now serve customers 40%
               faster, and we&apos;ve eliminated tab disputes. The beverage
