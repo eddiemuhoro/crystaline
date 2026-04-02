@@ -97,7 +97,7 @@ export default function HomePage() {
             <p className="text-gray-600">
               Need a custom solution?{" "}
               <a
-                href="https://wa.me/254725473779?text=I'm%20interested%20in%20Crystaline%20ERP"
+                href={`https://wa.me/254725473779?text=${encodeURIComponent("Hello 👋, I came across Crystaline ERP on your website and I'm interested. Could you please share more details?")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-emerald-600 hover:text-emerald-700"
@@ -212,7 +212,7 @@ export default function HomePage() {
                 </p>
               </div>
               <a
-                href="https://maps.google.com/?q=The+Bazaar+Nairobi+CBD+Kenya"
+                href="https://www.google.com/maps/place/Raja+Building,+3rd+floor+Biashara+St,+Nairobi/@-1.2816522,36.8193492,17z/data=!4m6!3m5!1s0x182f10d460097909:0xc8970b21dca059b5!8m2!3d-1.2816558!4d36.8210578!16s%2Fg%2F1hhkdqzvh?entry=ttu&g_ep=EgoyMDI2MDMzMC4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-auto text-xs font-semibold text-brand-700 transition-colors hover:text-brand-800"

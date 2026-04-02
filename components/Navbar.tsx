@@ -91,7 +91,7 @@ export function Navbar() {
           ))}
         </nav>
         <Link
-          href="https://wa.me/254741419830?text=I'm%20interested%20in%20Crystaline%20ERP"
+          href={`https://wa.me/254741419830?text=${encodeURIComponent("Hello 👋, I came across Crystaline ERP on your website and I'm interested. Could you please share more details?")}`}
           target="_blank"
           rel="noopener noreferrer"
           className="hidden btn-primary rounded-2xl px-6 py-3 text-sm font-bold text-white shadow-lg hover:shadow-2xl md:inline-flex  lg:text-base bg-gradient-to-r from-brand-700 to-brand-600"
@@ -175,7 +175,7 @@ export function Navbar() {
 
               <div className="mt-6 border-t border-slate-100 pt-6">
                 <Link
-                  href="https://wa.me/254725473779?text=I'm%20interested%20in%20Crystaline%20ERP"
+                  href={`https://wa.me/254725473779?text=${encodeURIComponent("Hello 👋, I came across Crystaline ERP on your website and I'm interested. Could you please share more details?")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={closeMobileMenu}

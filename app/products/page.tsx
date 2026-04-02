@@ -178,7 +178,7 @@ export default async function ProductsPage(props: {
 
         <div className="mt-1 text-center">
           <a
-            href="https://wa.me/254725473779?text=I'm%20interested%20in%20Crystaline%20ERP"
+            href={`https://wa.me/254725473779?text=${encodeURIComponent("Hello 👋, I came across Crystaline ERP on your website and I'm interested. Could you please share more details?")}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-700 to-brand-600 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-emerald-600/30 transition-all hover:bg-emerald-700"

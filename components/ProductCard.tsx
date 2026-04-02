@@ -30,7 +30,7 @@ export function ProductCard({
   // WhatsApp Order Link
   // Replace the phone number or message as needed.
   const whatsappUrl = `https://wa.me/254725473779?text=${encodeURIComponent(
-    `I'm interested in the ${title} package.`,
+    `Hello 👋, I came across Crystaline ERP on your website and I'd like to learn more about ${title}.\nKindly assist me. Thank you.`,
   )}`;
 
   return (

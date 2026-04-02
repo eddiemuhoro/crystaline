@@ -59,7 +59,7 @@ export default function PricingPage() {
           <p className="text-gray-600 text-sm">
             Need a custom solution?{" "}
             <a
-              href="https://wa.me/254725473779?text=I'm%20interested%20in%20Crystaline%20ERP"
+              href={`https://wa.me/254725473779?text=${encodeURIComponent("Hello 👋, I came across Crystaline ERP on your website and I'm interested. Could you please share more details?")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold text-emerald-600 hover:text-emerald-700"

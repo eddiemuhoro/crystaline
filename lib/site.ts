@@ -37,7 +37,8 @@ export const siteConfig = {
     twitter: "https://twitter.com/crystaline",
     facebook: "https://www.facebook.com/profile.php?id=100089447680981",
     instagram: "https://www.instagram.com/accounts/onetap/?next=%2F",
-    linkedin: "https://twitter.com/sajsoft_ltd",
+    linkedin: "https://www.linkedin.com/company/sajsoft-solutions/",
+    tiktok: "https://www.tiktok.com/@crystalerp1",
   },
 };
 
