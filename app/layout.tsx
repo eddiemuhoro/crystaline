@@ -19,6 +19,9 @@ const metadataBase = new URL(siteConfig.url);
 
 export const metadata: Metadata = {
   metadataBase,
+  icons: {
+    icon: "/favicon.ico",
+  },
   title: {
     default: siteConfig.name,
     template: `%s | ${siteConfig.shortName}`,
@@ -119,11 +122,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth antialiased bg-linear-to-b from-slate-50/80 via-white to-slate-50/50">
+    <html
+      lang="en"
+      className="scroll-smooth antialiased bg-linear-to-b from-slate-50/80 via-white to-slate-50/50"
+    >
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
           suppressHydrationWarning
         />
         <script
@@ -137,7 +145,9 @@ export default function RootLayout({
           suppressHydrationWarning
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} text-slate-900`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} text-slate-900`}
+      >
         <Navbar />
         <main className="mx-auto w-full max-w-7xl px-6 py-12 lg:px-8">
           {children}

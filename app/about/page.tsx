@@ -6,6 +6,13 @@ import { FeatureCard } from "@/components/FeatureCard";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
 import { featureHighlights } from "@/lib/site";
 
+// blog/[
+// streamlining-table-management-with-a-restaurant-pos-system,
+// streamlining-table-management-with-a-restaurant-pos-system
+// ]
+
+// redirect - /blog
+
 const automationTracks = [
   {
     title: "Real-time inventory intelligence",
@@ -315,8 +322,14 @@ export default function AboutPage() {
             </p>
           </article>
           <article className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-50 text-2xl font-bold text-brand-700">
-              JM
+            <div className="mb-4 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-brand-50">
+              <Image
+                src="/mosh.jpeg"
+                alt="Joseph Moshi"
+                width={64}
+                height={64}
+                className="h-full w-full object-cover"
+              />
             </div>
             <h3 className="text-lg font-semibold text-slate-900">
               Joseph Moshi
