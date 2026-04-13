@@ -130,6 +130,7 @@ export const testimonialQuotes = [
     quote:
       "I was looking for an ERP software that could handle all of my business needs and this one has exceeded my expectations. The HR management tools are very user-friendly, the inventory management system is efficient. I couldn't be happier with my decision to switch to this software.",
     author: "Backyard Shoes",
+    link:"https://www.google.com/aclk?sa=L&pf=1&ai=DChsSEwib7avGweqTAxXsqf0FHUB1KX8YACICCAEQABoCd2Y&co=1&ase=2&gclid=Cj0KCQjwqPLOBhCiARIsAKRMPZqYW3cadIWf5BpdJV5mw2kap8pynHyCDGGmcUvkFuWJhXykyGImA0YaAs0MEALw_wcB&cid=CAASuwHkaKdA5lZnyjc9FQ_MPnq0s3PRxsBjYJoDPC9eOX_6kEFOLKGmostrTx33eEodVOksBOs4QuQPB2FnZ4ajT6Z5hYcMuJ3gLAg5xMjARnUh3cgHqQdNe9pP2YhWTDmUzucsM5goNMF2jcOcPvObIdJgfyJAZ24EM1t_BIIj2-7rLysQQAlsAqPerZQrCMky158ekoYzYOaUJvfLZejUMRuBV7DW7rQjWk0zfowTSVsz1uK79wxQFVWeGv_T&cce=2&category=acrcp_v1_32&sig=AOD64_0vtjbSyHs1xdMCeSYEnrAtKUTw7g&q&nis=4&adurl=https://backyardshoez.co.ke/product-category/office/?gad_source%3D1%26gad_campaignid%3D22264031170%26gbraid%3D0AAAAADlNrOaf3ke8Pypoy0OlGPXGCrBk4%26gclid%3DCj0KCQjwqPLOBhCiARIsAKRMPZqYW3cadIWf5BpdJV5mw2kap8pynHyCDGGmcUvkFuWJhXykyGImA0YaAs0MEALw_wcB&ved=2ahUKEwiGnabGweqTAxWwRaQEHensBUIQ0Qx6BAgQEAE"
   },
 ];
 
