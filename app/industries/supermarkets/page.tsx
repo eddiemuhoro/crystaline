@@ -134,9 +134,9 @@ export default function SupermarketsPage() {
 
       <section className="space-y-8">
         <SectionHeading
-          eyebrow="Success story"
-          title="How QuickMart scaled to 12 branches with Crystaline ERP."
-          description="See how a Nairobi supermarket chain streamlined operations and reduced stock-outs by 60%."
+          eyebrow="Customer success"
+          title="6 years of transforming retail operations with Crystaline ERP"
+          description="From inventory and financial management to user-friendly HR tools, see why businesses trust Crystaline ERP to streamline their operations."
         />
         <div className="rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
           <blockquote className="space-y-4">

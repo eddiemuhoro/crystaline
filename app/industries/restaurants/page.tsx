@@ -132,7 +132,7 @@ export default function RestaurantsPage() {
         </div>
       </section>
 
-      <section className="space-y-8">
+      {/* <section className="space-y-8">
         <SectionHeading
           eyebrow="Success story"
           title="How Java House improved order accuracy to 99.8%."
@@ -148,15 +148,12 @@ export default function RestaurantsPage() {
             </p>
             <footer className="flex items-center gap-4">
               <div>
-                <p className="font-semibold text-slate-900">
-                  David Omondi, General Manager
-                </p>
                 <p className="text-sm text-slate-600">Java House, Nairobi</p>
               </div>
             </footer>
           </blockquote>
         </div>
-      </section>
+      </section> */}
 
       <CallToAction />
     </div>

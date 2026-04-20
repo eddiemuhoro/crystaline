@@ -132,7 +132,7 @@ export default function BarsPage() {
         </div>
       </section>
 
-      <section className="space-y-8">
+      {/* <section className="space-y-8">
         <SectionHeading
           eyebrow="Success story"
           title="How Westlands Lounge improved service speed by 40%."
@@ -149,9 +149,6 @@ export default function BarsPage() {
             </p>
             <footer className="flex items-center gap-4">
               <div>
-                <p className="font-semibold text-slate-900">
-                  Sarah Kimani, Manager
-                </p>
                 <p className="text-sm text-slate-600">
                   Westlands Lounge, Nairobi
                 </p>
@@ -159,7 +156,7 @@ export default function BarsPage() {
             </footer>
           </blockquote>
         </div>
-      </section>
+      </section> */}
 
       <CallToAction />
     </div>
