@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   compress: true,
   poweredByHeader: false,
   generateEtags: true,
@@ -16,14 +15,38 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  // Enable static exports for better SEO
-  output: undefined, // Keep as server-side for dynamic sitemap
+  output: undefined,
 
-  // Setup 301 Redirects to maintain SEO for old indexed pages
+  async redirects() {
+    return [
+      {
+        source: "/blog/integrating-online-ordering-and-delivery-services-with-your-pos-system",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/blog/streamlining-table-management-with-a-restaurant-pos-system",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/blog/future-proofing-your-business-with-scalable-and-flexible-pos-system-solutions",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/blog/inventory-tracking-for-perishable-goods-optimizing-stock-rotation-with-a-pos-system",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/blog/the-benefits-of-mobile-ordering-and-self-service-kiosks-in-quick-service-restaurants",
+        destination: "/blog",
+        permanent: true,
+      },
+    ];
+  },
 
-  //old A - 217.20.124.83
-  // www cname - 217.20.124.83
-  // Headers for better SEO and security
   async headers() {
     return [
       {

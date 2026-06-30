@@ -21,7 +21,7 @@ export function PackageCard({
 }: PackageCardProps) {
   // WhatsApp Order Link
   const whatsappUrl = `https://wa.me/254725473779?text=${encodeURIComponent(
-    `Hello, i'd love to enquire on ${name} package`
+    `Hello 👋, I came across Crystaline ERP on your website and I'd like to learn more about the ${name} package.\nKindly assist me. Thank you.`
   )}`;
 
   return (

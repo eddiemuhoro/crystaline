@@ -11,6 +11,8 @@ import {
 export const siteConfig = {
   name: "Crystaline ERP & POS Software",
   shortName: "Crystaline ERP",
+  description:
+    "Crystaline ERP delivers modern ERP and POS software that helps Kenyan businesses streamline sales, inventory, finance, and people operations from one secure cloud platform.",
   url: "https://crystaline.co.ke",
   keywords: [
     "ERP software Kenya",
@@ -35,7 +37,8 @@ export const siteConfig = {
     twitter: "https://twitter.com/crystaline",
     facebook: "https://www.facebook.com/profile.php?id=100089447680981",
     instagram: "https://www.instagram.com/accounts/onetap/?next=%2F",
-    linkedin: "https://twitter.com/sajsoft_ltd",
+    linkedin: "https://www.linkedin.com/company/sajsoft-solutions/",
+    tiktok: "https://www.tiktok.com/@crystalerp1",
   },
 };
 
@@ -127,6 +130,7 @@ export const testimonialQuotes = [
     quote:
       "I was looking for an ERP software that could handle all of my business needs and this one has exceeded my expectations. The HR management tools are very user-friendly, the inventory management system is efficient. I couldn't be happier with my decision to switch to this software.",
     author: "Backyard Shoes",
+    link: "https://backyardshoez.co.ke/",
   },
 ];
 

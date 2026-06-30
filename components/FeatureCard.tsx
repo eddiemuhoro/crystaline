@@ -17,7 +17,7 @@ export function FeatureCard({
         <Icon className="h-6 w-6 text-brand-600" strokeWidth={2} />
       </div>
       <div>
-        <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
+        <h3 className="text-base sm:text-lg  font-semibold text-slate-900">{title}</h3>
         <p className="mt-2 text-sm text-slate-600">{description}</p>
       </div>
     </article>

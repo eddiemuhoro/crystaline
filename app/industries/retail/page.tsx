@@ -108,7 +108,7 @@ export default function RetailPage() {
               key={challenge.title}
               className="rounded-2xl border border-brand-200/60 bg-white p-6 shadow-sm"
             >
-              <h3 className="text-lg font-semibold text-slate-900">
+              <h3 className="text-base sm:text-lg font-semibold text-slate-900">
                 {challenge.title}
               </h3>
               <p className="mt-3 text-sm text-slate-600">
@@ -134,29 +134,35 @@ export default function RetailPage() {
 
       <section className="space-y-8">
         <SectionHeading
-          eyebrow="Success story"
-          title="How Trendy Boutique grew to 5 locations with Crystaline ERP."
-          description="See how a Nairobi fashion retailer scaled operations and improved margins."
+          eyebrow="Customer success"
+          title="An all-in-one ERP that exceeds expectations"
+          description="From user-friendly HR tools to efficient inventory management, see why businesses are confident in switching to Crystaline ERP."
         />
+
         <div className="rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
           <blockquote className="space-y-4">
-            <p className="text-lg italic text-slate-700">
-              &ldquo;Crystaline ERP&apos;s variant tracking was a game-changer for
-              our fashion business. We can now manage thousands of SKUs across
-              sizes and colors effortlessly. The customer loyalty program helped
-              us increase repeat purchases by 35%, and multi-location sync lets
-              us transfer stock where it sells best.&rdquo;
+            <p className="text-base sm:text-lg italic text-slate-700">
+              &ldquo;I was looking for an ERP software that could handle all of
+              my business needs and this one has exceeded my expectations. The
+              HR management tools are very user-friendly, the inventory
+              management system is efficient. I couldn&apos;t be happier with my
+              decision to switch to this software.&rdquo;
             </p>
-            <footer className="flex items-center gap-4">
-              <div>
-                <p className="font-semibold text-slate-900">
-                  Grace Wanjiru, Owner
-                </p>
-                <p className="text-sm text-slate-600">
-                  Trendy Boutique, Nairobi
-                </p>
-              </div>
-            </footer>
+
+             <footer className="flex items-center justify-between gap-4 flex-wrap">
+      <figcaption className="mt-2 text-sm font-semibold text-brand-700">
+        — Backyard Shoes
+      </figcaption>
+
+      <a
+        href="https://backyardshoez.co.ke/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-sm font-medium text-brand-600 hover:text-brand-800 transition"
+      >
+        View Backyard Shoes profile →
+      </a>
+    </footer>
           </blockquote>
         </div>
       </section>

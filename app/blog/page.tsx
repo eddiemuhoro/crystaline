@@ -43,12 +43,12 @@ export default async function BlogsPage() {
                 className="w-full h-56 object-cover rounded-xl"
               />
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="mb-3 text-xl font-bold text-gray-900 transition-colors group-hover:text-emerald-600">
+                <h3 className="mb-3 text-lg sm:text-xl font-bold text-gray-900 transition-colors group-hover:text-emerald-600">
                   <Link href={`/blog/${article.slug}`}>{article.title}</Link>
                 </h3>
                 <p className="mb-4 flex-1 text-gray-600">{article.excerpt}</p>
-                <div className="flex items-center gap-4 border-t border-gray-100 pt-4 text-sm text-gray-500">
-                  <div className="flex items-center gap-1">
+                <div className="sm:flex items-center gap-4 border-t border-gray-100 pt-4 text-sm text-gray-500">
+                  <div className="flex items-center gap-1 sm:mb-0 mb-4">
                     <User className="h-4 w-4" />
                     <span>{article.author}</span>
                   </div>
@@ -63,8 +63,8 @@ export default async function BlogsPage() {
                     </span>
                   </div>
                 </div>
-                <div className="mt-3 flex items-center justify-between">
-                  <div className="flex items-center gap-1 text-sm text-gray-500">
+                <div className="mt-3 sm:flex items-center justify-between">
+                  <div className="flex items-center gap-1 text-sm text-gray-500 mb-4 sm:mb-0">
                     <Clock className="h-4 w-4" />{" "}
                     <span>{article.readingTime}</span>
                   </div>

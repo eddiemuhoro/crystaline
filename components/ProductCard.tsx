@@ -30,13 +30,13 @@ export function ProductCard({
   // WhatsApp Order Link
   // Replace the phone number or message as needed.
   const whatsappUrl = `https://wa.me/254725473779?text=${encodeURIComponent(
-    `I'm interested in the ${title} package.`,
+    `Hello 👋, I came across Crystaline ERP on your website and I'd like to learn more about ${title}.\nKindly assist me. Thank you.`,
   )}`;
 
   return (
     <>
       <div className="group flex flex-col rounded-2xl border border-gray-100 bg-white overflow-hidden transition-all hover:border-emerald-200 hover:shadow-xl">
-        <div className="relative h-48 bg-gradient-to-br from-emerald-50 to-emerald-100 p-6">
+        <div className="relative h-48 bg-linear-to-br from-emerald-50 to-emerald-100 p-6">
           <div className="absolute inset-0 flex items-center justify-center p-4">
             {/* image */}
             {image && (
@@ -53,9 +53,9 @@ export function ProductCard({
 
         {/* content */}
         <div className="flex flex-1 flex-col p-6 bg-gray-50">
-          <h3 className="mb-2 text-lg font-bold text-gray-900">{title}</h3>
+          <h3 className="mb-2 text-lg font-bold text-gray-900 truncate" title={title}>{title}</h3>
           <div className="relative">
-            <p className="text-sm text-gray-600  ">{subtitle}</p>
+            <p className="text-sm text-gray-600 truncate" title={subtitle}>{subtitle}</p>
           </div>
           <div className="flex items-center justify-between mt-4">
             <span className="text-lg font-bold text-emerald-600">
@@ -101,7 +101,7 @@ export function ProductCard({
 
             <div className="flex flex-col">
               {image && (
-                <div className="w-full h-64 sm:h-80 relative bg-gradient-to-br from-emerald-50/50 to-emerald-100/50 rounded-t-3xl border-b border-slate-100 p-8">
+                <div className="w-full h-64 sm:h-80 relative bg-linear-to-br from-emerald-50/50 to-emerald-100/50 rounded-t-3xl border-b border-slate-100 p-8">
                   <Image
                     src={image}
                     fill
@@ -173,7 +173,7 @@ export function ProductCard({
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="order-1 sm:order-2 flex-1 flex items-center justify-center gap-2 py-4 rounded-xl bg-gradient-to-r from-brand-700 to-brand-600 font-bold text-white shadow-xl shadow-brand-500/20 transition-all hover:shadow-2xl hover:shadow-brand-500/40 hover:-translate-y-0.5 active:translate-y-0 active:scale-95"
+                    className="order-1 sm:order-2 flex-1 flex items-center justify-center gap-2 py-4 rounded-xl bg-linear-to-r from-brand-700 to-brand-600 font-bold text-white shadow-xl shadow-brand-500/20 transition-all hover:shadow-2xl hover:shadow-brand-500/40 hover:-translate-y-0.5 active:translate-y-0 active:scale-95"
                   >
                     Order Now
                   </a>

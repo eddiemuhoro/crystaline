@@ -1,10 +1,10 @@
-# SEO Setup Guide for erp.crystaline.co.ke
+# SEO Setup Guide for crystaline.co.ke
 
 ## ✅ Completed Configurations
 
 ### 1. Domain Configuration
 
-- ✅ Updated site URL from `crytalian.co.ke` to `erp.crystaline.co.ke`
+- ✅ Updated site URL from `crytalian.co.ke` to `crystaline.co.ke`
 - ✅ Fixed metadata base URL in layout
 - ✅ Updated all canonical URLs
 
@@ -18,13 +18,13 @@
   - Resources (priority: 0.7)
   - Terms & Privacy (priority: 0.5)
   - All dynamic resource articles (priority: 0.6)
-- ✅ Sitemap available at: `https://erp.crystaline.co.ke/sitemap.xml`
+- ✅ Sitemap available at: `https://crystaline.co.ke/sitemap.xml`
 
 ### 3. Robots.txt
 
 - ✅ Configured to allow all crawlers
 - ✅ Points to sitemap
-- ✅ Available at: `https://erp.crystaline.co.ke/robots.txt`
+- ✅ Available at: `https://crystaline.co.ke/robots.txt`
 
 ### 4. Structured Data (JSON-LD)
 
@@ -78,7 +78,7 @@ You have 3 options to verify:
 ### Step 3: Request Indexing (Optional but Recommended)
 
 1. Go to "URL Inspection" in Search Console
-2. Enter your homepage URL: `https://erp.crystaline.co.ke`
+2. Enter your homepage URL: `https://crystaline.co.ke`
 3. Click "Request Indexing"
 4. Repeat for important pages:
    - `/features`
@@ -101,13 +101,13 @@ You have 3 options to verify:
 
 ```bash
 # Sitemap
-curl https://erp.crystaline.co.ke/sitemap.xml
+curl https://crystaline.co.ke/sitemap.xml
 
 # Robots.txt
-curl https://erp.crystaline.co.ke/robots.txt
+curl https://crystaline.co.ke/robots.txt
 
 # Homepage meta tags
-curl -I https://erp.crystaline.co.ke
+curl -I https://crystaline.co.ke
 ```
 
 ### Online SEO Tools to Validate:
@@ -202,5 +202,5 @@ Need help? Check:
 ---
 
 **Last Updated**: March 8, 2026
-**Site**: https://erp.crystaline.co.ke
+**Site**: https://crystaline.co.ke
 **Status**: Ready for indexing ✅

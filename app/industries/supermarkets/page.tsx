@@ -96,7 +96,7 @@ export default function SupermarketsPage() {
         ]}
       />
 
-      <section className="space-y-8 -mb-1">
+      <section className="space-y-8">
         <SectionHeading
           eyebrow="Common challenges"
           title="Built to solve real supermarket problems."
@@ -108,7 +108,7 @@ export default function SupermarketsPage() {
               key={challenge.title}
               className="rounded-2xl border border-brand-200/60 bg-white p-6 shadow-sm"
             >
-              <h3 className="text-lg font-semibold text-slate-900">
+              <h3 className="text-base sm:text-lg font-semibold text-slate-900">
                 {challenge.title}
               </h3>
               <p className="mt-3 text-sm text-slate-600">
@@ -119,7 +119,7 @@ export default function SupermarketsPage() {
         </div>
       </section>
 
-      <section className="space-y-8 rounded-3xl border border-brand-100 bg-brand-50 p-8 shadow-sm -mb-1">
+      <section className="space-y-8 rounded-3xl border border-brand-100 bg-brand-50 p-8 shadow-sm">
         <SectionHeading
           eyebrow="Supermarket features"
           title="Everything you need to run a modern supermarket."
@@ -132,15 +132,15 @@ export default function SupermarketsPage() {
         </div>
       </section>
 
-      <section className="space-y-8 -mb-1">
+      <section className="space-y-8">
         <SectionHeading
-          eyebrow="Success story"
-          title="How QuickMart scaled to 12 branches with Crystaline ERP."
-          description="See how a Nairobi supermarket chain streamlined operations and reduced stock-outs by 60%."
+          eyebrow="Customer success"
+          title="6 years of transforming retail operations with Crystaline ERP"
+          description="From inventory and financial management to user-friendly HR tools, see why businesses trust Crystaline ERP to streamline their operations."
         />
         <div className="rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
           <blockquote className="space-y-4">
-            <p className="text-lg italic text-slate-700">
+            <p className="text-base sm:text-lg italic text-slate-700">
               &ldquo;We have been using this ERP software for our retail
               business for the past 6 years and it transformed the way we manage
               my inventory and finances. The HR management tools are

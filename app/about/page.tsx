@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageBanner } from "@/components/PageBanner";
 import { SectionHeading } from "@/components/SectionHeading";
 import { FeatureCard } from "@/components/FeatureCard";
 import { BreadcrumbJsonLd } from "@/components/BreadcrumbJsonLd";
-import { featureHighlights, siteConfig } from "@/lib/site";
+import { featureHighlights } from "@/lib/site";
+
+// blog/[
+// streamlining-table-management-with-a-restaurant-pos-system,
+// streamlining-table-management-with-a-restaurant-pos-system
+// ]
+
+// redirect - /blog
 
 const automationTracks = [
   {
@@ -75,7 +83,7 @@ export default function AboutPage() {
         items={[{ name: "Home" }, { name: "About", path: "/about" }]}
       />
 
-      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto -mb-14 lg:-mb-16">
+      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <SectionHeading
           eyebrow="Mission"
           title="Digitize every workflow that powers Kenyan entrepreneurs."
@@ -83,17 +91,17 @@ export default function AboutPage() {
         />
         <div className="grid gap-6 lg:grid-cols-2">
           <article className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm">
-            <h3 className="text-lg font-semibold text-slate-900">
+            <h3 className="text-base sm:text-lg font-semibold text-slate-900">
               Customer-first rollouts
             </h3>
-            <p className="mt-3 text-sm text-slate-600">
+            <p className="mt-3 text-sm  text-slate-600">
               Implementation engineers co-create blueprints with your finance,
               HR, and retail leads. Every switch-over includes data validation,
               playbook training, and on-site go-live assistance.
             </p>
           </article>
           <article className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm">
-            <h3 className="text-lg font-semibold text-slate-900">
+            <h3 className="text-base sm:text-lg font-semibold text-slate-900">
               Local innovation
             </h3>
             <p className="mt-3 text-sm text-slate-600">
@@ -106,7 +114,7 @@ export default function AboutPage() {
       </section>
 
       {/* Brought over from Features Page */}
-      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto -mb-1">
+      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <SectionHeading
           eyebrow="Core pillars"
           title="Full-stack ERP for retail and services."
@@ -119,7 +127,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="space-y-8 rounded-3xl border border-brand-100 bg-brand-50 p-6 sm:p-8 shadow-sm mx-4 sm:mx-6 lg:mx-8 max-w-7xl lg:mx-auto -mb-1">
+      <section className="space-y-8 rounded-3xl border border-brand-100 bg-brand-50 p-6 sm:p-8 shadow-sm mx-4 sm:mx-6 max-w-7xl lg:mx-auto">
         <SectionHeading
           eyebrow="Automation tracks"
           title="Switch on only what you need—scale when ready."
@@ -131,13 +139,15 @@ export default function AboutPage() {
               key={track.title}
               className="rounded-2xl border border-brand-200/60 bg-white p-6"
             >
-              <h3 className="text-lg font-semibold text-slate-900">
+              <h3 className="text-base sm:text-lg font-semibold text-slate-900">
                 {track.title}
               </h3>
               <ul className="mt-4 space-y-2 text-sm text-slate-600">
                 {track.bullets.map((bullet) => (
                   <li key={bullet} className="flex items-start gap-2">
-                    <span aria-hidden className="text-brand-500">•</span>
+                    <span aria-hidden className="text-brand-500">
+                      •
+                    </span>
                     <span>{bullet}</span>
                   </li>
                 ))}
@@ -147,7 +157,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto -mb-14 lg:-mb-16">
+      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto ">
         <SectionHeading
           eyebrow="Onboarding"
           title="Launch in as little as three days."
@@ -178,7 +188,7 @@ export default function AboutPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-600">
                 Step {index + 1}
               </p>
-              <h3 className="mt-3 text-lg font-semibold text-slate-900">
+              <h3 className="mt-3 text-base sm:text-lg font-semibold text-slate-900">
                 {step.title}
               </h3>
               <p className="mt-2 text-sm text-slate-600">{step.detail}</p>
@@ -187,7 +197,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto -mb-14 lg:-mb-16">
+      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <SectionHeading
           eyebrow="What's included"
           title="Every deployment ships with"
@@ -210,7 +220,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto -mb-14 lg:-mb-16">
+      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto ">
         <SectionHeading
           eyebrow="Integrations"
           title="Connect Crystaline ERP to the rest of your stack."
@@ -223,7 +233,7 @@ export default function AboutPage() {
                 key={category}
                 className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm"
               >
-                <h3 className="text-lg font-semibold text-slate-900">
+                <h3 className="text-base sm:text-lg font-semibold text-slate-900">
                   {category}
                 </h3>
                 <p className="mt-3 text-sm text-slate-600">
@@ -237,7 +247,7 @@ export default function AboutPage() {
       </section>
       {/* End Brought over from Features Page */}
 
-      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto -mb-14 lg:-mb-24">
+      <section className="space-y-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <SectionHeading
           eyebrow="Leadership"
           title="Built by operators who understand Kenyan commerce."
@@ -245,8 +255,14 @@ export default function AboutPage() {
         />
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           <article className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-50 text-2xl font-bold text-brand-700">
-              SK
+            <div className="mb-4 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-brand-50">
+              <Image
+                src="/sammy.jpg"
+                alt="Sammy Kinyua"
+                width={64}
+                height={64}
+                className="h-full w-full object-cover"
+              />
             </div>
             <h3 className="text-lg font-semibold text-slate-900">
               Sammy Kinyua
@@ -257,13 +273,19 @@ export default function AboutPage() {
             <p className="mt-3 text-sm text-slate-600">
               Over 15 years of experience in the IT field. Holds a degree in
               business management from Kenyatta University and a diploma in
-              computer science. Pioneered Crystaline ERP&apos;s vision to modernize
-              African commerce.
+              computer science. Pioneered Crystaline ERP&apos;s vision to
+              modernize African commerce.
             </p>
           </article>
           <article className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-50 text-2xl font-bold text-brand-700">
-              NG
+            <div className="mb-4 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-brand-50">
+              <Image
+                src="/nahashon.jpg"
+                alt="Nahashon Gathai"
+                width={64}
+                height={64}
+                className="h-full w-full object-cover"
+              />
             </div>
             <h3 className="text-lg font-semibold text-slate-900">
               Nahashon Gathai
@@ -277,8 +299,14 @@ export default function AboutPage() {
             </p>
           </article>
           <article className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-50 text-2xl font-bold text-brand-700">
-              TN
+            <div className="mb-4 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-brand-50">
+              <Image
+                src="/tim.jpg"
+                alt="Timothy Ndegwa"
+                width={64}
+                height={64}
+                className="h-full w-full object-cover"
+              />
             </div>
             <h3 className="text-lg font-semibold text-slate-900">
               Timothy Ndegwa
@@ -294,8 +322,14 @@ export default function AboutPage() {
             </p>
           </article>
           <article className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-50 text-2xl font-bold text-brand-700">
-              JM
+            <div className="mb-4 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-brand-50">
+              <Image
+                src="/mosh.jpeg"
+                alt="Joseph Moshi"
+                width={64}
+                height={64}
+                className="h-full w-full object-cover"
+              />
             </div>
             <h3 className="text-lg font-semibold text-slate-900">
               Joseph Moshi

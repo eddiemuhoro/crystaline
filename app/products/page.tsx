@@ -20,13 +20,24 @@ type SanityProduct = {
 
 import { client } from "@/sanity/client";
 import Link from "next/link";
+import { ProductSearch } from "@/components/ProductSearch";
+import { ProductCategoryFilter } from "@/components/ProductCategoryFilter";
 
-const POSTS_QUERY = `*[
+const getPostsQuery = (hasSearch: boolean, hasCategory: boolean) => `*[
   _type == "products"
   && defined(slug.current)
+  ${hasSearch ? '&& (title match $searchQuery || subtitle match $searchQuery)' : ''}
+  ${hasCategory ? '&& category == $category' : ''}
 ]|order(publishedAt desc)[$start...$end]{_id, title, "slug": slug.current, price, description, subtitle, "overview": coalesce(pt::text(overview), overview), highlights, "image": image.asset->url, publishedAt}`;
 
-const TOTAL_QUERY = `count(*[_type == "products" && defined(slug.current)])`;
+const getTotalQuery = (hasSearch: boolean, hasCategory: boolean) => `count(*[
+  _type == "products" 
+  && defined(slug.current)
+  ${hasSearch ? '&& (title match $searchQuery || subtitle match $searchQuery)' : ''}
+  ${hasCategory ? '&& category == $category' : ''}
+])`;
+
+const getCategoriesQuery = `array::unique(*[_type == "products" && defined(category)].category) | order(@)`;
 
 const options = { next: { revalidate: 60 } };
 
@@ -58,18 +69,30 @@ export default async function ProductsPage(props: {
 }) {
   const searchParams = await Promise.resolve(props.searchParams);
   const pageStr = searchParams?.page;
+  const qStr = searchParams?.q;
+  const catStr = searchParams?.category;
   const currentPage = typeof pageStr === "string" ? parseInt(pageStr, 10) || 1 : 1;
+  const searchQuery = typeof qStr === "string" ? qStr : "";
+  const activeCategory = typeof catStr === "string" ? catStr : "";
+  const hasSearch = Boolean(searchQuery);
+  const hasCategory = Boolean(activeCategory);
+  const searchParamValue = searchQuery ? `${searchQuery}*` : '';
   const itemsPerPage = 12;
   const start = (currentPage - 1) * itemsPerPage;
   const end = start + itemsPerPage;
 
-  const [products, totalCount] = await Promise.all([
+  const [products, totalCount, categories] = await Promise.all([
     client.fetch<SanityProduct[]>(
-      POSTS_QUERY,
-      { start, end },
+      getPostsQuery(hasSearch, hasCategory),
+      { start, end, ...(hasSearch && { searchQuery: searchParamValue }), ...(hasCategory && { category: activeCategory }) },
       options,
     ),
-    client.fetch<number>(TOTAL_QUERY, {}, options),
+    client.fetch<number>(
+      getTotalQuery(hasSearch, hasCategory),
+      { ...(hasSearch && { searchQuery: searchParamValue }), ...(hasCategory && { category: activeCategory }) },
+      options,
+    ),
+    client.fetch<string[]>(getCategoriesQuery, {}, options),
   ]);
 
   const totalPages = Math.ceil(totalCount / itemsPerPage);
@@ -87,28 +110,39 @@ export default async function ProductsPage(props: {
       />
 
       <section className="space-y-8">
-        <div className="grid gap-6 lg:grid-cols-3">
-          {products?.map((product) => (
-            <ProductCard
-              key={product._id}
-              title={product.title}
-              subtitle={product.subtitle}
-              overview={product.overview || ""}
-              description={product.description}
-              price={product.price || 0}
-              href={`/products/${product.slug}`}
-              highlights={product.highlights || []}
-              image={product.image}
-            />
-          ))}
-        </div>
+        <ProductCategoryFilter categories={categories} />
+        <ProductSearch />
+        
+        {products?.length === 0 ? (
+          <div className="text-center py-16 text-gray-500 bg-gray-50 rounded-2xl border border-gray-100">
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">No products found</h3>
+            <p className="text-base">We couldn&apos;t find anything matching &quot;{searchQuery}&quot;.</p>
+            <p className="text-sm mt-1">Try adjusting your search terms.</p>
+          </div>
+        ) : (
+          <div className="grid gap-6 lg:grid-cols-3">
+            {products?.map((product) => (
+              <ProductCard
+                key={product._id}
+                title={product.title}
+                subtitle={product.subtitle}
+                overview={product.overview || ""}
+                description={product.description}
+                price={product.price || 0}
+                href={`/products/${product.slug}`}
+                highlights={product.highlights || []}
+                image={product.image}
+              />
+            ))}
+          </div>
+        )}
 
         {/* Pagination Controls */}
         {totalPages > 1 && (
           <div className="flex items-center justify-center gap-6 pt-10 pb-4">
             {currentPage > 1 ? (
               <Link
-                href={`/products?page=${currentPage - 1}`}
+                href={`/products?page=${currentPage - 1}${searchQuery ? `&q=${encodeURIComponent(searchQuery)}` : ''}${activeCategory ? `&category=${encodeURIComponent(activeCategory)}` : ''}`}
                 className="group flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-emerald-600 transition-colors"
               >
                 <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
@@ -127,7 +161,7 @@ export default async function ProductsPage(props: {
 
             {currentPage < totalPages ? (
               <Link
-                href={`/products?page=${currentPage + 1}`}
+                href={`/products?page=${currentPage + 1}${searchQuery ? `&q=${encodeURIComponent(searchQuery)}` : ''}${activeCategory ? `&category=${encodeURIComponent(activeCategory)}` : ''}`}
                 className="group flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-emerald-600 transition-colors"
               >
                 Next
@@ -142,9 +176,9 @@ export default async function ProductsPage(props: {
           </div>
         )}
 
-        <div className="mt-1 text-center -mb-14 lg:-mb-16">
+        <div className="mt-1 text-center">
           <a
-            href="https://wa.me/254725473779?text=I'm%20interested%20in%20Crystaline%20ERP"
+            href={`https://wa.me/254725473779?text=${encodeURIComponent("Hello 👋, I came across Crystaline ERP on your website and I'm interested. Could you please share more details?")}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-700 to-brand-600 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-emerald-600/30 transition-all hover:bg-emerald-700"
