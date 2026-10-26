@@ -183,6 +183,7 @@ export function Footer() {
           </p>
           <div className="flex flex-wrap gap-6 font-medium text-slate-500">
             <Link href="/privacy" className="transition-colors hover:text-brand-700">Privacy</Link>
+            <Link href="/app-privacy" className="transition-colors hover:text-brand-700">App privacy</Link>
             <Link href="/terms" className="transition-colors hover:text-brand-700">Terms</Link>
             <Link href="/sitemap.xml" className="transition-colors hover:text-brand-700">Sitemap</Link>
           </div>

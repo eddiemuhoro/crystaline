@@ -11,6 +11,7 @@ const staticRoutes = [
   { path: "/blog", priority: 0.7, changeFrequency: "weekly" as const },
   { path: "/terms", priority: 0.5, changeFrequency: "yearly" as const },
   { path: "/privacy", priority: 0.5, changeFrequency: "yearly" as const },
+  { path: "/app-privacy", priority: 0.4, changeFrequency: "yearly" as const },
   // Industry pages
   {
     path: "/industries/supermarkets",
